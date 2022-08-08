@@ -1,0 +1,177 @@
+---
+title:  Mathematical Statistics (Fall 2022)
+keywords: ['Mathematical Statistics', 'MATH-UA.0234', 'NYU', 'Courant']
+description: Course overview for NYU Mathematical Statistics Fall 2022
+...
+
+Welcome to Mathematical Statistics!
+
+
+**Instructor**: Tyler Chen  
+**Email**: tyler.chen@nyu.edu  
+**Class**: TuTh 2:00-3:15PM; CIWW 109  
+**Office Hours**:  
+
+
+**Teaching Assistant**:  
+**Recitation**: A, B  
+
+
+
+[**Syllabus**](./syllabus.html)  
+[**Edstem discussion**](https://edstem.org/us/courses/24656/discussion/)  
+[**Gradescope**](https://www.gradescope.com/courses/414277)  
+
+
+## Schedule
+
+
+W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
+
+<div class="schedule-container">
+
+<div class="week weektitle">
+<div class="label">**Week**</div>
+<div class="topic">**Topic**</div>
+<div class="reading">**Reading**</div>
+<div class="hw">**Homework/Quiz**</div>
+</div>
+
+
+<div class="week current">
+<div class="label">**1.** (8/29)</div>
+<div class="topic">Probability review</div>
+<div class="reading">syllabus, W1, W2, W3, CB1, CB2, CB3, CB4</div>
+<div class="hw">Intro survey (due 9/06)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**2.** (9/04)</div>
+<div class="topic">Convergence of RVs, LLN and CLT</div>
+<div class="reading">W5, CB5</div>
+<div class="hw">HW1 (due 9/08)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**3.** (9/11)</div>
+<div class="topic">Sampling distributions, delta method</div>
+<div class="reading">W5, CB5</div>
+<div class="hw">quiz 1 (9/13)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**4.** (9/18)</div>
+<div class="topic">Inference, MLE</div>
+<div class="reading">W6, CB7</div>
+<div class="hw">HW2 (due 9/22)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**5.** (9/25)</div>
+<div class="topic">Method of moments</div>
+<div class="reading">W9, CB7</div>
+<div class="hw">quiz 2 (9/27)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**6.** (10/02)</div>
+<div class="topic">Confidence intervals</div>
+<div class="reading">W9, CB9</div>
+<div class="hw">HW3 (due 10/06)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**7.** (10/09)</div>
+<div class="topic">Bootstrapping</div>
+<div class="reading">W8</div>
+<div class="hw">quiz 3 (10/11)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**8.** (10/16)</div>
+<div class="topic">Hypothesis testing, p-values</div>
+<div class="reading">W10, CB8</div>
+<div class="hw">HW4 (due 10/20)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**9.** (10/23)</div>
+<div class="topic">Baysian Inference</div>
+<div class="reading">W11</div>
+<div class="hw">quiz 4 (10/25)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**10.** (10/30)</div>
+<div class="topic">built in slack time / catch up</div>
+<div class="reading">&nbsp;</div>
+<div class="hw">HW5 (due 11/03)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**11.** (11/06)</div>
+<div class="topic">Simulation</div>
+<div class="reading">&nbsp;</div>
+<div class="hw">quiz 5 (11/8)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**12.** (11/13)</div>
+<div class="topic">Linear Regression</div>
+<div class="reading">W13, CB11</div>
+<div class="hw">HW6 (due 11/17)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**13.** (11/20)</div>
+<div class="topic">Logistic Regression</div>
+<div class="reading">W13, CB12</div>
+<div class="hw">quiz 6 (11/22), project proosals (due 11/24)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**14.** (11/27)</div>
+<div class="topic">Classification</div>
+<div class="reading">W22</div>
+<div class="hw">HW7 (due 12/01)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**15.** (12/04)</div>
+<div class="topic">Machine Learning/Project presentations</div>
+<div class="reading">&nbsp;</div>
+<div class="hw">quiz 7 (12/06)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**16.** (12/11)</div>
+<div class="topic">Project presentations</div>
+<div class="reading">&nbsp;</div>
+<div class="hw">peer project reviews (due 12/14)</div>
+</div>
+
+
+<div class="week">
+<div class="label">**17.** (12/18)</div>
+<div class="topic">Finals Week</div>
+<div class="reading"></div>
+<div class="hw"></div>
+</div>
+
+</div>
+  
