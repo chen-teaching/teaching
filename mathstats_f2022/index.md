@@ -13,9 +13,9 @@ Welcome to Mathematical Statistics!
 **Office Hours**:  
 
 
-**Teaching Assistant**:  
-**Recitation**: A, B  
-
+**Teaching Assistant**: Theodore Plotkin  
+**Recitation 02**: 3:30-4:45PM; CIWW 201  
+**Recitation 03**: 11:00-12:15PM; CIWW 201
 
 
 [**Syllabus**](./syllabus.html)  

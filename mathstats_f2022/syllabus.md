@@ -26,17 +26,16 @@ Grading is broken down as follows:
 
 ### Participation
 
-Active participation in the course in mandatory. There are many ways in which you can participate which will earn you participation points. To earn the full 15% participation, you must earn at least 15 points over the course of the semester. Additional points will not translate to a higher score. If you earn 10-14 points you will receive 10%, and if you earn 5-9 points you will receive 5%. Less than 5 points will recieve 0%.
+Active participation in the course in mandatory, and you are expected to attend all lectures. There are many ways in which you can participate which will earn you participation points. To earn the full 15% participation, you must earn at least 15 points over the course of the semester. Additional points will not translate to a higher score. If you earn 10-14 points you will receive 10%, and if you earn 5-9 points you will receive 5%. Less than 5 points will receive 0%.
 
-- (10pts, max 10pts) Actively engageme in breakout groups throughout semester
+- (10pts, max 10pts) Actively engage in breakout groups throughout semester
 	- If you miss one or two classes without prior notice that's fine. However, substantial absense will disqualify from this category. Please talk to me if you have any questions/concerns.
 - (5pts, max 5pts) present breakout group's work
 - (2pts, max 6pts) Attend office hours
 - (1pts, max 6pts) Ask/answer a question on the discussion board
 	- Questions/answers must be high quality and related to the course materials. Thus, a question like "what is the difference between a definite and indefinite integral?" would get a point, but a question like "is there a quiz today?" would not.
-- (3pts, max 3pts) organize a study/homework session open for all students in the class
 
-The bar for participation points is relatively low. For instance, if you attend class and participate in breakout groups and present your group's answers one time, you will earn full credit. Alternately, you could particpate in breakout groups and attend office hours 3 times and get full credit. In fact, in class partitipcation is not even necessary if you attend office hours, particpate in the online discussion board, and
+The bar for participation points is relatively low. For instance, if you attend class and participate in breakout groups and present your group's answers one time, you will earn full credit. Alternately, you could participate in breakout groups and attend office hours 3 times and get full credit. 
 
 You are responsible for keeping track of your participation and logging it in the participation assignment on Gradescope. It is recommended to log as you go so you don't forget when you particpated.
 
