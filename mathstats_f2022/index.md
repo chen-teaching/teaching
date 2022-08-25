@@ -138,7 +138,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**13.** (11/20)</div>
 <div class="topic">Logistic Regression</div>
 <div class="reading">W13, CB12</div>
-<div class="hw">quiz 6 (11/22), project proosals (due 11/24)</div>
+<div class="hw">quiz 6 (11/22), project proposals (due 11/22)</div>
 </div>
 
 
