@@ -4,18 +4,22 @@ keywords: ['Mathematical Statistics', 'MATH-UA.0234', 'NYU', 'Courant']
 description: Course overview for NYU Mathematical Statistics Fall 2022
 ...
 
-Welcome to Mathematical Statistics!
+Welcome to Mathematical Statistics! 
+Statistics is an exciting field with applications in many disciplines including machine learning and data science, the physical sciences, and the social sciences. 
+In this class we will cover the fundamentals of statistics from a mathematical perspective. 
+This means not just learning about statistical tools, but understanding why and how these tools work. You are required to have taken MATH-UA 233 Theory of Probability, so the ability to work with basic ideas from probability is expected.
 
 
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: TuTh 2:00-3:15PM; CIWW 109  
-**Office Hours**:  
+**Office Hours**: TBD  
 
 
 **Teaching Assistant**: Theodore Plotkin  
 **Recitation 02**: 3:30-4:45PM; CIWW 201  
-**Recitation 03**: 11:00-12:15PM; CIWW 201
+**Recitation 03**: 11:00-12:15PM; CIWW 201  
+**Office Hours**: TBD
 
 
 [**Syllabus**](./syllabus.html)  

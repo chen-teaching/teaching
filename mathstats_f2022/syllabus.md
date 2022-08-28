@@ -13,6 +13,7 @@ This syllabus contains important information regarding course policies and proce
 ## Accommodations and Accessibility
 
 While participation in and engagement with the course is necessary, I recognize that not everyone has the same learning needs. I am happy to work with you directly, or with you in conjunction with the Center for Student Accessibility (CSA) to accommodate your individual needs. This includes accommodations for religious/cultural holidays, learning needs, sickness, etc.
+Please reach out to me with any concerns.
 
 ## Grading
 
@@ -23,7 +24,15 @@ Grading is broken down as follows:
 - 25% Quizzes
 - 30% Final Project
 
+Numerical grades will be converted to letter grades using the following thresholds:
 
+-----------  ---- ---- ---- ---- ---- ---- ---- ----
+**Cutoff**   93%  90%  87%  83%  80%  75%  65%  50%
+**Grade**    A    A-   B+   B    B-   C+   C    D 
+-----------  ---- ---- ---- ---- ---- ---- ---- ----
+
+These thresholds may be adjusted based on the final grades, but they will only be moved down; i.e. any changes can only bennefit your final grade.
+  
 ### Participation
 
 Active participation in the course in mandatory, and you are expected to attend all lectures. There are many ways in which you can participate which will earn you participation points. To earn the full 15% participation, you must earn at least 15 points over the course of the semester. Additional points will not translate to a higher score. If you earn 10-14 points you will receive 10%, and if you earn 5-9 points you will receive 5%. Less than 5 points will receive 0%.
@@ -36,6 +45,7 @@ Active participation in the course in mandatory, and you are expected to attend 
 	- Questions/answers must be high quality and related to the course materials. Thus, a question like "what is the difference between a definite and indefinite integral?" would get a point, but a question like "is there a quiz today?" would not.
 
 The bar for participation points is relatively low. For instance, if you attend class and participate in breakout groups and present your group's answers one time, you will earn full credit. Alternately, you could participate in breakout groups and attend office hours 3 times and get full credit. 
+However, a good faith effort is required, and trying to cheat the system will result in penalties.
 
 You are responsible for keeping track of your participation and logging it in the participation assignment on Gradescope. It is recommended to log as you go so you don't forget when you particpated.
 
