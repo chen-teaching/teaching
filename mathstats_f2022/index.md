@@ -68,7 +68,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**4.** (9/18)</div>
-<div class="topic">Inference, MLE</div>
+<div class="topic">Inference, Confidence Intervals</div>
 <div class="reading">W6, CB7</div>
 <div class="hw">HW2 (due 9/22)</div>
 </div>
@@ -76,24 +76,24 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**5.** (9/25)</div>
-<div class="topic">Method of moments</div>
-<div class="reading">W9, CB7</div>
+<div class="topic">Density estimation</div>
+<div class="reading">W7</div>
 <div class="hw">quiz 2 (9/27)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**6.** (10/02)</div>
-<div class="topic">Confidence intervals</div>
-<div class="reading">W9, CB9</div>
+<div class="topic">Bootstrapping</div>
+<div class="reading">W8, CB10</div>
 <div class="hw">HW3 (due 10/06)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**7.** (10/09)</div>
-<div class="topic">Bootstrapping</div>
-<div class="reading">W8</div>
+<div class="topic">Method of moments, MLE</div>
+<div class="reading">W9, CB9</div>
 <div class="hw">quiz 3 (10/11)</div>
 </div>
 
