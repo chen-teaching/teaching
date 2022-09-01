@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large{Mathematical Statistics (MATH-UA 234)}}
+ 
+    \textbf{\Large{Homework 1}}
+
+    Due 09/08 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+
+\begin{problem}[Wasserman 1.19 (Bayes theorem)]
+Suppose that 30 percent of computer owners use a Macintosh, 50 percent
+use Windows, and 20 percent use Linux. Suppose that 65 percent of
+the Mac users have succumbed to a computer virus, 82 percent of the
+Windows users get the virus, and 50 percent of the Linux users get
+the virus. We select a person at random and learn that her system was
+infected with the virus. What is the probability that they are a Windows
+user?
+\end{problem}
+
+\begin{problem}
+    Suppose $\PP[A] = 2/3$ and $\PP[B^c] = 1/4$. Can $A$ and $B$ be disjoint (only one can occur)? Why or why not?
+\end{problem}
+
+
+\begin{problem}
+    Use the axioms of a probability distribution to show or answer the following:
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Show $\PP[\emptyset] = 0$.
+        \item Show $A\subseteq B \Longrightarrow \PP[A] \leq \PP[B]$.
+        \item Does $A\subsetneq B$ imply $\PP[A] < \PP[B]$?
+        \item Show $0\leq \PP[A] \leq 1$ for all $A$.
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+    Use the axioms of a probability distribution to answer the following:
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Describe a situation where we might have a sample space $\Omega$ such that $\PP[\{\omega\}] = 0$ for all $\omega\in\Omega$.
+        \item 
+            Explain what is wrong with the following proof that $1=0$.
+            
+            \textbf{Proof.} By definition $\cup_{\omega \in \Omega} \{\omega\} = \{ \omega : \exists \omega' \in \Omega \text{ with } \omega \in \{\omega' \} \} = \Omega$.
+            Thus,
+            \begin{align*}
+                1 &= \PP[\Omega] \tag{Axiom 2}
+                \\&= \PP\bigg[\bigcup_{\omega \in \Omega} \{ \omega\}\bigg]  \tag{definition of union}
+                \\&= \sum_{\omega \in \Omega} \PP[\{\omega\} ] \tag{Axiom 3} 
+                \\&= \sum_{\omega \in \Omega} 0  \tag{assumption} 
+                \\&= 0 \tag*{\qed}
+            \end{align*}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserman 1.22 (simulate coin fipping)]
+Suppose we flip a coin $n$ times and let $p$ denote
+the probability of heads. Let $X$ be the number of heads. We call $X$
+a binomial random variable, which is discussed in the next chapter.
+Intuition suggests that $X$ will be close to $np$. To see if this is true, we
+can repeat this experiment many times and average the $X$ values. Carry
+out a simulation and compare the average of the $X$'s to $np$. 
+
+Try this for
+$p =.3$ and $n = 10$, $n = 100$, and $n = 1000$ repeating each experiment 100 and then 1000 times.
+\end{problem}
+
+\begin{problem}[Wasserman 2.2 (computing probabilities from distributions)]
+    Let $X$ be such that $\PP[X=2] = \PP[X=3] = 1/10$ and $\PP[X=5] = 8/10$.
+
+    Plot two different possible CDFs $F$ for $X$ and use these CDFs to find $\PP[2<X<4.8]$ and $\PP[2\leq X\leq 4.8]$.
+
+\end{problem}
+
+\begin{problem}[Wasserman 2.17 (conditional probabilities from distributions)]
+Let
+    \begin{equation*}
+        f_{X,Y}(x,y) 
+        = 
+        \begin{cases}
+            c(x+y^2) & 0\leq x\leq 1 \text{ and } 0\leq y \leq 1 \\
+            0 & \text{otherwise.}
+        \end{cases}
+    \end{equation*}
+    Find $\PP[X<1/2 | Y = 1/2]$.
+\end{problem}
+
+\begin{problem}[Wasserman 2.21 (important trick about iid maxes)]
+    Let $X_1, \ldots, X_n\sim\operatorname{Exp}(\eta)$ be iid. Let $Y=\max\{X_1, \ldots, X_n\}$. Find the PDF of $Y$. Hint: $Y\leq y$ if and only if $X_i \leq y$ for $i=1,\ldots, n$.
+\end{problem}
+
+\begin{problem}
+    Look for an instance of one of the probability concepts we've seen in the course which you noticed in a different part of your life (e.g. in other classes, on the subway, at the park, on TV, etc.).
+
+    In a few sentences, explain this instance and how it could be described mathematically.
+\end{problem}
+
+\end{document}

@@ -25,7 +25,7 @@ This means not just learning about statistical tools, but understanding why and 
 [**Syllabus**](./syllabus.html)  
 [**Edstem discussion**](https://edstem.org/us/courses/24656/discussion/)  
 [**Gradescope**](https://www.gradescope.com/courses/414277)  
-
+[**Bagel Institute**](https://bagel.institute)
 
 ## Schedule
 
@@ -46,7 +46,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**1.** (8/29)</div>
 <div class="topic">Probability review</div>
 <div class="reading">syllabus, W1, W2, W3, CB1, CB2, CB3, CB4</div>
-<div class="hw">Intro survey (due 9/06)</div>
+<div class="hw">Intro survey (due 09/06) [[link]](https://www.gradescope.com/courses/414277/assignments/2153700)</div>
 </div>
 
 
@@ -54,7 +54,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**2.** (9/04)</div>
 <div class="topic">Convergence of RVs, LLN and CLT</div>
 <div class="reading">W5, CB5</div>
-<div class="hw">HW1 (due 9/08)</div>
+<div class="hw">HW1 (due 9/08) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
 
