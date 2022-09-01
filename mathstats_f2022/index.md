@@ -6,8 +6,10 @@ description: Course overview for NYU Mathematical Statistics Fall 2022
 
 Welcome to Mathematical Statistics! 
 Statistics is an exciting field with applications in many disciplines including machine learning and data science, the physical sciences, and the social sciences. 
-In this class we will cover the fundamentals of statistics from a mathematical perspective. 
-This means not just learning about statistical tools, but understanding why and how these tools work. You are required to have taken MATH-UA 233 Theory of Probability, so the ability to work with basic ideas from probability is expected.
+In this class we will cover the fundamentals of statistics from a mathematical perspective.
+This means not just learning about statistical tools, but understanding why and how these tools work. 
+During the course you will develop proficiency in using these tools, as well as communicating about their mathematical foundations and applications.
+You are required to have taken MATH-UA 233 Theory of Probability, so the ability to work with basic ideas from probability is expected.
 
 
 **Instructor**: Tyler Chen  

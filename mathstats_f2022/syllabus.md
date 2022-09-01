@@ -93,10 +93,10 @@ A free PDF download is available to NYU students: [here](https://link.springer.c
 
 ## Academic Integrity {#academic-integrity}
 
-For a more in-depth text you can reference: Statistical Inference 2nd edition by Casella and Berger.t
+For a more in-depth text you can reference: Statistical Inference 2nd edition by Casella and Berger.
 
 
-Please see the general NYU policy: https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html
+Please see the general NYU policy: [https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html)
 
 Any violations of the NYU or course policy on academic integrity may result in punishment. Depending on severity, this could include receiving a zero on the homework, quiz, or project, failure of the course, or being reported to the University.
 
