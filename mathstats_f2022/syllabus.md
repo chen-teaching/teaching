@@ -20,7 +20,7 @@ Please reach out to me with any concerns.
 Grading is broken down as follows:
 
 - 15% Participation
-- 35% Homework
+- 30% Homework
 - 25% Quizzes
 - 30% Final Project
 
