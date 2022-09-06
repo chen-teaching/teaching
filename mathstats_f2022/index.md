@@ -47,7 +47,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week">
 <div class="label">**1.** (8/29)</div>
 <div class="topic">Probability review</div>
-<div class="reading">syllabus, W1, W2, W3, CB1, CB2, CB3, CB4 [[09/01\ notes]](.09_01.pdf)</div>
+<div class="reading">syllabus, W1, W2, W3, CB1, CB2, CB3, CB4 [[09/01\ notes]](09_01.pdf)</div>
 <div class="hw">Intro survey (due 09/06) [[link]](https://www.gradescope.com/courses/414277/assignments/2153700)</div>
 </div>
 
@@ -55,7 +55,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**2.** (9/04)</div>
 <div class="topic">Convergence of RVs, LLN and CLT</div>
-<div class="reading">W5, CB5,  [[09/06\ notes]](.09_06.pdf)</div>
+<div class="reading">W5, CB5,  [[09/06\ notes]](09_06.pdf)</div>
 <div class="hw">HW1 (due 9/15) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
