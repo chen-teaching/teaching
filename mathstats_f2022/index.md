@@ -55,7 +55,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**2.** (9/04)</div>
 <div class="topic">Convergence of RVs, LLN and CLT</div>
-<div class="reading">W5, CB5,  [[09/06\ notes]](09_06.pdf)</div>
+<div class="reading">W5, CB5,  [[09/06\ notes]](09_06.pdf), [[09/08\ notes]](09_08.pdf)</div>
 <div class="hw">HW1 (due 9/15) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
