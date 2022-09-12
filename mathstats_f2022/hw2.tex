@@ -1,0 +1,119 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 2: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 09/22 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+\begin{problem}
+    Solve each of the following:
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Let $X$ be any random variable with $\EE[X]=0$.
+            Show that $\EE[X^4] \geq \EE[X^2]^2$.
+        \item Suppose $X\sim \operatorname{Exp}(1)$. 
+            Then, as in Example 3.30, the moment generating function is $\psi_X(t) = 1/(1-t)$. 
+            Use the moment generating function to find $\EE[X^k]$, for integer $k\geq 0$.
+        \item Let $X\sim \operatorname{Exp}(1)$ and let $Y = \cos(X)$. Find $\EE[Y]$.
+            
+        \item Let $X,Y$ be random variables. Show that $\CoV[X,Y] = \EE[XY] - \EE[X]\EE[Y]$.
+
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Suppose $X$ and $Y$ are random variables with joint probability mass function,
+    \begin{equation*}
+        f_{X,Y}(x,y) = \PP[X=x, Y=y] = 
+        \begin{cases}
+            .1 & X=-1,Y=1 \\
+            .3 & X=-1,Y=-1 \\
+            .2 & X=1,Y=1 \\
+            .4 & X=1,Y=-1 \\
+        \end{cases}
+    \end{equation*}
+    
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Compute the marginal probability mass function, $f_X(x) = \PP[X=x]$.
+        \item Compute $f(y) = \EE[X | Y = y]$.
+        \item Compute $\EE[X]$ using the marginal pmf and then using the the law of iterated expectation. Do the results agree?
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Wasserman 3.4 (statistics of a random walk)]
+A particle starts at the origin of the real line and moves along the line in
+jumps of one unit. For each jump the probability is $p$ that the particle
+will jump one unit to the left and the probability is $1-p$ that the particle
+will jump one unit to the right. Let $X_n$ be the position of the particle
+after $n$ jumps. 
+Find $\EE[X_n]$ and $\VV[X_n]$. 
+(This is known as a random walk.)
+\end{problem}
+
+
+\begin{problem}[Wasserman 3.15 (variance of a mixture)]
+    Let
+    \begin{equation*}
+        f_{X,Y}(x,y) = \begin{cases} \frac{1}{3}(x+y) & 0\leq x \leq 1, 0\leq y \leq 2 \\ 0& \text{otherwise.} \end{cases}
+    \end{equation*}
+    Find $\VV[2X-3Y+8]$.
+\end{problem}
+
+\begin{problem}[Wasserman 5.4 (convergence)]
+\item Let $X_1, X_2, \ldots$ be a sequence of random variables such that
+    \begin{equation*}
+        \PP[X_n = 1/n] = 1 - 1/n^2
+        ,\quad
+        \PP[X_n = n] = 1/n^2.
+    \end{equation*}
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Does $X_n$ converge in probability to any random variable? 
+            If so, prove this. If no such variable exists, explain why not. 
+        \item Does $X_n$ converge in quadratic mean?
+            If so, prove this. If no such variable exists, explain why not. 
+    \end{enumerate} 
+\end{problem}
+
+\begin{problem}
+    Describe an instance of one of the probability concepts we've seen recently in the course which you noticed in a different part of your life (e.g. in other classes, on the subway, at the park, in the dorm, etc.).
+\end{problem}
+
+\end{document}
