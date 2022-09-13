@@ -4,6 +4,8 @@ keywords: ['Mathematical Statistics', 'MATH-UA.0234', 'NYU', 'Courant']
 description: Course overview for NYU Mathematical Statistics Fall 2022
 ...
 
+<p style="background:red; color:white">No in person class 9/13 and 9/15. See Ed for details.</p>
+
 Welcome to Mathematical Statistics! 
 Statistics is an exciting field with applications in many disciplines including machine learning and data science, the physical sciences, and the social sciences. 
 In this class we will cover the fundamentals of statistics from a mathematical perspective.
@@ -71,7 +73,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week">
 <div class="label">**4.** (9/18)</div>
 <div class="topic">Sampling distributions, delta method</div>
-<div class="reading">W5, CB5</div>
+<div class="reading">W5, CB5, [[09/13\ lecture]](https://nyu.zoom.us/rec/share/0OLq7d1vkFMf7jm6OSL7-dB9Nx2BQZZQ3jzQOxHL1b0cBUfTQAGhOLckAo3zvetR._AFGs8eWwGhNFmBt), [[09_13\ notes]](09_13.pdf) </div>
 <div class="hw">HW2 (due 9/22) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 
