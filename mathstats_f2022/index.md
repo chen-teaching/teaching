@@ -52,17 +52,17 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**2.** (9/04)</div>
-<div class="topic">Convergence of RVs, LLN and CLT</div>
-<div class="reading">W5, CB5,  [[09/06\ notes]](09_06.pdf), [[09/08\ notes]](09_08.pdf)</div>
+<div class="topic">Probability review</div>
+<div class="reading">[[09/06\ notes]](09_06.pdf), [[09/08\ notes]](09_08.pdf)</div>
 <div class="hw">HW1 (due 9/15) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**3.** (9/11)</div>
-<div class="topic">Sampling distributions, delta method</div>
+<div class="topic">Convergence of RVs, LLN and CLT</div>
 <div class="reading">W5, CB5</div>
 <div class="hw">quiz 1 (9/13)</div>
 </div>
@@ -70,56 +70,57 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**4.** (9/18)</div>
-<div class="topic">Inference, Confidence Intervals</div>
-<div class="reading">W6, CB7</div>
+<div class="topic">Sampling distributions, delta method</div>
+<div class="reading">W5, CB5</div>
 <div class="hw">HW2 (due 9/22) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**5.** (9/25)</div>
-<div class="topic">Density estimation</div>
-<div class="reading">W7</div>
+<div class="topic">Inference, Confidence Intervals</div>
+<div class="reading">W6, CB7</div>
 <div class="hw">quiz 2 (9/27)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**6.** (10/02)</div>
-<div class="topic">Bootstrapping</div>
-<div class="reading">W8, CB10</div>
+<div class="topic">Density estimation</div>
+<div class="reading">W7</div>
 <div class="hw">HW3 (due 10/06)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**7.** (10/09)</div>
-<div class="topic">Method of moments, MLE</div>
-<div class="reading">W9, CB9</div>
+<div class="topic">Bootstrapping</div>
+<div class="reading">W8, CB10</div>
 <div class="hw">quiz 3 (10/11)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**8.** (10/16)</div>
-<div class="topic">Hypothesis testing, p-values</div>
-<div class="reading">W10, CB8</div>
+<div class="topic">Method of moments, MLE</div>
+<div class="reading">W9, CB9</div>
 <div class="hw">HW4 (due 10/20)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**9.** (10/23)</div>
-<div class="topic">Baysian Inference</div>
-<div class="reading">W11</div>
+<div class="topic">Hypothesis testing, p-values</div>
+<div class="reading">W10, CB8</div>
 <div class="hw">quiz 4 (10/25)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**10.** (10/30)</div>
-<div class="topic">built in slack time / catch up</div>
-<div class="reading">&nbsp;</div>
+<div class="topic">Baysian Inference</div>
+<div class="reading">W11</div>
+
 <div class="hw">HW5 (due 11/03)</div>
 </div>
 
@@ -134,16 +135,16 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**12.** (11/13)</div>
-<div class="topic">Linear Regression</div>
-<div class="reading">W13, CB11</div>
+<div class="topic">built in slack time / catch up</div>
+<div class="reading"></div>
 <div class="hw">HW6 (due 11/17)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**13.** (11/20)</div>
-<div class="topic">Logistic Regression</div>
-<div class="reading">W13, CB12</div>
+<div class="topic">Linear/Logistic Regression</div>
+<div class="reading">W13, CB11,12</div>
 <div class="hw">quiz 6 (11/22), project proposals (due 11/22)</div>
 </div>
 
