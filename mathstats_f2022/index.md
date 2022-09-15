@@ -65,15 +65,15 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**3.** (9/11)</div>
 <div class="topic">Convergence of RVs, LLN and CLT</div>
-<div class="reading">W5, CB5</div>
-<div class="hw">quiz 1 (9/13)</div>
+<div class="reading">W5, CB5, [[09/13\ lecture]](https://nyu.zoom.us/rec/share/0OLq7d1vkFMf7jm6OSL7-dB9Nx2BQZZQ3jzQOxHL1b0cBUfTQAGhOLckAo3zvetR._AFGs8eWwGhNFmBt), [[09/13\ notes]](09_13.pdf), [[09/15\ lecture]](https://nyu.zoom.us/rec/share/XzwNFOnjU-0FJ1t7650bGJ9nQaTeh8hXFaNSFYQxVGdbxg8hxqDJlKuDZXDQCgfL.LKqPR3dxnNuDmb2w?startTime=1663255698000), [[09/15\ notes]](09_15.pdf), [[09/15\ code]](https://colab.research.google.com/drive/1QqAGs-AnLnjdpbokrOAWrdpb8ytioliy?usp=sharing)</div>
+<div class="hw">[quiz 1 (9/13)](./q1.pdf)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**4.** (9/18)</div>
 <div class="topic">Sampling distributions, delta method</div>
-<div class="reading">W5, CB5, [[09/13\ lecture]](https://nyu.zoom.us/rec/share/0OLq7d1vkFMf7jm6OSL7-dB9Nx2BQZZQ3jzQOxHL1b0cBUfTQAGhOLckAo3zvetR._AFGs8eWwGhNFmBt), [[09/13\ notes]](09_13.pdf) </div>
+<div class="reading">W5, CB5</div>
 <div class="hw">HW2 (due 9/22) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 
