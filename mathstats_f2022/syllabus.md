@@ -71,7 +71,7 @@ You are highly encouraged to work with peers on the homework, but you must write
 
 ### Quizzes
 
-- Each Tuesday there will be an in-person quiz lasting about 15 minutes
+- Roughly every other Tuesday there will be an in-person quiz lasting about 15 minutes
 - Quizzes will contain straightforward questions very similar to previous homework problems
 - The goal of quizzes is to serve as a self-check that you understand the important concepts
 - The lowest quiz grade will be dropped if you fill out the mid-semester and end of semester course evaluations

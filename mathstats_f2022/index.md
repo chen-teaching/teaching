@@ -4,8 +4,6 @@ keywords: ['Mathematical Statistics', 'MATH-UA.0234', 'NYU', 'Courant']
 description: Course overview for NYU Mathematical Statistics Fall 2022
 ...
 
-<p style="background:red; color:white">No in person class 9/13 and 9/15. See Ed for details.</p>
-
 Welcome to Mathematical Statistics! 
 Statistics is an exciting field with applications in many disciplines including machine learning and data science, the physical sciences, and the social sciences. 
 In this class we will cover the fundamentals of statistics from a mathematical perspective.
@@ -62,17 +60,17 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**3.** (9/11)</div>
-<div class="topic">Convergence of RVs, LLN and CLT</div>
+<div class="topic">Convergence of RVs, LLN and CLT, Delta method, inverse CDF sampling</div>
 <div class="reading">W5, CB5, [[09/13\ lecture]](https://nyu.zoom.us/rec/share/0OLq7d1vkFMf7jm6OSL7-dB9Nx2BQZZQ3jzQOxHL1b0cBUfTQAGhOLckAo3zvetR._AFGs8eWwGhNFmBt), [[09/13\ notes]](09_13.pdf), [[09/15\ lecture]](https://nyu.zoom.us/rec/share/XzwNFOnjU-0FJ1t7650bGJ9nQaTeh8hXFaNSFYQxVGdbxg8hxqDJlKuDZXDQCgfL.LKqPR3dxnNuDmb2w?startTime=1663255698000), [[09/15\ notes]](09_15.pdf), [[09/15\ code]](https://colab.research.google.com/drive/1QqAGs-AnLnjdpbokrOAWrdpb8ytioliy?usp=sharing)</div>
 <div class="hw">[quiz 1 (9/13)](./q1.pdf)</div>
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**4.** (9/18)</div>
-<div class="topic">Sampling distributions, delta method</div>
+<div class="topic">More CLT, Inference</div>
 <div class="reading">W5, CB5</div>
 <div class="hw">HW2 (due 9/22) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
@@ -131,7 +129,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**11.** (11/06)</div>
 <div class="topic">Simulation</div>
 <div class="reading">&nbsp;</div>
-<div class="hw">quiz 5 (11/8)</div>
+<div class="hw">quiz 5 (11/08)</div>
 </div>
 
 
