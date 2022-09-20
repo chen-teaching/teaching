@@ -96,7 +96,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**7.** (10/09)</div>
 <div class="topic">Bootstrapping</div>
 <div class="reading">W8, CB10</div>
-<div class="hw">quiz 3 (10/11)</div>
+<div class="hw">quiz 3 (10/13)</div>
 </div>
 
 
