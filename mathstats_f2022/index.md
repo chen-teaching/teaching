@@ -68,7 +68,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**4.** (9/18)</div>
 <div class="topic">More CLT, Inference</div>
 <div class="reading">W5, CB5, [[09/20\ notes]](09_20.pdf), [[09/22\ notes]](09_22.pdf)</div>
@@ -76,7 +76,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**5.** (9/25)</div>
 <div class="topic">Inference, Confidence Intervals</div>
 <div class="reading">W6, CB7</div>
