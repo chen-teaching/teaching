@@ -88,7 +88,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**6.** (10/02)</div>
 <div class="topic">Density estimation</div>
 <div class="reading">W7</div>
-<div class="hw">HW3 (due 10/06)</div>
+<div class="hw">HW3 (due 10/06) [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
 

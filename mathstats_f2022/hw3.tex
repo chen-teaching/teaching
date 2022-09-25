@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 3: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 10/06 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+\begin{problem}
+    Let
+    \begin{equation*}
+        \vec{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix},
+        \qquad
+        \vec{A} = \begin{bmatrix}
+            a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+            a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{n,1} & a_{n,2} & \cdots & a_{n,n} \\
+        \end{bmatrix}
+    \end{equation*}
+    where $a_{i,j}$ are constants and $x_i\sim N(0,1)$, $i=1,2,\ldots,n$ are independent and identically distributed standard normal random variables.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item What is the covariance matrix $\vec{\Sigma}$ for $\vec{x}$? (Recall the $(i,j)$-entry of $\vec{\Sigma}$ is $\CoV[x_i,x_j]$.
+        \item Show that $\EE[\vec{x}^{\mathsf{T}}\vec{A}\vec{x}] = \operatorname{tr}(\vec{A}) := a_{1,1} + a_{2,2} + \cdots + a_{n,n}$.
+            (hint: write out the expression for $\vec{x}^{\mathsf{T}}\vec{A} \vec{x}$ as a sum over the entires of $\vec{A}$)
+        \item Suppose $\vec{A}$ is diagonal; i.e. $a_{i,j} = 0$ for all $i\neq j$.
+            Compute the variance of $\vec{x}^{\mathsf{T}} \vec{A} \vec{x}$.
+            You may use the fact that $x_i^2$ is a Chi-square random variable with one degree of freedom so that $\VV[x_i^2] = 2$.
+    \end{enumerate}
+    This is an example of ``stochastic trace estimation'' which is an important algorithmic tool in a number of recent algorithms.
+\end{problem}
+
+\begin{problem}[Wasserstein 5.5]
+    Let $X_1, X_2, \ldots, X_n \sim \operatorname{Ber}(p)$. 
+    Let $Z_n = (X_1^2 + X_2^2 + \cdots + X_n^2) / n$.
+    Prove that
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item $Z_n$ converges in probability to the constant random variable $p$.
+        \item $Z_n$ converges in quadratic mean to the constant random variable $p$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserstein 6.1]
+    Let $X_1, X_2, \ldots, X_n \sim \operatorname{Poisson}(\lambda)$ and let $\hat{\lambda} = n^{-1} \sum_{i=1}^{n} X_i$ be our point estimator for $\lambda$.
+    Find the bias $\mathrm{Bias} = \EE[\hat{\lambda}] - \lambda$, standard error $\textsf{se}_n = \sqrt{\VV[\hat{\lambda}]}$, and mean squared error $\textsc{MSE}_n = \EE[(\hat{\lambda} - \lambda)^2]$ of $\hat{\lambda}$.
+\end{problem}
+
+\begin{problem}[Wasserstein 6.2]
+    Let $X_1, X_2, \ldots, X_n \sim \operatorname{Unif}(0,\theta)$ and let $\hat{\theta} = \max\{X_1, X_2, \ldots, X_n\}$ be our point estimator for $\theta$.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Write down the distribution for $\hat{\theta}$ (hint: we've already don't a similar problem)
+        \item Find the bias $\mathrm{Bias} = \EE[\hat{\theta}] - \theta$, standard error $\textsf{se}_n = \sqrt{\VV[\hat{\theta}]}$, and mean squared error $\textsc{MSE}_n = \EE[(\hat{\theta} - \theta)^2]$ of $\hat{\theta}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserstein 6.3]
+    Let $X_1, X_2, \ldots, X_n \sim \operatorname{Unif}(0,\theta)$ and let $\hat{\theta} = 2 \overline{X}_n$ be our point estimator for $\theta$.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Find the bias $\mathrm{Bias} = \EE[\hat{\theta}] - \theta$, standard error $\textsf{se}_n = \sqrt{\VV[\hat{\theta}]}$, and mean squared error $\textsc{MSE}_n = \EE[(\hat{\theta} - \theta)^2]$ of $\hat{\theta}$.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Suppose $X_1, X_2, \ldots, X_n \sim F_{\mu,\sigma^2}$ are independent and identically distributed samples from some distribution $F_{\mu,\sigma^2}$ with mean $\mu$ and variance $\sigma^2$.
+
+    Recall that 
+    \begin{equation*}
+        \hat{S}_n^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X}_n)^2
+        ,\qquad
+        \hat{T}_n^2 = \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X}_n)^2
+    \end{equation*}
+    are both point estimators for the parameter $\sigma^2$.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Compute $\EE[\hat{S}_n^2]$ and $\EE[\hat{T}_n^2]$.
+        \item Which point estimator has smaller bias?
+        \item Which point estimator has smaller standard error?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Describe of point estimation of a parameter which you noticed in a different part of \textbf{your life} (e.g. in other classes, on the subway, at the park, in the dorm, etc.).
+\end{problem}
+
+\end{document}
