@@ -80,7 +80,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**5.** (9/25)</div>
 <div class="topic">Inference, Confidence Intervals</div>
 <div class="reading">W6, CB7</div>
-<div class="hw">quiz 2 (9/27)</div>
+<div class="hw">quiz 2 (9/27) [[pdf]](./q2.pdf)</div>
 </div>
 
 
