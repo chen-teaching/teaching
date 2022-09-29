@@ -21,7 +21,7 @@ You are required to have taken MATH-UA 233 Theory of Probability, so the ability
 **Teaching Assistant**: Theodore Plotkin  
 **Recitation 02**: 3:30-4:45PM; CIWW 201  
 **Recitation 03**: 11:00-12:15PM; CIWW 201  
-**Office Hours**: Tu 2-4PM; [zoom: 910 9819 0753](https://nyu.zoom.us/j/91098190753)
+**Office Hours**: M 2-4PM; [zoom: 910 9819 0753](https://nyu.zoom.us/j/91098190753)
 
 
 [**Syllabus**](./syllabus.html)  
