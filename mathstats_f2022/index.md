@@ -87,7 +87,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**6.** (10/02)</div>
 <div class="topic">Density estimation</div>
-<div class="reading">W7</div>
+<div class="reading">W7, [[10/04]](10_04.pdf), [[10/04\ code]](https://colab.research.google.com/drive/1UW2DUOVDwoyIhUhJ-9BQsq5_Qj9XeiI0?usp=sharing)</div>
 <div class="hw">HW3 (due 10/06) [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
