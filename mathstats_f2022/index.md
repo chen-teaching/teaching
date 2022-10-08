@@ -84,7 +84,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**6.** (10/02)</div>
 <div class="topic">Density estimation</div>
 <div class="reading">W7, [[10/04]](10_04.pdf), [[10/04\ code]](https://colab.research.google.com/drive/1UW2DUOVDwoyIhUhJ-9BQsq5_Qj9XeiI0?usp=sharing), [[10/06]](10_06.pdf)</div>
@@ -92,7 +92,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**7.** (10/09)</div>
 <div class="topic">Bootstrapping</div>
 <div class="reading">W8, CB10</div>
@@ -104,7 +104,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**8.** (10/16)</div>
 <div class="topic">Method of moments, MLE</div>
 <div class="reading">W9, CB9</div>
-<div class="hw">HW4 (due 10/20)</div>
+<div class="hw">HW4 (due 10/20) [[pdf]](./hw4.pdf) [[tex]](./hw4.tex)</div>
 </div>
 
 

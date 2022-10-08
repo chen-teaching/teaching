@@ -1,0 +1,198 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 4: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 10/20 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+Chebyshev's inequality asserts that, for any random variable $Z$, 
+\begin{equation*}
+    \PP[|Z-\EE[Z]|\geq \epsilon] \leq \frac{\VV[Z]}{\epsilon^2}
+    ,\qquad \forall \epsilon>0.
+\end{equation*}
+This fact will come in useful on this assignment.
+
+
+\begin{problem}
+    Suppose that for some unknown $\theta \in (0,1)$, $X_1, X_2, \ldots, X_n \sim \operatorname{Unif}(0,\theta)$ are independent and identically distributed.
+    Find $L_n$ and $U_n$ (depending on $\alpha$ but not on $\theta$) such that 
+    \begin{equation*}
+        \PP[ \theta \in (L_n,U_n) ] \geq 1-\alpha.
+    \end{equation*}
+    You can use Chebyshev's inequality and the results from HW3.
+\end{problem}
+
+\begin{problem}
+Let $X$ be a $t$-step random walk with parameter $p$. Then we can write 
+\begin{equation*}
+    X = \sum_{i=1}^{t} Y_i
+    ,\qquad
+    Y_i = \begin{cases} -1 & \text{w.p. } 1-p \\ +1 & \text{w.p. } p \end{cases}
+\end{equation*}
+where the $Y_i$ are iid.
+Let $F$ be the distribution function for $X$. That is, $F(x) = \PP[X\leq x]$.
+
+Recall that $\EE[X] = t(1-2p)$.
+Thus,
+\begin{equation*}
+    p 
+    = \frac{1}{2} \left(1-\frac{\EE[X]}{t} \right)
+    = \frac{1}{2} \left(1 - \frac{1}{t} \int x \d{F}(x) \right).
+\end{equation*}
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+
+        \item Is $p$ a linear functional? Why or why not?
+        \item Let $X_1, X_2, \ldots, X_n$ be iid copies of $X$ (i.e. each $X_i$ is a different $t$-step random walk with parameter $p$) and define
+            \begin{equation*}
+                \hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^{n} \bOne[X_i \leq x].
+            \end{equation*}
+
+            What is the plug in estimator for the parameter $p$?
+        \item Use this estimator and Chebyshev's inequality to derive a $1-\alpha$ confidence interval for $p$. 
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserman 7.5]
+    Let $x$ and $y$ be distinct points. What is $\CoV[\hat{F}_n(x), \hat{F}_n(y)]$i?
+\end{problem}
+
+\begin{problem}[Wasserman 7.6]
+Let $X_1, \ldots, X_n \sim F$ (iid) and let $\hat{F}_n$ be the empirical distribution function.
+Let $a<b$ be fixed numbers and define $\theta = T(F) = F(b) - F(a)$.
+    Let $\hat{\theta}_n = T(\hat{F}_n) = \hat{F}_n(b) - \hat{F}_n(a)$.
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Find the bias and standard error of $\hat{\theta}_n$ as an estimator for $\theta$
+        \item Using this result and Chebyshev's inequality, find an $1-\alpha$ confidence interval for $\theta$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+
+\begin{problem}[Wasserman 8.5]
+    Let $X_1, \ldots, X_n \sim F$ (iid) and $\hat{F}_n$ the empirical CDF.
+    Let $X_1^*, \ldots, X_n^* \sim \hat{F}_n$ and define
+    \begin{equation*}
+        \bar{X}_n^* = \frac{1}{n} (X_1^* + \cdots + X_n^*).
+    \end{equation*}
+    
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item What is $\EE[\bar{X}_n^*|X_1, \ldots, X_n]$ and $\VV[\bar{X}_n^*|X_1, \ldots, X_n]$?
+        \item What is $\EE[\bar{X}_n^*]$ and $\VV[\bar{X}_n^*]$?
+        \item Suppose we make iid copies $\bar{X}_{n,1}^*, \ldots, \bar{X}_{n,B}^*$ of $\bar{X}_n^*$.
+            Let
+            \begin{equation*}
+                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{n} \sum_{r=1}^{n} \bar{X}_{n,r}^* \right)^2.
+            \end{equation*}
+
+            What is $\EE[v_{\textup{boot}}]$? 
+
+        \item Suppose we use $v_{\textup{boot}}$ as an approximation for $\VV[\bar{X}_n^*]$.
+            Describe the potential sources of error and when this would be a good/bad approximation.
+
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Wasserman 7.7]
+    Suppose $X_1, X_2, \ldots, X_n \sim \operatorname{Unif}(0,\theta)$ are independent and identically distributed. 
+    Assume that the $X_1, \ldots, X_n$ are distinct (this happens with probability one) and let $\hat{\theta}_n = \max\{X_1, \ldots, X_n\}$.
+    Let $\hat{\theta}_n^* = \max\{X_1^*, \ldots, X_n^*\}$, where $X_1^*, \ldots, X_n^* \sim \hat{F}_n$ (iid).
+
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Show that for any $t\in\mathbb{R}$, $\PP[\hat{\theta}_n = t] = 0$. 
+        \item Show that there exists $t\in \mathbb{R}$ such that $\PP[\hat{\theta}_n^* = t] \neq 0 $. In particular, show that $\PP[\hat{\theta}_n^* = \hat{\theta}] \approx 0.632$ for $n$ large. (Hint: show that $\PP[\hat{\theta}_n^* = \hat{\theta}_n] = 1-(1-1/n)^n$)
+        \item Recall that our bootstrap sample $\hat{\theta}_n^*$ is meant to approximate $\hat{\theta}_n$. 
+            However, as seen in (b), $\hat{\theta}_n^*$ is far more likely than certain values than $\hat{\theta}_n$.
+        Discuss why the distribution of $\hat{\theta}_n$ and $\hat{\theta}_n^*$ is so different and whether bootstrapping is effective.
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+
+Below is data for the hospitalization time (in hours) of $n=200$ patients with COVID 19.
+    \begin{quote}
+    \texttt{108, 144, 89, 122, 53, 153, 165, 183, 101, 114, 115, 203, 31, 51, 31, 109, 45, 85, 72, 107, 80, 157,  73, 107, 19, 140, 183, 38, 112, 143, 49, 61, 46,  99, 42, 79, 81, 53, 112, 79, 136, 149, 38, 52, 125, 92, 80, 79, 91, 110, 65, 12, 46, 59, 62,  39, 119, 103, 95, 97, 109, 104, 17, 184, 37, 110, 118, 166, 20, 44, 66, 118, 13, 151, 163, 90, 99,  80, 166, 89, 37, 64, 174, 24, 110, 36, 75, 90, 145, 59, 96, 69, 25, 43, 144, 55, 49, 53, 98,  89, 52, 91, 88, 74, 104, 188, 64, 67, 153, 153, 104, 36, 107,  2, 34, 169, 152, 84, 34, 54, 93,  89, 28, 116, 141, 63, 124, 95, 127, 28, 118, 99,  97, 97, 61, 100, 68, 103, 90, 131, 79, 144, 147,  46, 82, 117, 126, 94, 155, 111, 50, 215, 76, 35,  80, 94, 167, 27, 106, 85, 142, 116, 91, 126, 178,  47, 25, 114, 15, 71, 128, 151, 119, 104, 124, 125,  40, 59, 77, 105, 100, 123, 30, 65, 136, 136, 253, 158, 205, 145, 42, 173, 67, 49, 67, 92, 79, 115,  24, 97}
+    \end{quote}
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Plot the empirical CDF $\hat{F}_n$. Make sure the label the horizontal axis
+        \item Compute the value of the plug-in estimator for the mean hospitalization time $\int x\d F(x)$ for the given data.
+
+        \item Suppose we use bootstrapping to sample $X_1^*, \ldots, X_n^*\sim \hat{F}_n$ (iid) and get $\bar{X}_n^* = \frac{1}{n}(X_1^* + \cdots + X_n^*)$.
+            We can then compute the estimate the bootstrap variance by
+            \begin{equation*}
+                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{n} \sum_{r=1}^{n} \bar{X}_{n,r}^* \right)^2
+            \end{equation*}
+            where $\bar{X}_{n,1}^*, \ldots, \bar{X}_{n,B}^*$ are $B$ iid copies of $\bar{X}_n^*$.
+            Compute
+            \begin{equation*}
+                \lim_{B\to\infty} v_{\textup{boot}}.
+            \end{equation*}
+
+
+        \item What assumptions have you made throughout this process?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    What is one thing that is going well in the class and one thing you would like to improve on?
+\end{problem}
+
+\end{document}
