@@ -64,7 +64,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**3.** (9/11)</div>
 <div class="topic">Convergence of RVs, LLN and CLT, Delta method, inverse CDF sampling</div>
 <div class="reading">W5, CB5, [[09/13\ lecture]](https://nyu.zoom.us/rec/share/0OLq7d1vkFMf7jm6OSL7-dB9Nx2BQZZQ3jzQOxHL1b0cBUfTQAGhOLckAo3zvetR._AFGs8eWwGhNFmBt), [[09/13]](09_13.pdf), [[09/15\ lecture]](https://nyu.zoom.us/rec/share/XzwNFOnjU-0FJ1t7650bGJ9nQaTeh8hXFaNSFYQxVGdbxg8hxqDJlKuDZXDQCgfL.LKqPR3dxnNuDmb2w?startTime=1663255698000), [[09/15]](09_15.pdf), [[09/15\ code]](https://colab.research.google.com/drive/1QqAGs-AnLnjdpbokrOAWrdpb8ytioliy?usp=sharing)</div>
-<div class="hw">[quiz 1 (9/13)](./q1.pdf)</div>
+<div class="hw">quiz 1 (9/13) [[pdf]](./q1.pdf)</div>
 </div>
 
 
@@ -79,7 +79,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week">
 <div class="label">**5.** (9/25)</div>
 <div class="topic">Inference, Confidence Intervals</div>
-<div class="reading">W6, CB7, [[09/27]](09_27.pdf), [[09_29]](09_29.pdf)</div>
+<div class="reading">W6, CB7, [[09/27]](09_27.pdf), [[09/29]](09_29.pdf)</div>
 <div class="hw">quiz 2 (9/27) [[pdf]](./q2.pdf)</div>
 </div>
 
@@ -92,7 +92,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**7.** (10/09)</div>
 <div class="topic">Bootstrapping</div>
 <div class="reading">W8, CB10,  [[10/13]](./10_13.pdf), [[10/13\ code]](https://colab.research.google.com/drive/12skbpFS_MA0yaO_JYfoCCpNAo0LTiT37?usp=sharing)</div>
@@ -100,7 +100,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**8.** (10/16)</div>
 <div class="topic">Method of moments, MLE</div>
 <div class="reading">W9, CB9</div>
