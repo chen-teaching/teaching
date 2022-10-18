@@ -15,7 +15,7 @@ You are required to have taken MATH-UA 233 Theory of Probability, so the ability
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: TuTh 2-3:15PM; CIWW 109  
-**Office Hours**: Tu 6-7PM, Th 10-11AM; CIWW 905  
+**Office Hours**: M,Tu 6-7PM, Th 10-11AM; CIWW 905  
 
 
 **Teaching Assistant**: Theodore Plotkin  
