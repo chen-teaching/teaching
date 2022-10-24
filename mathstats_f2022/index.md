@@ -100,17 +100,17 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**8.** (10/16)</div>
 <div class="topic">Method of moments, MLE</div>
 <div class="reading">W9, CB9, [[10/18]](./10_18.pdf) [[10/20]](./10_20.pdf)</div>
-<div class="hw">HW4 (due 10/20) [[pdf]](./hw4.pdf) [[tex]](./hw4.tex)</div>
+<div class="hw">HW4 (due 10/20) [[pdf]](./hw4.pdf) [[tex]](./hw4.tex) [[sol]](./hw4_sol.pdf)</div>
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**9.** (10/23)</div>
-<div class="topic">Hypothesis testing, p-values</div>
+<div class="topic">MLE, Hypothesis testing, p-values</div>
 <div class="reading">W10, CB8</div>
 <div class="hw">quiz 4 (10/25)</div>
 </div>
@@ -118,7 +118,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**10.** (10/30)</div>
-<div class="topic">Baysian Inference</div>
+<div class="topic">p-values, Baysian Inference</div>
 <div class="reading">W11</div>
 
 <div class="hw">HW5 (due 11/03)</div>
