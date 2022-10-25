@@ -1,0 +1,130 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 5: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 11/03 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+\begin{problem}
+    Suppose $X_1, \ldots, X_n \sim F_\theta\mkern1mu$. 
+    Then the likelihood function is 
+    \begin{equation*}
+        L_n(\theta) = \prod_{i=1}^{n} f_\theta(X_i).
+    \end{equation*}
+
+    In your own words, describe the meaning of $L_n(\theta)$ for a specific value of $\theta$ when 
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item $f_\theta$ is a probability mass function
+        \item $f_\theta$ is a probability density function
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserman 9.1]
+    In this problem, you will fill in some pieces we skipped in lecture. If you take the approach of searching for critical points, you should justify why your response is a global maximum.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item 
+            Let $X_1, \ldots, X_n \sim \operatorname{Ber}(p)$ where $p$ is an unknown parameter.
+            Show $\ell_n(p) = S\log(p) + (n-S)\log(1-p)$, where $S = X_1 + \cdots + X_n\mkern1mu$, and then find the maximizer of $\ell_n(p)$.
+        \item
+            Let $X_1, \ldots, X_n \sim N(\mu,\sigma^2)$ where $\mu$ and $\sigma$ are unknown parameters.
+            Show $\ell(\mu,\sigma) = -n\log(\sigma)-nS^2/(2\sigma^2)-n(\bar{X}-\mu)^2/(2\sigma^2)$, where $\bar{X} = n^{-1}(X_1 + \cdots + X_n)$ and then find the maximizer of $\ell_n(\mu,\sigma)$.
+
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Wasserman 9.1]
+    Let $X_1, \ldots, X_n \sim \operatorname{Gamma}(\alpha,\beta)$ where $\alpha$ and $\beta$ are unknown parameters.
+    Find the method of moments estimator for $\alpha$ and $\beta$.
+\end{problem}
+
+
+\begin{problem}[Wasserman 9.2]
+    Let $X_1, \ldots, X_n \sim \operatorname{Unif}(a,b)$ where $a$ and $b$ are unknown parameters with $a<b$.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Find the method of moments estimator for $a$ and $b$.
+        \item Find the maximum likelihood estimators for $a$ and $b$.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Wasserman 9.5]
+    Let $X_1, \ldots, X_n \sim \operatorname{Poisson}(\lambda)$ where $\lambda$ is an unknown parameter.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Find the method of moments estimator for $\lambda$.
+        \item Find the maximum likelihood estimators for $\lambda$.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Wasserman 9.6]
+    Let $X_1, \ldots, X_n \sim N(\theta,1)$ where $\theta$ is an unknown parameter.
+    Define
+    \begin{equation*}
+        Y_i = \begin{cases}1 & X_i > 0 \\ 0 & X_i \leq 0. \end{cases}
+    \end{equation*}
+    Let $\psi = \PP[Y_1 = 1]$.
+
+    Find the maximum likelihood estimator for $\psi$.
+\end{problem}
+
+
+
+\end{document}

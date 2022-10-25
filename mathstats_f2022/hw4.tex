@@ -82,7 +82,7 @@ Let $X$ be a $t$-step random walk with parameter $p$. Then we can write
 \begin{equation*}
     X = \sum_{i=1}^{t} Y_i
     ,\qquad
-    Y_i = \begin{cases} -1 & \text{w.p. } 1-p \\ +1 & \text{w.p. } p \end{cases}
+    Y_i = \begin{cases} -1 & \text{w.p. } p \\ +1 & \text{w.p. } 1-p \end{cases}
 \end{equation*}
 where the $Y_i$ are iid.
 Let $F$ be the distribution function for $X$. That is, $F(x) = \PP[X\leq x]$.
@@ -136,7 +136,7 @@ Let $a<b$ be fixed numbers and define $\theta = T(F) = F(b) - F(a)$.
         \item Suppose we make iid copies $\bar{X}_{n,1}^*, \ldots, \bar{X}_{n,B}^*$ of $\bar{X}_n^*$.
             Let
             \begin{equation*}
-                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{n} \sum_{r=1}^{n} \bar{X}_{n,r}^* \right)^2.
+                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{B} \sum_{r=1}^{B} \bar{X}_{n,r}^* \right)^2.
             \end{equation*}
 
             What is $\EE[v_{\textup{boot}}]$? 
@@ -178,7 +178,7 @@ Below is data for the hospitalization time (in hours) of $n=200$ patients with C
         \item Suppose we use bootstrapping to sample $X_1^*, \ldots, X_n^*\sim \hat{F}_n$ (iid) and get $\bar{X}_n^* = \frac{1}{n}(X_1^* + \cdots + X_n^*)$.
             We can then compute the estimate the bootstrap variance by
             \begin{equation*}
-                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{n} \sum_{r=1}^{n} \bar{X}_{n,r}^* \right)^2
+                v_{\textup{boot}} = \frac{1}{B} \sum_{b=1}^{B} \left( \bar{X}_{n,b}^* - \frac{1}{B} \sum_{r=1}^{B} \bar{X}_{n,r}^* \right)^2
             \end{equation*}
             where $\bar{X}_{n,1}^*, \ldots, \bar{X}_{n,B}^*$ are $B$ iid copies of $\bar{X}_n^*$.
             Compute

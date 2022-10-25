@@ -121,7 +121,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="topic">p-values, Baysian Inference</div>
 <div class="reading">W11</div>
 
-<div class="hw">HW5 (due 11/03)</div>
+<div class="hw">HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex)</div>
 </div>
 
 
