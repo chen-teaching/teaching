@@ -14,7 +14,7 @@ You are required to have taken MATH-UA 233 Theory of Probability, so the ability
 
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
-**Class**: TuTh 2-3:15PM; CIWW 109  
+**Class**: Tu,Th 2-3:15PM; CIWW 109  
 **Office Hours**: M,Tu 6-7PM, Th 10-11AM; CIWW 905  
 
 
@@ -111,8 +111,8 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**9.** (10/23)</div>
 <div class="topic">MLE, Hypothesis testing, p-values</div>
-<div class="reading">W10, CB8</div>
-<div class="hw">quiz 4 (10/25)</div>
+<div class="reading">W10, CB8, , [[10/25]](./10_25.pdf)</div>
+<div class="hw">quiz 4 (10/25) [[pdf]](./q4.pdf)</div>
 </div>
 
 
