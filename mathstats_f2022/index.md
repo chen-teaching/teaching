@@ -110,33 +110,33 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week current">
 <div class="label">**9.** (10/23)</div>
-<div class="topic">MLE, Hypothesis testing, p-values</div>
-<div class="reading">W10, CB8, , [[10/25]](./10_25.pdf)</div>
+<div class="topic">MLE, Review</div>
+<div class="reading">W10, CB8, [10/25]](./10_25.pdf), [10/27]](./10_27.pdf)</div>
 <div class="hw">quiz 4 (10/25) [[pdf]](./q4.pdf)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**10.** (10/30)</div>
-<div class="topic">p-values, Baysian Inference</div>
-<div class="reading">W11</div>
+<div class="topic">Hypothesis testing, p-values</div>
+<div class="reading">W10,CB8</div>
 
-<div class="hw">HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex)</div>
+<div class="hw">quiz 4 (redo) (11/01),  HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**11.** (11/06)</div>
-<div class="topic">Simulation</div>
-<div class="reading">&nbsp;</div>
+<div class="topic">Baysian Inference</div>
+<div class="reading">W11</div>
 <div class="hw">quiz 5 (11/08)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**12.** (11/13)</div>
-<div class="topic">built in slack time / catch up</div>
-<div class="reading"></div>
+<div class="topic">Simulation</div>
+<div class="reading">&nbsp;</div>
 <div class="hw">HW6 (due 11/17)</div>
 </div>
 
