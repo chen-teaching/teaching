@@ -111,7 +111,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**9.** (10/23)</div>
 <div class="topic">MLE, Review</div>
-<div class="reading">W10, CB8, [10/25]](./10_25.pdf), [10/27]](./10_27.pdf)</div>
+<div class="reading">W10, CB8, [[10/25]](./10_25.pdf), [[10/27]](./10_27.pdf)</div>
 <div class="hw">quiz 4 (10/25) [[pdf]](./q4.pdf)</div>
 </div>
 
