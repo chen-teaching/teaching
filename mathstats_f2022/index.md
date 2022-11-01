@@ -12,6 +12,8 @@ During the course you will develop proficiency in using these tools, as well as 
 You are required to have taken MATH-UA 233 Theory of Probability, so the ability to work with basic ideas from probability is expected.
 
 
+The project description is posted [here](./project.pdf).
+
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: Tu,Th 2-3:15PM; CIWW 109  
@@ -145,7 +147,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**13.** (11/20)</div>
 <div class="topic">Linear/Logistic Regression</div>
 <div class="reading">W13, CB11,12</div>
-<div class="hw">quiz 6 (11/22), project proposals (due 11/22)</div>
+<div class="hw">quiz 6 (11/22), project proposals (due 11/22) [[pdf]](./project.pdf)</div>
 </div>
 
 
