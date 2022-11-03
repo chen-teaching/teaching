@@ -121,7 +121,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**10.** (10/30)</div>
 <div class="topic">Hypothesis testing, p-values</div>
-<div class="reading">W10,CB8</div>
+<div class="reading">W10,CB8, [[11/01.pdf]](./11_01.pdf)</div>
 
 <div class="hw">quiz 4 (redo) (11/01),  HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex)</div>
 </div>
