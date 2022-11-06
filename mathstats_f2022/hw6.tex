@@ -1,0 +1,159 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 6: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 11/17 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+\textbf{Reminder.} Don't forget the project proposals are due on 11/22. A good proposal is the key to doing well on the project, so if you have to choose between spending time on the homework or on the proposal, choose the proposal (although hopefully you can put sufficient time into both).
+
+\begin{problem}
+    Pick at least one of the following articles to read. Provide a one paragraph summary of what you think the most important points of the article were.
+
+    \begin{itemize}[nolistsep]
+        \item \href{https://www.vox.com/2016/3/15/11225162/p-value-simple-definition-hacking}{An unhealthy obsession with p-values is ruining science}
+        \item \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/}{Using Effect Size—or Why the P Value Is Not Enough}
+        \item \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4359000/}{The Extent and Consequences of P-Hacking in Science}
+    \end{itemize}
+\end{problem}
+
+
+\begin{problem}
+Suppose that the size $\alpha$ test is of the form
+    \begin{equation*}
+        \text{reject $H_0=\{\theta\in\Theta_0\}$ if and only if $T(X_1, \ldots, X_n) > c_\alpha$}.
+    \end{equation*}
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Given data $X_1, \ldots, X_n\mkern1mu$, prove that, 
+    \begin{equation*}
+        \text{$p$-value} = \sup_{\theta\in\Theta_0} \PP[T(X_1', \ldots, X_n') > T(X_1, \ldots, X_n) | X_1', \ldots, X_n' \sim F_\theta].
+    \end{equation*}
+    \item Explain, in simple words, what this result says about the meaning of a $p$-value for this type of test.
+    \end{enumerate}
+\end{problem}
+
+\iffalse
+\begin{solution}
+    We write the power function
+    \begin{align*}
+        \beta(\theta) = \PP[T(X_1', \ldots, X_n') \in (a_\alpha,b_\alpha) | X_1', \ldots, X_n'\sim F_\theta].
+    \end{align*}
+    By definition,
+    \begin{align*}
+        \alpha 
+        = \sup_{\theta\in\Theta_0}\beta(\theta) 
+        = \sup_{\theta\in\Theta_0} \PP[T(X_1', \ldots, X_n') \in (a_\alpha,b_\alpha) | X_1', \ldots, X_n'\sim F_\theta].
+    \end{align*}
+\end{solution}
+\fi
+
+\begin{problem}[Wasserman 10.5]
+    Let $X_1, \ldots, X_n\sim \operatorname{Unif}(0,\theta)$ and let $Y=\max\{X_1, \ldots, X_n\}$.
+    We want to test $H_0 = \{ \theta  \leq 1/2 \}$ vs $H_1 = \{\theta>1/2\}$ and we will reject if $Y>c$ for some constant $c$.
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Find the power function $\beta(\theta) = \PP[\max\{X_1, \ldots, X_n\} > c | X_1, \ldots, X_n \sim \operatorname{Unif}(0,\theta) ]$.
+        \item What choice of $c$ will make the size of the test $0.05$?
+        \item In a sample of size $n=20$ with $Y=0.48$, what is the $p$-value? What is the conclusion about $H_0$ that you would make?
+        \item In a sample of size $n=5$ with $Y=0.45$, what is the $p$-value? What is the conclusion about $H_0$ that you would make? Since $Y=0.45$ is smaller than the previous case, we might expect it would be ``harder to reject'' $H_0$, yet the $p$-value is smaller than the previous case. 
+            Explain this observation. 
+        \item In a sample of size $n=20$ with $Y=0.52$, what is the $p$-value? What is the conclusion about $H_0$ that you would make?
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}[Wasserman 10.6]
+There is a theory that people can postpone their death until after an  important event. To test the theory, Phillips and King (1988) collected  data on deaths around the Jewish holiday Passover. 
+Of 1919 deaths, 922  died the week before the holiday and 997 died the week after. 
+
+    We can model this situation by thinking of whether each person died after or before the holiday as an iid Bernoulli random variable with parameter $p$.
+    Then, the number of people who died after the holiday is a Binomial random variable with parameter $(n,p)$, where $n=1919$.
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item for each $\alpha\in(0,1)$, devise a size-$\alpha$ test for the null hypothesis that $p = 1/2$. 
+        \item Report and  interpret the $p$-value. 
+        \item Construct a confidence interval for $p$.
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+Suppose you work for a pharmaceutical company.
+You are trying to develop drugs to reduce the recovery time from infection by a particular virus.
+
+To model the effectiveness of a given drug, you could do the following:
+    Let $X_i$ the recovery time of a patient given your drug, and suppose $X_i\sim N(\mu,1)$ some unknown $\mu$.
+    The mean recovery time for patients who did not receive any treatment is $\mu_0$. Thus, you would like to test the null hypothesis $H_0 = \{ \mu \leq \mu_0 \}$ by analyzing the outcomes $X_1, \ldots, X_n$ of a drug trial.
+    If you are able to reject the null hypothesis, then you will be able to market your drug.
+
+    In reality, you studied statistics in college instead of chemistry and every drug you make is ineffective ($\mu = \mu_0$).
+    However, you are greedy and want to make money by selling drugs. 
+    Your boss doesn't know statistics, and in your area there are no governmental regulation agencies.
+    Thus, if you perform an experiment where you reject the null hypothesis at a $p$-value of $0.05$, then you will be able to sell the drug and get rich.
+    
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Explain how you could design an experiment (or series of experiments) in order to reject the null hypothesis at a $p$-value of 0.05 (or at least give you a decent shot at this).
+            Your experiments should be legitimate (i.e. you cannot just lie about whether the drug helped someone or not).
+
+        \item Now, suppose you are a governmental regulator. 
+            Explain what regulations you might introduce which would have prevented your alter-ego from getting away with such tricks.
+    
+    \end{enumerate}
+
+\end{problem}
+
+\end{document}
