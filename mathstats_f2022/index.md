@@ -130,7 +130,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**11.** (11/06)</div>
 <div class="topic">Baysian Inference</div>
-<div class="reading">W11, [[11/08]](./11_08.pdf), [11/08 worksheet]](./11_08_worksheet.pdf)</div>
+<div class="reading">W11, [[11/08]](./11_08.pdf), [[11/08 worksheet]](./11_08_worksheet.pdf)</div>
 <div class="hw">quiz 5 (11/08) [[pdf]](./q5.pdf)</div>
 </div>
 
