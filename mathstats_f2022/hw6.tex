@@ -2,6 +2,7 @@
 
 \usepackage[margin=1.25in]{geometry}
 
+
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{unicode-math}
 \mathitalicsmode=1
@@ -123,8 +124,8 @@ Suppose you work for a pharmaceutical company.
 You are trying to develop drugs to reduce the recovery time from infection by a particular virus.
 
 To model the effectiveness of a given drug, you could do the following:
-    Let $X_i$ the recovery time of a patient given your drug, and suppose $X_i\sim N(\mu,1)$ some unknown $\mu$.
-    The mean recovery time for patients who did not receive any treatment is $\mu_0$. Thus, you would like to test the null hypothesis $H_0 = \{ \mu \leq \mu_0 \}$ by analyzing the outcomes $X_1, \ldots, X_n$ of a drug trial.
+    Let $X_i$ the recovery time of a patient given a given drug, and suppose $X_i\sim N(\mu,1)$ some unknown $\mu$.
+    The mean recovery time for patients who did not receive any treatment is $\mu_0$. Thus, you would like to test the null hypothesis $H_0 = \{ \mu \geq \mu_0 \}$ by analyzing the outcomes $X_1, \ldots, X_n$ of a drug trial.
     If you are able to reject the null hypothesis, then you will be able to market your drug.
 
     In reality, you studied statistics in college instead of chemistry and every drug you make is ineffective ($\mu = \mu_0$).
@@ -134,7 +135,7 @@ To model the effectiveness of a given drug, you could do the following:
     
     \begin{enumerate}[label=(\alph*),topsep=0pt]
         \item Explain how you could design an experiment (or series of experiments) in order to reject the null hypothesis at a $p$-value of 0.05 (or at least give you a decent shot at this).
-            Your experiments should be legitimate (i.e. you cannot just lie about whether the drug helped someone or not).
+            Your experiments should be scientifically legitimate (i.e. you cannot just lie about the data collected in the trial).
 
         \item Now, suppose you are a governmental regulator. 
             Explain what regulations you might introduce which would have prevented your alter-ego from getting away with such tricks.
