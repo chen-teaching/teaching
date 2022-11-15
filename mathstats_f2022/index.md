@@ -137,8 +137,8 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**12.** (11/13)</div>
-<div class="topic">Baysian Inference</div>
-<div class="reading">&nbsp;</div>
+<div class="topic">Baysian Inference, Gaussian process regression</div>
+<div class="reading">[[11/15]](./11_15.pdf), [[11/15\ code]](https://colab.research.google.com/drive/1ww7mzQdiCax-Rbnhe855E1PCfNKLB1cZ?usp=sharing)</div>
 <div class="hw">HW6 (due 11/17) [[pdf]](./hw6.pdf) [[tex]](./hw6.tex)</div>
 </div>
 
