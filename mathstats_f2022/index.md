@@ -130,14 +130,14 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**11.** (11/06)</div>
 <div class="topic">Baysian Inference</div>
-<div class="reading">W11, [[11/08]](./11_08.pdf), [[11/08 worksheet]](./11_08_worksheet.pdf)</div>
+<div class="reading">W11, [[11/08]](./11_08.pdf), [[11/08 worksheet]](./11_08_worksheet.pdf), [[11/10]](./11_10.pdf)</div>
 <div class="hw">quiz 5 (11/08) [[pdf]](./q5.pdf)</div>
 </div>
 
 
 <div class="week">
 <div class="label">**12.** (11/13)</div>
-<div class="topic">Simulation</div>
+<div class="topic">Baysian Inference</div>
 <div class="reading">&nbsp;</div>
 <div class="hw">HW6 (due 11/17) [[pdf]](./hw6.pdf) [[tex]](./hw6.tex)</div>
 </div>
@@ -177,7 +177,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**17.** (12/18)</div>
-<div class="topic">Finals Week</div>
+<div class="topic">Finals Week (no class)</div>
 <div class="reading"></div>
 <div class="hw"></div>
 </div>
