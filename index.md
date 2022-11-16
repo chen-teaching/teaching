@@ -7,6 +7,7 @@ description: Here is info on my teaching.
 
 ## NYU
 
+- [Numerical Analysis (Spring 2023)](./na_s2023)
 - [Mathematical Statistics (Fall 2022)](./mathstats_f2022)
 
 ## UW
@@ -16,5 +17,5 @@ description: Here is info on my teaching.
 - Interdisciplinary Writing/Natural Science (Fall 2020)
 
 
-You can email me at [chentyl@uw.edu](mailto:chentyl@uw.edu).
+You can email me at [tyler.chen@nyu.edu](mailto:tyler.chen@nyu.edu).
 Pronouns: they or he.
