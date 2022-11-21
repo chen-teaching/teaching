@@ -127,7 +127,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**11.** (11/06)</div>
 <div class="topic">Baysian Inference</div>
 <div class="reading">W11, [[11/08]](./11_08.pdf), [[11/08 worksheet]](./11_08_worksheet.pdf), [[11/10]](./11_10.pdf)</div>
@@ -138,12 +138,12 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week">
 <div class="label">**12.** (11/13)</div>
 <div class="topic">Baysian Inference, Gaussian process regression</div>
-<div class="reading">[[11/15]](./11_15.pdf), [[11/15\ code]](https://colab.research.google.com/drive/1ww7mzQdiCax-Rbnhe855E1PCfNKLB1cZ?usp=sharing)</div>
-<div class="hw">HW6 (due 11/17) [[pdf]](./hw6.pdf) [[tex]](./hw6.tex)</div>
+<div class="reading">[[11/15]](./11_15.pdf), [[11/15\ code]](https://colab.research.google.com/drive/1ww7mzQdiCax-Rbnhe855E1PCfNKLB1cZ?usp=sharing),[[11/17]](./11_17.pdf) , [[11/17\ code]](https://colab.research.google.com/drive/1IIGUsxbKk1H9UJr9NTYPpZLTJzIBshQH?usp=sharing)</div>
+<div class="hw">HW6 (due 11/17) [[pdf]](./hw6.pdf) [[tex]](./hw6.tex) [[sol]](./hw6_sol.pdf)</div>
 </div>
 
 
-<div class="week">
+<div class="week current">
 <div class="label">**13.** (11/20)</div>
 <div class="topic">Linear/Logistic Regression</div>
 <div class="reading">W13, CB11,12</div>
