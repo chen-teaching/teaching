@@ -114,7 +114,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**9.** (10/23)</div>
 <div class="topic">MLE, Review</div>
 <div class="reading">W10, CB8, [[10/25]](./10_25.pdf), [[10/27]](./10_27.pdf)</div>
-<div class="hw">quiz 4 (10/25) [[pdf]](./q4.pdf)</div>
+<div class="hw">quiz 4 (10/25)</div>
 </div>
 
 
@@ -123,7 +123,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="topic">Hypothesis testing, p-values</div>
 <div class="reading">W10,CB8, [[11/01]](./11_01.pdf), [[11/03]](./11_03.pdf), [[11/03 worksheet]](./11_03_worksheet.pdf)</div>
 
-<div class="hw">quiz 4 (redo) (11/01),  HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex) [[sol]](./hw5_sol.pdf)</div>
+<div class="hw">quiz 4 (redo) (11/01) [[pdf]](./q4.pdf),  HW5 (due 11/03) [[pdf]](./hw5.pdf) [[tex]](./hw5.tex) [[sol]](./hw5_sol.pdf)</div>
 </div>
 
 
@@ -146,8 +146,8 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="week current">
 <div class="label">**13.** (11/20)</div>
 <div class="topic">Linear/Logistic Regression</div>
-<div class="reading">W13, CB11,12</div>
-<div class="hw">quiz 6 (11/22), project proposals (due 11/22) [[pdf]](./project.pdf)</div>
+<div class="reading">W13, CB11, CB12, [[11/22]](./11_22.pdf)</div>
+<div class="hw">quiz 6 (11/22) [[pdf]](./q6.pdf), project proposals (due 11/22) [[pdf]](./project.pdf)</div>
 </div>
 
 
@@ -155,7 +155,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**14.** (11/27)</div>
 <div class="topic">Classification</div>
 <div class="reading">W22</div>
-<div class="hw">HW7 (due 12/01)</div>
+<div class="hw">HW7 (due 12/08)  [[pdf]](./hw7.pdf) [[tex]](./hw7.tex)</div>
 </div>
 
 
@@ -163,7 +163,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**15.** (12/04)</div>
 <div class="topic">Machine Learning/Project presentations</div>
 <div class="reading">&nbsp;</div>
-<div class="hw">quiz 7 (12/06)</div>
+<div class="hw">quiz 7 (12/06) <div style="color:#dc322f">(note this is before HW7 is due)</div></div>
 </div>
 
 

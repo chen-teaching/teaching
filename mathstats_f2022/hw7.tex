@@ -1,0 +1,168 @@
+\documentclass{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\CoV}{\operatorname{Co\mathbb{V}}}
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large\sffamily{Homework 7: Mathematical Statistics (MATH-UA 234)}}
+ 
+
+    Due 12/08 at the beginning of class on \href{https://www.gradescope.com/courses/414277/}{Gradescope}.
+    The quiz will still be 12/06, and will cover content from problems 1-3 (i.e. Bayesian inference). No solutions will be posted prior to the quiz.
+\end{center}
+
+
+\extrafootertext{\hspace{-14.2pt}problems with a textbook reference are based on, but not identical to, the given reference}
+
+\vspace{2em}
+
+
+\textbf{Reminder.} 
+Remember than the project presentations are on December 14th!
+
+\begin{problem}
+    Suppose $X_1, \ldots, X_n \sim \operatorname{Ber}(p)$ (with $1$ representing heads and zero representing tails) and that we use the prior distribution $p\sim \operatorname{Beta}(\alpha,\beta)$.
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Compute the posteriori distribution for $p|X_1=x_1, \ldots, X_n=x_n$.
+        \item For each of the coins below, find values of $\alpha$ and $\beta$ so that your prior distribution represents your belief about the parameter $p$ of the coin.
+            Plot and label these 6 prior distributions.
+            Note that the head side is the side marked with the number.
+        \item Suppose you flipped coin zero and got 53 heads and 47 tails. Make a plot showing the prior and posterior densities for $p$.
+        \item Suppose you flipped coin 4 and got 39 heads and 61 tails. Make a plot showing the prior and the posterior densities for $p$.
+        \item Suppose you flipped coin 6 and got 0 heads and 100 tails. Make a plot showing the prior and the posterior densities for $p$.
+        \item For the coin 6 example, is the probability that $p=1$ under your posterior 100\%? 
+        Does this make sense? Why or why not?
+    \end{enumerate}
+    \includegraphics[width=\textwidth]{coins-all.jpg}
+    This image was taken from this site: \url{https://izbicki.me/blog/how-to-create-an-unfair-coin-and-prove-it-with-math.html}
+\end{problem}
+
+\begin{problem}[Wasserman 11.1]
+    Suppose $X_1, \ldots, X_n \sim N(\theta,\sigma^2)$, and that we use the prior distribution $\theta\sim N(a,b^2)$.
+    Show that $\theta|X_1=x_1, \ldots, X_n=x_n \sim N(\bar{\theta},\tau^2)$ where 
+    \begin{equation*}
+        \bar{\theta} = w \frac{x_1+ \cdots + x_n}{n} + (1-w)a
+        ,\qquad w = \frac{1/\mathsf{se}^2}{1/\mathsf{se}^2 + 1/b^2}
+        ,\qquad \tau = 1/\sqrt{1/\mathsf{se}^2 + 1/b^2}
+        ,\qquad \mathsf{se} = \sigma/\sqrt{n}.
+    \end{equation*}
+\end{problem}
+
+\clearpage
+\begin{problem}[Wasserman 11.2]
+    Let $X_1, \ldots, X_n\sim N(\mu,1)$.
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Simulate a dataset (using $\mu=5$) consisting of $n=100$ observations
+        \item Take $f(\mu) = 1$ as the prior density, and find the posterior density given the observed data. Plot this density
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Consider a model of the form $f(x) = \hat{\beta}_0 + \hat{\beta}_1 y$ and, given data 
+    \begin{equation*}
+        (X_1, Y_1), \ldots, (X_n, Y_n),
+    \end{equation*}
+    define the loss function
+    \begin{equation*}
+        L(\hat{\beta}_0, \hat{\beta}_1) = \sum_{i=1}^{n} (Y_i - f(X_i))^2. 
+    \end{equation*}
+
+    \begin{enumerate}[label=(\alph*),topsep=0pt]
+        \item Compute the partial derivatives 
+            $\partial L(\hat{\beta}_0,\hat{\beta}_1) / \partial \hat{\beta}_0$
+            and $\partial L(\hat{\beta}_0,\hat{\beta}_1) / \partial \hat{\beta}_1$
+        \item Find the minimizers $\hat{\beta}_0$ and $\hat{\beta}_1$ for $L(\hat{\beta}_0, \hat{\beta}_1)$.
+        \item Show that you can write the loss function in the form $\|\vec{b} - \vec{A}\vec{x}\|_2^2$, where $\vec{b}$ is a particular vector of length $n$, $\vec{A}$ is a $n\times 2$ matrix, and $\vec{x}$ is a length $2$ vector.
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+Consider the following four data sets:
+
+    \begin{lstlisting}
+x1 = [10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5]
+y1 = [8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68]
+
+x2 = [10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5]
+y2 = [9.14, 8.14, 8.74, 8.77, 9.26, 8.10, 6.13, 3.10, 9.13, 7.26, 4.74]
+
+x3 = [10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5]
+y3 = [7.46, 6.77, 12.74, 7.11, 7.81, 8.84, 6.08, 5.39, 8.15, 6.42, 5.73]
+
+x4 = [8, 8, 8, 8, 8, 8, 8, 19, 8, 8, 8]
+y4 = [6.58, 5.76, 7.71, 8.84, 8.47, 7.04, 5.25, 12.50, 5.56, 7.91, 6.89]
+
+    \end{lstlisting}
+
+\begin{enumerate}[label=(\alph*),topsep=0pt]
+    \item Find the sample mean and sample variance of each datasets' $X$ and $Y$ values. Compute the sample correlation between the datasets.
+    \item Find the linear regression line and compute the $R^2$ value for each dataset.
+    \item Now, plot the datasets and the linear regression lines. Explain what happened.
+\end{enumerate}
+
+
+\begin{problem}
+TBD
+\end{problem}
+
+\begin{problem}
+TBD
+\end{problem}
+
+
+\end{problem}
+
+
+\end{document}
