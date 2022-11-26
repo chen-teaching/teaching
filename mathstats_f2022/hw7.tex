@@ -80,7 +80,7 @@ Remember than the project presentations are on December 14th!
         \item Suppose you flipped coin zero and got 53 heads and 47 tails. Make a plot showing the prior and posterior densities for $p$.
         \item Suppose you flipped coin 4 and got 39 heads and 61 tails. Make a plot showing the prior and the posterior densities for $p$.
         \item Suppose you flipped coin 6 and got 0 heads and 100 tails. Make a plot showing the prior and the posterior densities for $p$.
-        \item For the coin 6 example, is the probability that $p=1$ under your posterior 100\%? 
+        \item For the coin 6 example, is the probability that $p=0$ under your posterior 100\%? 
         Does this make sense? Why or why not?
     \end{enumerate}
     \includegraphics[width=\textwidth]{coins-all.jpg}
@@ -151,18 +151,34 @@ y4 = [6.58, 5.76, 7.71, 8.84, 8.47, 7.04, 5.25, 12.50, 5.56, 7.91, 6.89]
     \item Find the linear regression line and compute the $R^2$ value for each dataset.
     \item Now, plot the datasets and the linear regression lines. Explain what happened.
 \end{enumerate}
+\end{problem}
+
+\begin{problem}[Wasserman 13.2]
+    Suppose $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$, where $\EE[\epsilon_i | X_i] = 0$ and $\VV[\epsilon_i | X_i] = \sigma^2$.
+
+    Let $\hat{\beta}_0$ and $\hat{\beta}_1$ be the least squares estimates given in Theorem 13.4.
+%\begin{enumerate}[label=(\alph*),topsep=0pt]
+    Show that $\EE[\hat{\beta}_0|X_1, \ldots, X_n] = \beta_0$ and $\EE[\hat{\beta}_1|X_1, \ldots, X_n] = \beta_1$.
+    %\item Show that $\VV[\hat{\beta}_0 | X_1, \ldots, X_n] = \frac{\sigma^2}{n s_X} \frac{1}{n} \sum_{i=1}^{n} X_i^2$ and $\VV[\hat{\beta}_1 | X_1, \ldots, X_n] = \frac{\sigma^2}{n s_X}$, where $s_X = \frac{1}{n} \sum_{i=1}^{n}(X_i - \bar{X}_i)^2$.
+%\end{enumerate}
+    You should regard $X_1, \ldots, X_n$ as constant.
+\end{problem}
+
+
 
 
 \begin{problem}
-TBD
+    Pick at least one of the following articles to read. 
+    Provide a one paragraph summary of what you think the most important points of the article were.
+    Discuss how this is relevant to what we are learning in class.
+
+    \begin{itemize}[nolistsep]
+        \item \href{https://www.vox.com/recode/2020/2/18/21121286/algorithms-bias-discrimination-facial-recognition-transparency}{Why algorithms can be racist and sexist}
+        \item \href{https://hbr.org/2019/05/all-the-ways-hiring-algorithms-can-introduce-bias}{All the Ways Hiring Algorithms Can Introduce Bias}
+        \item \href{https://sitn.hms.harvard.edu/flash/2020/racial-discrimination-in-face-recognition-technology/}{Racial Discrimination in Face Recognition Technology}
+    \end{itemize}
 \end{problem}
 
-\begin{problem}
-TBD
-\end{problem}
-
-
-\end{problem}
 
 
 \end{document}
