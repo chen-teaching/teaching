@@ -39,15 +39,16 @@ Active participation in the course in mandatory, and you are expected to attend 
 
 - (10pts, max 10pts) Actively engage in breakout groups throughout semester
 	- If you miss one or two classes without prior notice that's fine. However, substantial absense will disqualify from this category. Please talk to me if you have any questions/concerns.
-- (5pts, max 5pts) present breakout group's work
+- ~~(5pts, max 5pts) present breakout group's work~~
 - (2pts, max 6pts) Attend office hours
 - (1pts, max 6pts) Ask/answer a question on the discussion board
 	- Questions/answers must be high quality and related to the course materials. Thus, a question like "what is the difference between a definite and indefinite integral?" would get a point, but a question like "is there a quiz today?" would not.
 
-The bar for participation points is relatively low. For instance, if you attend class and participate in breakout groups and present your group's answers one time, you will earn full credit. Alternately, you could participate in breakout groups and attend office hours 3 times and get full credit. 
+The bar for participation points is relatively low. For instance, ~~if you attend class and participate in breakout groups and present your group's answers one time, you will earn full credit. Alternately,~~ you could participate in breakout groups and attend office hours 3 times and get full credit. 
 However, a good faith effort is required, and trying to cheat the system will result in penalties.
 
 You are responsible for keeping track of your participation and logging it in the participation assignment on Gradescope. It is recommended to log as you go so you don't forget when you particpated.
+
 
 
 ### Homework
