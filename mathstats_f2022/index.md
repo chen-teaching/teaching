@@ -12,7 +12,7 @@ During the course you will develop proficiency in using these tools, as well as 
 You are required to have taken MATH-UA 233 Theory of Probability, so the ability to work with basic ideas from probability is expected.
 
 
-The project description is posted [here](./project.pdf).
+The project description is posted [here](./project.html).
 
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
