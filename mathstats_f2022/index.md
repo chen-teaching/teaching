@@ -161,7 +161,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 
 <div class="week">
 <div class="label">**15.** (12/04)</div>
-<div class="topic">Machine Learning/Project presentations</div>
+<div class="topic">Project work day, Overview of statistics</div>
 <div class="reading">[[12/01]](./12_01.pdf)</div>
 <div class="hw">quiz 7 (12/06) <div style="color:#dc322f">(note this is before HW7 is due)</div></div>
 </div>
@@ -171,7 +171,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**16.** (12/11)</div>
 <div class="topic">Project presentations</div>
 <div class="reading">&nbsp;</div>
-<div class="hw">peer project reviews (due 12/14)</div>
+<div class="hw">peer project reviews (due 12/14) [[pdf]](./reviews.pdf)</div>
 </div>
 
 
