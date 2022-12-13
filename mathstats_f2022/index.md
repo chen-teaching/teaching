@@ -155,7 +155,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**14.** (11/27)</div>
 <div class="topic">Classification</div>
 <div class="reading">W22, [[11/29]](./11_29.pdf)</div>
-<div class="hw">HW7 (due 12/08)  [[pdf]](./hw7.pdf) [[tex]](./hw7.tex)</div>
+<div class="hw">HW7 (due 12/08)  [[pdf]](./hw7.pdf) [[tex]](./hw7.tex)  [[soll]](./hw7_sol.pdf)</div>
 </div>
 
 
