@@ -163,7 +163,7 @@ W=Wasserman, CB=Casella & Berger. Numbers are chapter #’s.
 <div class="label">**15.** (12/04)</div>
 <div class="topic">Project work day, Overview of statistics</div>
 <div class="reading">[[12/01]](./12_01.pdf)</div>
-<div class="hw">quiz 7 (12/06) <div style="color:#dc322f">(note this is before HW7 is due)</div></div>
+<div class="hw">quiz 7 (12/06) [[pdf]](./q7.pdf)<div style="color:#dc322f">(note this is before HW7 is due)</div></div>
 </div>
 
 
