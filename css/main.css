@@ -179,11 +179,11 @@ thead > tr {
 }
 
 .week > .topic {
-    width: 25%;
+    width: 30%;
 }
 
 .week > .reading {
-    width: 30%;
+    width: 25%;
 }
 
 .week > .hw {
@@ -237,9 +237,9 @@ caption {
 
 }
 
-@media (min-width:1000px) {
+@media (min-width:1200px) {
     #contentContainer {
-        width: 800px;
+        width: 1000px;
     }
 }
 
