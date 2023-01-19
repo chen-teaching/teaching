@@ -16,7 +16,7 @@ There is no prerequisite for coding.
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: M,W 3:30-4:50PM; JABS 775B  
-**Office Hours**: 370 Jay Street, 11th floor, room and times TBD
+**Office Hours**: TBD
 
 
 **Teaching Assistant**: ?  
@@ -24,10 +24,11 @@ There is no prerequisite for coding.
 **Office Hours**: TBD  
 
 
-[**Syllabus**](./syllabus.html)  
+[**Syllabus**](./syllabus.html)
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
+[**Course notes (last update: Jan 19)**](https://drive.google.com/file/d/1nRPEUFjdfUYQlMMFELXvgfT0itZYWFeh/view?usp=sharing)
 
 ## Schedule
 
@@ -88,8 +89,8 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 
 <div class="week">
 <div class="label">**7.** (3/5)</div>
-<div class="topic">Eigenvalue/vector</div>
-<div class="reading">N11</div>
+<div class="topic">built in slack time</div>
+<div class="reading">\ </div>
 <div class="hw">quiz 3 (3/06)</div>
 </div>
 
@@ -102,8 +103,8 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 
 <div class="week">
 <div class="label">**8.** (3/19)</div>
-<div class="topic">built in slack time</div>
-<div class="reading">\ </div>
+<div class="topic">Eigenvalue/vector</div>
+<div class="reading">N11</div>
 <div class="hw">HW 4 (due 03/23)</div>
 </div>
 

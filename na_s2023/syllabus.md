@@ -9,6 +9,11 @@ description: Course syllabus for NYU Numerical Analysis Spring 2023
 Welcome to Numerical Analysis (MATH-UA.0252, MATH-UY.4424)!
 This syllabus contains important information regarding course policies and procedures.
 
+### Course goals
+
+- Demonstrate an general understanding of key concepts in numerical analysis such as: stability and conditioning, techniques for solving linear systems and least squares problems, matrix factorizations, and polynomial approximation and quadrature
+- Gain basic proficiency with numerical computing in numpy or a similar language
+- Build confidence communicating about advanced mathematical subjects using natural language
 
 ## Accommodations and Accessibility
 
@@ -22,9 +27,10 @@ Absenses which can be forseen must be planned for in advance.
 There is no required textbook. 
 In addition to the course notes, it is recommended that you read the relevant topics in: 
 
-- *Numerical methods: design, analysis, and computer implementation of algorithms* by Anne Greenbaum and Tim Chartier
-- *An Introduction to Numerical Analysis* by Endre Süli and David Mayers
+- *Numerical methods: design, analysis, and computer implementation of algorithms* by Anne Greenbaum and Tim Chartier [[link]](https://ebookcentral.proquest.com/lib/nyulibrary-ebooks/detail.action?docID=867854)
+- *An Introduction to Numerical Analysis* by Endre Süli and David Mayers [[link]](https://www.cambridge.org/core/books/an-introduction-to-numerical-analysis/FD8BCAD7FE68002E2179DFF68B8B7237)
 
+Both of these texts are available online for free with an NYU netID. 
 
 ## Grading
 
