@@ -19,9 +19,9 @@ There is no prerequisite for coding.
 **Office Hours**: TBD
 
 
-**Teaching Assistant**: ?  
+**Teaching Assistant**: Fanghe (Athena) Liu  
 **Recitation**: F 2:00-3:20PM; RGSH 325  
-**Office Hours**: TBD  
+**Office Hours**: TBD 
 
 
 [**Syllabus**](./syllabus.html)  
@@ -56,7 +56,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**2.** (1/29)</div>
 <div class="topic">Floating point arithmetic, stability/conditioning</div>
 <div class="reading">GC5, GC6, N4, N5, N6 </div>
-<div class="hw">HW1 (due 2/02)</div>
+<div class="hw">HW1 (due 2/02) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
 <div class="week">

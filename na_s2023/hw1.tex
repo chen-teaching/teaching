@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Homework 1\hfill Numerical Analysis Spring 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 02/02 at 11:59pm on \href{https://www.gradescope.com/courses/487363/}{Gradescope}.
+        \item Write the names of anyone you work with on the top of your assignment. If you worked alone, write that you worked alone.
+        \item Show your work.
+        \item Include all code you use as copyable \verb|monospaced| text in the PDF (i.e. not as a screenshot).
+        \item Do not put the solutions to multiple problems on the same page.
+        \item Tag your responses on gradescope. Each page should have a \emph{single} problem tag. Improperly tagged responses will not receive credit.
+\end{itemize}
+    
+\vspace{1em}
+
+\begin{problem}~
+    \begin{enumerate}
+        \item The Summit supercomputer can do $10^{18}$ floating point operations per second.
+            The supercomputer is physically large. 
+            Suppose that the furthest nodes are separated by 100 meters.
+            Roughly how many floating point operations could be done in the time it takes to send a signal from one of these node to the other? (You can assume the signal travels at the speed of light)
+            \begin{center}
+                \includegraphics[width=.7\textwidth]{summit.jpg}
+                
+                Image of Summit from \href{https://www.flickr.com/photos/olcf/49912253043/in/album-72157683655708262/}{ORNL}.
+            \end{center}
+        \item Suppose $\vec{A}$ is both an upper triangular matrix and a lower triangular matrix. Show that $\vec{A}$ is diagonal.
+        \item Suppose $\vec{A}$ is a matrix. Show that $\vec{A}^\T \vec{A}$ is symmetric.
+        \item Suppose $\vec{A}$ is a diagonal matrix and $\vec{B}$ is upper triangular. Show that $\vec{A}\vec{B}$ is upper triangular.
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+
+\begin{problem}~
+    Consider linear equations $f(x) = a x + b$ and $\tilde{f}(x) = a x + (b+\epsilon)$, where $a$ and $b$ are constants and $\epsilon = 10^{-5}$.
+    \begin{enumerate}
+        \item Find the solutions to $f(x) = 0$ and $\tilde{f}(x) = 0$ in terms of $a$ and $b$.
+        \item Find values of $a$ and $b$ so that the solutions to these two equations are very different. Here ``very different'' means the solutions differ by much more than $\epsilon$.
+        \item Using matplotlib, plot the functions $f(x)$ and $\tilde{f}(x)$ corresponding to your values of $a$ and $b$.
+            Make sure the plots are labeled, and that the axes are chosen such that the two lines can be clearly differentiated from one another and the zeros are clearly visible.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Define 
+\begin{equation*}
+    \vec{A} = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \\ 10 & 11 & 12\end{bmatrix}
+    ,\quad
+    \vec{B} = \begin{bmatrix} 0 & -1 & 4 \\ -7 & 0 & 1 \\ 3 & 4 & -3\end{bmatrix}
+    ,\quad
+    \vec{x} = \begin{bmatrix} 3 \\ 2 \\ -2\end{bmatrix}.
+\end{equation*}
+
+    \begin{enumerate}
+        \item Compute $\vec{A} \vec{B}$.
+        \item Compute $\vec{B} \vec{x}$.
+        \item Compute $\vec{A} (\vec{B} \vec{x})$.
+        \item Compute $(\vec{A}\vec{B}) \vec{x}$.
+    \end{enumerate}
+Show your work at each step.
+\end{problem}
+
+\begin{problem}~
+\begin{enumerate}
+    \item Make the matrices $\vec{A}$, $\vec{B}$, and vector $\vec{x}$ in numpy.
+    \item Verify each of the answers you generated in Problem 1 using numpy. 
+\end{enumerate}
+\end{problem}
+
+\end{document}
