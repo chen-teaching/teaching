@@ -24,7 +24,7 @@ There is no prerequisite for coding.
 **Office Hours**: TBD  
 
 
-[**Syllabus**](./syllabus.html)
+[**Syllabus**](./syllabus.html)  
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
