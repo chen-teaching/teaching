@@ -28,7 +28,7 @@ There is no prerequisite for coding.
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
-[**Course notes (last update: Jan 19)**](https://drive.google.com/file/d/1nRPEUFjdfUYQlMMFELXvgfT0itZYWFeh/view?usp=sharing)
+[**Course notes (last update: Jan 23)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
 
 ## Schedule
 
