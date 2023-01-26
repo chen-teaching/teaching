@@ -16,7 +16,7 @@ There is no prerequisite for coding.
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: M,W 3:30-4:50PM; JABS 775B  
-**Office Hours**: TBD
+**Office Hours**: M 5:00-6:00PM, Tu 3:30-4:30PM; 370 Jay Street Floor 11
 
 
 **Teaching Assistant**: Fanghe (Athena) Liu  
