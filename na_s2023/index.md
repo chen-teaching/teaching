@@ -45,14 +45,14 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 </div>
 
 
-<div class="week current">
+<div class="week">
 <div class="label">**1.** (1/22)</div>
 <div class="topic">Intro to numerical analysis</div>
 <div class="reading">syllabus, GC1, GC2, N1-N4 </div>
 <div class="hw">Intro Survey [[pdf]](./intro_survey.pdf) [[tex]](./intro_survey.tex) (due 1/25)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**2.** (1/29)</div>
 <div class="topic">Floating point arithmetic, stability/conditioning</div>
 <div class="reading">GC5, GC6, N4, N5, N6 </div>
