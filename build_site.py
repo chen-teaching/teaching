@@ -28,7 +28,7 @@ def build_html(file_name):
     #os.system(f'pandoc -o {file_name}.pdf src/{file_name}.md')
 
 
-build_html('index')
-build_html('mathstats_f2022/index')
-build_html('mathstats_f2022/syllabus')
+#build_html('index')
+build_html('na_s2023/index')
+build_html('na_s2023/syllabus')
 

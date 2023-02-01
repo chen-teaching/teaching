@@ -16,19 +16,19 @@ There is no prerequisite for coding.
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: M,W 3:30-4:50PM; JABS 775B  
-**Office Hours**: M 5:00-6:00PM, Tu 3:30-4:30PM; 370 Jay Street Floor 11
+**Office Hours**: M,W 5:00-6:00PM; 370 Jay Street Floor 11
 
 
 **Teaching Assistant**: Fanghe (Athena) Liu  
-**Recitation**: F 2:00-3:20PM; RGSH 325  
-**Office Hours**: TBD 
+**Recitation**: F 2:00-3:20PM; RGSH 325
+**Office Hours**: F 3:40-4:40PM; 2 Metrotech Floor 8 
 
 
 [**Syllabus**](./syllabus.html)  
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
-[**Course notes (last update: Jan 23)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
+[**Course notes (last update: Jan 31)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
 
 ## Schedule
 
