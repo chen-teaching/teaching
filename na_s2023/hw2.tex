@@ -1,0 +1,280 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Homework 2\hfill Numerical Analysis Spring 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 02/16 at 11:59pm on \href{https://www.gradescope.com/courses/487363/}{Gradescope}.
+        \item Write the names of anyone you work with on the top of your assignment. If you worked alone, write that you worked alone.
+        \item Show your work.
+        \item Include all code you use as copyable \verb|monospaced| text in the PDF (i.e. not as a screenshot).
+        \item Do not put the solutions to multiple problems on the same page.
+        \item Tag your responses on gradescope. Each page should have a \emph{single} problem tag. Improperly tagged responses will not receive credit.
+\end{itemize}
+    
+\vspace{2em}
+
+\begin{problem}
+    Consider the problem of evaluating the function $f:\mathbb{R}\to\mathbb{R}$ on some domain $D \subset \mathbb{R}$.
+    We can formalize our definition of condition number of $f$ at an input $x$ as
+    \begin{equation*}
+        \kappa(f,x) = \lim_{\tilde{x} \to x} \frac{|f(\tilde{x}) - f(x)|}{|\tilde{x}-x|}.
+    \end{equation*}
+
+    \begin{enumerate}
+        \item Suppose $f(x)$ is differentiable at $x$. 
+            How does $\kappa(f,x)$ relate to $f'(x)$?
+        \item Let $f(x) = \sqrt{x}$.
+            What is $\kappa(f,4)$? Show $\kappa(f,0) = \infty$.
+        \item Suppose $g(x) = 1000 f(x)$. How do $\kappa(f,x)$ and $\kappa(g,x)$ relate?
+        \item Suppose $g(x) = f(x)+1000$. How do $\kappa(f,x)$ and $\kappa(g,x)$ relate?
+        \item Suppose $g(x) = f(x-1000)$. How do $\kappa(f,x)$ and $\kappa(g,x+1000)$ relate?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+We can also define a ``relative'' condition number
+    \begin{equation*}
+        \kappa_{\textup{rel}}(f,x) = \lim_{\tilde{x} \to x} \frac{|f(\tilde{x}) - f(x)|/|f(x)|}{|\tilde{x}-x| / |x|}.
+    \end{equation*}
+
+    \begin{enumerate}
+    \item Suppose $g(x) = 1000 f(x)$. How do $\kappa_{\textup{rel}}(f,x)$ and $\kappa_{\textup{rel}}(g,x)$ relate?
+    \item Suppose $g(x) = f(x)+1000$. How do $\kappa_{\textup{rel}}(f,x)$ and $\kappa_{\textup{rel}}(g,x)$ relate?
+    \item Suppose $g(x) = f(x-1000)$. How do $\kappa_{\textup{rel}}(f,x)$ and $\kappa_{\textup{rel}}(g,x+1000)$ relate?
+    \item Think about the implications of your responses to these problems, and then describe a real-life situation in which it makes more sense to use the relative condition number than the regular condition number.
+
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+Describe whether the following problems/tasks are well-conditioned or not. 
+    Justify each of your responses.
+
+    \begin{enumerate}
+         \item Problem/task: You are given a vector $[x_1, x_2]$ and must compute the solution $[z_1, z_2]$ to the linear system of equations
+            \begin{equation*}
+                 2.3z_1 − 1.01z_2 = x_1 
+                 ,\qquad 
+                 2.31 z_1 − 1.00 z_2= x_2.
+            \end{equation*}
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+                $[1,2]$ & $[30.816,69.184]$ \\
+                $[1,1]$ & $[0.30211,-0.302115]$ \\ 
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+        \item Problem/task: You are given function $h:[-1,1]\to \mathbb{R}$ and must return $\int_{-1}^{1} g(s) \d{s}$. Here you should interpret $\tilde{h} \approx h$ to mean $\tilde{h}(s) \approx h(s)$ for all $s\in[-1,1]$.
+
+
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+                $h(s) = 1$ & 2 \\
+                $h(s) = s^2$ & 2/3 \\
+                $h(s) = \sin(s)$ & 0 \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+\clearpage
+
+
+        \item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a color image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+            \clearpage
+        \item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a greyscale image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+        
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day_gs.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night_gs.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+            Images from:
+            \href{https://www.youtube.com/watch?v=yhCAWZlv_Sc}{Brooklyn 4K - Night Drive}
+            and \href{https://www.youtube.com/watch?v=eyu0d1x5TMs}{Jazz New York City Drive}
+
+    \end{enumerate}
+\end{problem}
+\clearpage
+
+\begin{problem}
+Consider the problem of adding $n$ numbers. 
+That is $f(x_1, \ldots, x_n) = x_1 + x_2 + \cdots + x_n$. 
+
+There are many ways we could implement an algorithm for this problem. Perhaps the simplest is
+\begin{lstlisting}
+import numpy as np
+
+def add_list(x,n):
+    s = np.zeros(0,dtype=x.dtype)
+    for i in range(n):
+        s = s + x[i]
+    return s
+\end{lstlisting}
+
+Consider $x = [10^{8},1,1,\ldots, 1]$ for $n=34412$.
+We can set this problem up as
+\begin{lstlisting}
+n = 34412
+x  = np.ones(n,dtype=np.float32)
+x[0] = 1*10**8
+
+add_list(x,n)
+\end{lstlisting}
+
+Note here we are using 32 bit floating point arithmetic throughout. 
+
+    \begin{enumerate}
+        \item
+            What is the correct answer to this problem, and what does the algorithm output?
+
+        \item Suppose instead we implement an algorithm
+\begin{lstlisting}
+def add_list_sorted(x,n):
+    z = np.sort(x)
+    s = np.array(0,dtype=x.dtype)
+    for i in range(n):
+        s = s + z[i]
+    return s
+\end{lstlisting}
+    What is the output of \lstinline{add_list_sorted(x,n)}?
+
+\item Explain why the two algorithms have different outputs.
+    \end{enumerate}
+
+
+\clearpage
+\begin{problem}
+
+    In class (and the notes) we saw that our impelemntation of a triangular solved was faster than numpy's \lstinline{np.linalg.solve}.
+
+    Scipy has a solver \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_triangular.html}{\lstinline{sp.linalg.solve_triangular}} for triangular systems which uses LAPACK's triangular solver.
+
+    Add this solver to the runtime comparison of \lstinline{np.linalg.solve} and our triangular solver in Chapter 7 of the notes (code is online in \href{https://drive.google.com/drive/u/0/folders/17mCJ0l6Sc4sKMXJPEklNQuDfrS6X4jcC}{Google Drive}).
+    
+    Include the new figure showing the runtime scaling of all three algorithms.
+    How does scipy's triangular solver compare compare?
+
+    Remember to include your code as well as the figure.
+
+    Note also that the timings don't work that well in colab, so it is preferable to run locally if possible.
+
+\end{problem}
+\end{problem}
+
+\end{document}

@@ -20,7 +20,7 @@ There is no prerequisite for coding.
 
 
 **Teaching Assistant**: Fanghe (Athena) Liu  
-**Recitation**: F 2:00-3:20PM; RGSH 325
+**Recitation**: F 2:00-3:20PM; RGSH 325  
 **Office Hours**: F 3:40-4:40PM; 2 Metrotech Floor 8 
 
 
@@ -52,17 +52,17 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="hw">Intro Survey [[pdf]](./intro_survey.pdf) [[tex]](./intro_survey.tex) (due 1/25)</div>
 </div>
 
-<div class="week current">
+<div class="week">
 <div class="label">**2.** (1/29)</div>
 <div class="topic">Floating point arithmetic, stability/conditioning</div>
 <div class="reading">GC5, GC6, N4, N5, N6 </div>
 <div class="hw">HW1 (due 2/02) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**3.** (2/05)</div>
-<div class="topic">Solving structured linear systems, Gauss Elimination</div>
-<div class="reading">GC7.2, N7, N8</div>
+<div class="topic">Rounding error analysis, Solving structured linear systems</div>
+<div class="reading">GC7.2</div>
 <div class="hw">quiz 1 (2/06)</div>
 </div>
 
@@ -70,7 +70,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**4.** (2/12)</div>
 <div class="topic">LU / PLU / Gaussian elimination</div>
 <div class="reading">GC7.2, N8</div>
-<div class="hw">HW 2 (2/16)</div>
+<div class="hw">HW 2 (2/16) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 
 <div class="week">
