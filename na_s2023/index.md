@@ -28,7 +28,7 @@ There is no prerequisite for coding.
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
-[**Course notes (last update: Jan 31)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
+[**Course notes (last update: Feb 5)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
 
 ## Schedule
 
@@ -48,14 +48,14 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="week">
 <div class="label">**1.** (1/22)</div>
 <div class="topic">Intro to numerical analysis</div>
-<div class="reading">syllabus, GC1, GC2, N1-N4 </div>
+<div class="reading">syllabus, GC1, GC2, N1-N4, [[ws1]](./ws1.pdf)</div>
 <div class="hw">Intro Survey [[pdf]](./intro_survey.pdf) [[tex]](./intro_survey.tex) (due 1/25)</div>
 </div>
 
 <div class="week">
 <div class="label">**2.** (1/29)</div>
 <div class="topic">Floating point arithmetic, stability/conditioning</div>
-<div class="reading">GC5, GC6, N4, N5, N6 </div>
+<div class="reading">GC5, GC6, N4, N5, N6, [[ws2]](./ws2.pdf)</div>
 <div class="hw">HW1 (due 2/02) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
