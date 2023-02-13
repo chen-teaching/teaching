@@ -28,7 +28,7 @@ There is no prerequisite for coding.
 [**Edstem discussion**](https://edstem.org/us/courses/34528/)  
 [**Gradescope**](https://www.gradescope.com/courses/487363)  
 
-[**Course notes (last update: Feb 5)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
+[**Course notes (last update: Feb 13)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
 
 ## Schedule
 
@@ -59,14 +59,14 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="hw">HW1 (due 2/02) [[pdf]](./hw1.pdf) [[tex]](./hw1.tex)</div>
 </div>
 
-<div class="week current">
+<div class="week">
 <div class="label">**3.** (2/05)</div>
 <div class="topic">Rounding error analysis, Solving structured linear systems</div>
 <div class="reading">GC7.2</div>
 <div class="hw">quiz 1 (2/06)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**4.** (2/12)</div>
 <div class="topic">LU / PLU / Gaussian elimination</div>
 <div class="reading">GC7.2, N8</div>

@@ -221,7 +221,7 @@ There are many ways we could implement an algorithm for this problem. Perhaps th
 import numpy as np
 
 def add_list(x,n):
-    s = np.zeros(0,dtype=x.dtype)
+    s = np.zeros(1,dtype=x.dtype)
     for i in range(n):
         s = s + x[i]
     return s
@@ -247,7 +247,7 @@ Note here we are using 32 bit floating point arithmetic throughout.
 \begin{lstlisting}
 def add_list_sorted(x,n):
     z = np.sort(x)
-    s = np.array(0,dtype=x.dtype)
+    s = np.array(1,dtype=x.dtype)
     for i in range(n):
         s = s + z[i]
     return s
