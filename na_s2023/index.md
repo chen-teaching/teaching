@@ -62,7 +62,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="week">
 <div class="label">**3.** (2/05)</div>
 <div class="topic">Rounding error analysis, Solving structured linear systems</div>
-<div class="reading">GC7.2</div>
+<div class="reading">GC7.2, [[ws3]](./ws3.pdf)</div>
 <div class="hw">quiz 1 (2/06)</div>
 </div>
 
