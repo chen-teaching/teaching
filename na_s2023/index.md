@@ -69,7 +69,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="week current">
 <div class="label">**4.** (2/12)</div>
 <div class="topic">LU / PLU / Gaussian elimination</div>
-<div class="reading">GC7.2, N8</div>
+<div class="reading">GC7.2, N8, [[ws4]](./ws4.pdf)</div>
 <div class="hw">HW 2 (2/16) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 

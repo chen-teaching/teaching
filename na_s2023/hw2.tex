@@ -247,7 +247,7 @@ Note here we are using 32 bit floating point arithmetic throughout.
 \begin{lstlisting}
 def add_list_sorted(x,n):
     z = np.sort(x)
-    s = np.array(1,dtype=x.dtype)
+    s = np.zeros(1,dtype=x.dtype)
     for i in range(n):
         s = s + z[i]
     return s
