@@ -66,30 +66,30 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="hw">quiz 1 (2/06)</div>
 </div>
 
-<div class="week current">
+<div class="week">
 <div class="label">**4.** (2/12)</div>
 <div class="topic">LU / PLU / Gaussian elimination</div>
 <div class="reading">GC7.2, N8, [[ws4]](./ws4.pdf)</div>
-<div class="hw">HW 2 (2/16) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
+<div class="hw">HW2 (due 2/16) [[pdf]](./hw2.pdf) [[tex]](./hw2.tex)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**5.** (2/19)</div>
-<div class="topic">QR (no class 2/20)</div>
+<div class="topic">LU cont. (no class 2/20)</div>
 <div class="reading">GC7.6.2, N9</div>
 <div class="hw">quiz 2 (2/22)</div>
 </div>
 
 <div class="week">
 <div class="label">**6.** (2/26)</div>
-<div class="topic">QR cont. / SVD</div>
+<div class="topic">QR</div>
 <div class="reading">N10</div>
-<div class="hw">HW 3 (due 3/  02)</div>
+<div class="hw">HW3 (due 3/02)  [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
 <div class="week">
 <div class="label">**7.** (3/5)</div>
-<div class="topic">built in slack time</div>
+<div class="topic">SVD</div>
 <div class="reading">\ </div>
 <div class="hw">quiz 3 (3/06)</div>
 </div>
@@ -105,7 +105,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**8.** (3/19)</div>
 <div class="topic">Eigenvalue/vector</div>
 <div class="reading">N11</div>
-<div class="hw">HW 4 (due 03/23)</div>
+<div class="hw">HW4 (due 03/23)</div>
 </div>
 
 <div class="week">
@@ -119,7 +119,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**10.** (4/02)</div>
 <div class="topic">Root finding</div>
 <div class="reading">GC4</div>
-<div class="hw">HW 5 (due 4/06)</div>
+<div class="hw">HW5 (due 4/06)</div>
 </div>
 
 <div class="week">
@@ -133,7 +133,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**12.** (4/16)</div>
 <div class="topic">Polynomial approximation</div>
 <div class="reading">\ </div>
-<div class="hw">HW 6 (due 4/20)</div>
+<div class="hw">HW6 (due 4/20)</div>
 </div>
 
 <div class="week">
@@ -147,7 +147,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**14.** (4/30)</div>
 <div class="topic">Numerical Differentiation</div>
 <div class="reading">GC9 </div>
-<div class="hw">HW 7 (due 5/04)</div>
+<div class="hw">HW7 (due 5/04)</div>
 </div>
 
 <div class="week">
