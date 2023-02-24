@@ -77,14 +77,14 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**5.** (2/19)</div>
 <div class="topic">LU cont. (no class 2/20)</div>
 <div class="reading">GC7.6.2, N9</div>
-<div class="hw">quiz 2 (2/22)</div>
+<div class="hw">quiz 2 (2/22) </div>
 </div>
 
 <div class="week">
 <div class="label">**6.** (2/26)</div>
 <div class="topic">QR</div>
 <div class="reading">N10</div>
-<div class="hw">HW3 (due 3/02)  [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
+<div class="hw">quiz 2 bonus (due 02/27) [[pdf]](./q2_bonus.pdf) [[tex]](./q2_bonus.tex); HW3 (due 3/02)  [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
 <div class="week">

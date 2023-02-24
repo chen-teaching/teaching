@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{float}
+\usepackage{tikz}
+
+\usepackage{booktabs}
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Quiz 2 (bonus)\hfill Numerical Analysis Spring 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+\vspace{.25em} 
+
+Answer the following questions. 
+You can discuss with others, but you must write up your solutions alone.
+Earning full points on this assignment will result in increasing your quiz 2 score by 7 points (with a maximum of 100\%).
+
+\vspace{2.5em}
+\begin{problem}
+    Let $\mathbb{F}$ denote some discrete set of numbers, and suppose that for some $\epsilon>0$ the function $\operatorname{rd}:\mathbb{R} \to \mathbb{F}$ satisfies
+    \[
+        |x - \operatorname{rd}(x)|< \epsilon |x|
+        ,\qquad \forall x\in\mathbb{R}.
+    \]
+
+    Find the largest value of $\epsilon$ for which we can guarantee
+    $\operatorname{rd}(10^5+1) \neq \operatorname{rd}(10^5)$. 
+
+\end{problem}
+
+\vspace{2em}
+\begin{problem}
+    Consider the following problem/task: You are given a differentiable function $h:[-1,1]\to \mathbb{R}$ and must return the length 2 vector $[h'(0),\int_{-1}^{1} h(s) \d{s}]$.
+
+            Example inputs/outputs:\vspace{-.5em}
+            \begin{center}
+                \begin{tabular}{ccc}
+            \toprule
+                    input && solution \\ \midrule
+                    $h(s) = 1$ && $[0,2]$ \\
+                    $h(s) = s^2+2s$ && $[2,2/3]$ \\
+                    $h(s) = \sin(s)$ && $[1,0]$ \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+    Define two inputs $h$ and $\tilde{h}$ as near if $\operatorname{dist}(h,\tilde{h}):=  \int_{-1}^{1} |h(s) - \tilde{h}(s)| \d{s} $ is small.
+
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Give a reasonable mathematical definition for the condition number of this problem at an input $h$. Your definition should be specific to this particular problem/task, not a generic answer.
+
+        \item Decide whether this problem is well-conditioned or not. If it is, explain why. If it is not, provide an example showing that it is not (with justification). 
+    \end{enumerate}
+
+\end{problem}
+
+
+
+
+\end{document}
