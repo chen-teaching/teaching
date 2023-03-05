@@ -80,18 +80,18 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="hw">quiz 2 (2/22) </div>
 </div>
 
-<div class="week current">
+<div class="week">
 <div class="label">**6.** (2/26)</div>
 <div class="topic">QR</div>
 <div class="reading">N10</div>
-<div class="hw">quiz 2 bonus (due 02/27) [[pdf]](./q2_bonus.pdf) [[tex]](./q2_bonus.tex); HW3 (due 3/02)  [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
+<div class="hw">quiz 2 bonus (due 02/27) [[pdf]](./q2_bonus.pdf) [[tex]](./q2_bonus.tex); HW3 (due 3/02) [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**7.** (3/5)</div>
 <div class="topic">SVD</div>
 <div class="reading">\ </div>
-<div class="hw">quiz 3 (3/06)</div>
+<div class="hw">quiz 3 (3/06) [[online]](https://www.gradescope.com/courses/487363/assignments/2704691)</div>
 </div>
 
 <div class="week">
@@ -105,7 +105,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**8.** (3/19)</div>
 <div class="topic">Eigenvalue/vector</div>
 <div class="reading">N11</div>
-<div class="hw">HW4 (due 03/23)</div>
+<div class="hw">HW4 (due 03/23) [[pdf]](./hw4.pdf) [[tex]](./hw4.tex)</div>
 </div>
 
 <div class="week">

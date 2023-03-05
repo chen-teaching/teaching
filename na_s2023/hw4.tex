@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Homework 4\hfill Numerical Analysis Spring 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 03/16 at 11:59pm on \href{https://www.gradescope.com/courses/487363/}{Gradescope}.
+        \item Write the names of anyone you work with on the top of your assignment. If you worked alone, write that you worked alone.
+        \item Show your work.
+        \item Include all code you use as copyable \verb|monospaced| text in the PDF (i.e. not as a screenshot).
+        \item Do not put the solutions to multiple problems on the same page.
+        \item Tag your responses on gradescope. Each page should have a \emph{single} problem tag. Improperly tagged responses will not receive credit.
+\end{itemize}
+    
+\vspace{2em}
+
+\begin{problem}
+
+    \begin{enumerate}
+        \item
+            Let $x_1, \ldots, x_n$ be uniformly space points from $-1$ to $1$.
+            You can generate this in code by \lstinline{x = np.linspace(-1,1,n)}.
+
+            For $n=100$, construct the matrix
+            \[
+                \vec{A} = 
+                \begin{bmatrix}
+                    (x_1)^0 & (x_1)^1 & \cdots & (x_1)^4 \\
+                    (x_2)^0 & (x_2)^1 & \cdots & (x_2)^4 \\ 
+                    \vdots & \vdots & & \vdots \\
+                    (x_n)^0 & (x_n)^1 & \cdots & (x_n)^4 \\
+                \end{bmatrix}
+            \]
+        \item 
+            Plot each column of $\vec{A}$ against $\vec{x} = [x_1, \ldots, x_n]$ on a single plot. 
+            Label each curve. 
+            
+            If your matrix $\vec{A}$ is a stored as a python array \lstinline{A}, you can plot the $i$-th column using \lstinline{plt.plot(x,A[:,i])}.
+
+        \item Apply a QR factorization to $\vec{A}$ to obtain $\vec{Q}\vec{R}$.
+
+            On a seperate plot from (b), plot each of the the columns of $\vec{Q}$.
+
+        \item 
+            Explain how each column of $\vec{Q}$ relates to $\vec{x}$.
+            In particular, write down the polynomials $p_0(x)$, $p_1(x)$, \ldots, $p_4(x)$ such that 
+            \[
+                \vec{Q} = 
+                \begin{bmatrix}
+                    p_0(x_1) & p_1(x_1) & \cdots & p_4(x_1) \\
+                    p_0(x_2) & p_1(x_2) & \cdots & p_4(x_2) \\ 
+                    \vdots & \vdots & & \vdots \\
+                    p_0(x_n) & p_1(x_n) & \cdots & p_4(x_n) \\
+                \end{bmatrix}.
+            \]
+        \item Change $n$ from $100$ to $1000$. 
+            What do you notice about the columns of $\vec{Q}$; in particular, about the polynomials $p_0$, $p_2$, \ldots, $p_4$?
+            
+            What would happen as $n\to\infty$?
+    \end{enumerate}
+
+\end{problem}
+
+\clearpage
+\begin{problem}
+    Let \[
+        \vec{A} = 
+        \begin{bmatrix}
+        \frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\
+        \frac{1}{2} & \frac{9}{2} & -\frac{1}{2} \\
+        -\frac{1}{2} & \frac{1}{2} & \frac{3}{2} \\
+        -\frac{1}{2} & -\frac{9}{2} & \frac{5}{2} \\
+        \end{bmatrix}
+    \]
+    \begin{enumerate}
+        \item Compute the QR factorization of $\vec{A}$ using the regular Gram-Schmidt algorithm.
+        Show your work at each step.
+        \item Compute the QR factorization of $\vec{A}$ using the modified Gram-Schmidt algorithm.
+        Show your work at each step.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Recall the regular Gram--Schmidt projection of $\vec{a}$ onto the orthogonal compliment of the columns $\vec{u}_1, \ldots, \vec{u}_j$ of $\vec{U}$ is
+    \[
+        \operatorname{proj}_{\vec{U}^\perp}(\vec{a}) = \vec{a} - \vec{u}_1 (\vec{u}_1^\T \vec{a}) - \ldots - \vec{u}_1 (\vec{u}_1^\T \vec{a}).
+    \]
+    \begin{enumerate}
+        \item Write this in terms of matrix-vector products with $\vec{U}$.
+        \item Matrix products are associative, so the order you multiply things above does not impact the solution. 
+            However, number of flops does depend on the order.
+
+            Describe the more efficient ordering, and give the number of floating point operations required.
+
+        \item Implement a new version of \lstinline{proj_perp_GS(U,a)} using (b).
+
+        \item Compare the original \lstinline{proj_perp_GS}, the modified \lstinline{proj_perp_MGS} and your new implementation.
+
+            In particular, let us generate an arbitrary orthogonal matrix $\vec{U}$ and vector $\vec{a}$.
+\begin{lstlisting}
+n = 2000
+U,_ = np.linalg.qr(np.random.randn(n,500))
+a = np.random.randn(n)
+
+ks = [1,50,100,150,200,250,300,350,400,450,500]
+\end{lstlisting}
+
+            For each of the $k$ values above, time how long it takes to compute the orthogonal projection of $\vec{a}$ onto the first $k$ columns of $\vec{U}$.
+            The matrix with the first $k$ columns of $\vec{U}$ is \lstinline{U[:,:k]}.
+
+            Plot all the timings on the same plot, labeling each curve and the axes.
+
+            Note that because of noise, it will help to average together several runs for each value of $k$. 
+
+            Optionally, you can repeat this and make new plots for different values of $n$.
+
+        \item What do you observe? How can you explain this, given that all of the algorithms use rough the same number of floating point operations?
+
+
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}
