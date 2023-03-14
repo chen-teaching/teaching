@@ -76,7 +76,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="week">
 <div class="label">**5.** (2/19)</div>
 <div class="topic">LU cont. (no class 2/20)</div>
-<div class="reading">GC7.6.2, N9</div>
+<div class="reading">GC7.6.2, N9, [[ws5]](./ws5.pdf)</div>
 <div class="hw">quiz 2 (2/22) </div>
 </div>
 
@@ -87,14 +87,14 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="hw">quiz 2 bonus (due 02/27) [[pdf]](./q2_bonus.pdf) [[tex]](./q2_bonus.tex); HW3 (due 3/02) [[pdf]](./hw3.pdf) [[tex]](./hw3.tex)</div>
 </div>
 
-<div class="week current">
+<div class="week">
 <div class="label">**7.** (3/5)</div>
 <div class="topic">SVD</div>
-<div class="reading">\ </div>
+<div class="reading">[[ws6]](./ws6.pdf)</div>
 <div class="hw">quiz 3 (3/06) [[online]](https://www.gradescope.com/courses/487363/assignments/2704691)</div>
 </div>
 
-<div class="week">
+<div class="week current">
 <div class="label">**--** (3/12)</div>
 <div class="topic">SPRING BREAK</div>
 <div class="reading">\ </div>
