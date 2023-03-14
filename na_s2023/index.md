@@ -30,6 +30,10 @@ There is no prerequisite for coding.
 
 [**Course notes (last update: Feb 13)**](https://drive.google.com/drive/folders/1KCqfpPS0vBOovHyvVdJXieG8LgY6xPdj?usp=share_link)
 
+
+[**Final project details**](./project.pdf)
+
+
 ## Schedule
 
 N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
@@ -112,7 +116,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**9.** (3/26)</div>
 <div class="topic">Least squares, conditioning of linear systems</div>
 <div class="reading">GC7.6, GC7.4, N12, N13</div>
-<div class="hw">quiz 4 (03/27)</div>
+<div class="hw">quiz 4 (03/27), project proposal (due 3/30)</div>
 </div>
 
 <div class="week">
@@ -140,7 +144,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**13.** (4/23)</div>
 <div class="topic">Numerical Integration</div>
 <div class="reading">GC10</div>
-<div class="hw">quiz 6 (4/24)</div>
+<div class="hw">quiz 6 (4/24), Final Report (4/27)</div>
 </div>
 
 <div class="week">
@@ -154,7 +158,7 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 <div class="label">**15.** (5/07)</div>
 <div class="topic">Review</div>
 <div class="reading">\ </div>
-<div class="hw">quiz 7 (5/08), Final Presentations (5/?)</div>
+<div class="hw">quiz 7 (5/08), Final Presentations (5/15)</div>
 </div>
 
 
