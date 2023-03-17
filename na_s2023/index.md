@@ -107,15 +107,15 @@ N=Course notes, GC = Greenbaum & Chartier. Numbers are chapter \#s.
 
 <div class="week">
 <div class="label">**8.** (3/19)</div>
-<div class="topic">Eigenvalue/vector</div>
-<div class="reading">N11</div>
+<div class="topic">Norms, conditioning of linear systems, least squares</div>
+<div class="reading">N11, N12</div>
 <div class="hw">HW4 (due 03/23) [[pdf]](./hw4.pdf) [[tex]](./hw4.tex)</div>
 </div>
 
 <div class="week">
 <div class="label">**9.** (3/26)</div>
-<div class="topic">Least squares, conditioning of linear systems</div>
-<div class="reading">GC7.6, GC7.4, N12, N13</div>
+<div class="topic">Eigenvalue/vector</div>
+<div class="reading">GC7.6, GC7.4, N13</div>
 <div class="hw">quiz 4 (03/27), project proposal (due 3/30)</div>
 </div>
 
