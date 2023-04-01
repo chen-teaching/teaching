@@ -134,7 +134,7 @@ This result sin a black and white image.
     \begin{enumerate}
         \item Randomized numerical linear algebra (RandNLA) is the study of the use of randomness in numerical linear algebra algorithms. 
             One of the most famous randNLA algorithms is the randomized SVD.
-            A simple version can be described in several lines:
+            A simple version for approximating the SVD of a $m\times n$ matrix $\vec{A}$ can be described in several lines:
             \begin{itemize}
                 \item Choose a $n\times k$ matrix $\vec{R}$ with standard normal random entries
                 \item Compute $\vec{X} = \vec{A} \vec{R}$
@@ -143,7 +143,7 @@ This result sin a black and white image.
                 \item Return approximate SVD of $\vec{A}$: $(\vec{Q} \hat{\vec{U}}) \hat{\vec{\Sigma}} \hat{\vec{V}}^\T$  
             \end{itemize}
 
-            Implement this algorithm and time it for $k=100$. 
+            Implement this algorithm and time it for $k=100$ with the same matrix $\vec{A}$ as in problem 1.
             To generate the random matrix, you can use \lstinline{np.random.randn(n,k)}.
 
 
