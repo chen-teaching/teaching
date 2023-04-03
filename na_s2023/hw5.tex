@@ -110,7 +110,7 @@ Here we obtain $\vec{A}$ by averaging the red, green, and blue channels of the i
 This result sin a black and white image.
 
     \begin{enumerate}
-        \item Plot the image using \lstinline{np.imshow}.
+        \item Plot the image using \lstinline{plt.imshow}.
             You may want to use the colormap \texttt{'Greys\_r'} so that it looks like a greyscale image.
         \item
             Compute the reduced SVD of $\vec{A}$. 
@@ -152,7 +152,7 @@ This result sin a black and white image.
         
         \item 
             Make a plot of the rank $k=100$ truncated SVD (from problem 1) and the $k=100$ randomized SVD.
-            Show the relative errors $\|\vec{A} - (\vec{Q} \hat{\vec{U}})\hat{\vec{\Sigma}} \hat{\vec{v}}^\T \|_\F/\|\vec{A}\|_\F$ for each. 
+            Show the relative errors $\|\vec{A} - (\vec{Q} \hat{\vec{U}})\hat{\vec{\Sigma}} \hat{\vec{V}}^\T \|_\F/\|\vec{A}\|_\F$ for each. 
 
         \item Prove that $\vec{Q}\hat{\vec{U}}$ has orthonormal columns.
     \end{enumerate}
