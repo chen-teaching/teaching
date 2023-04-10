@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Homework 6\hfill Numerical Analysis Spring 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 04/20 at 11:59pm on \href{https://www.gradescope.com/courses/487363/}{Gradescope}.
+        \item Write the names of anyone you work with on the top of your assignment. If you worked alone, write that you worked alone.
+        \item Show your work.
+        \item Include all code you use as copyable \verb|monospaced| text in the PDF (i.e. not as a screenshot).
+        \item Do not put the solutions to multiple problems on the same page.
+        \item Tag your responses on gradescope. Each page should have a \emph{single} problem tag. Improperly tagged responses will not receive credit.
+\end{itemize}
+    
+\vspace{2em}
+
+\begin{problem}
+    Spend at least two hours working on your project prior to the 20th. 
+    Answer the following:
+    \begin{enumerate}
+        \item What is the current status of your project? 
+        \item What are the big tasks you have left to do before your project is done?
+        \item What is your plan for completing the project in a timely manner?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Suppose $\vec{A}$ has SVD $\vec{A} = \vec{U} \vec{\Sigma} \vec{V}^\T$ where 
+    \[
+        \vec{U} = 
+        \begin{bmatrix}
+            |&|&&|\\
+            \vec{u}_1 & \vec{u}_2 & \cdots & \vec{u}_n\\
+            |&|&&|\\
+        \end{bmatrix},
+        \qquad
+        \vec{\Sigma} = \begin{bmatrix} \sigma_1 \\ &\sigma_2 \\ &&\ddots \\ &&& \sigma_n\end{bmatrix}
+        ,\qquad
+        \vec{V}
+    =   \begin{bmatrix}
+            |&|&&|\\
+            \vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_n\\
+            |&|&&|\\
+        \end{bmatrix}. 
+    \]
+    \begin{enumerate}
+        \item Show that $\vec{v}_i$ is an eigenvector of $\vec{A}^\T \vec{A}$. What is the corresponding eigenvalue?
+
+        \item
+
+    Define the block matrix:
+    \[
+        \vec{B} = 
+        \begin{bmatrix} \vec{0}& \vec{A} \\ 
+            \vec{A}^\T & \vec{0}
+        \end{bmatrix}.
+    \]
+    Show that 
+    \[
+        \vec{x} = \begin{bmatrix} \vec{u}_i \\ \vec{v}_i \end{bmatrix}
+    \]
+    is an eigenvector of $\vec{B}$.
+    What is the corresponding eigenvalue?
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+Suppose $\vec{A}$ has eigenvalue decomposition:
+\[
+    \vec{A} 
+    = 
+    \vec{V}
+    \begin{bmatrix}
+        -4 \\ & -1 \\ && 2 \\ &&& 3
+    \end{bmatrix}
+    \vec{V}^{-1}
+    ,\qquad
+    \vec{V} = \begin{bmatrix} |&|&|&| \\ \vec{v}_1 & \vec{v}_2 & \vec{v}_3 & \vec{v}_4 \\ |&|&|&| \end{bmatrix}
+    \]
+where the $\vec{v}_i$ are all orthonormal.
+
+    Suppose we run inverse power method with shift $c$ with $\vec{x} = \vec{v}_1 + \vec{v}_2 + \vec{v}_3 + \vec{v}_4$; that is, power method on $(\vec{A} - c\vec{I})^{-1}$.
+
+    If $c\in(0.5,2.5)$, then we will converge to $\vec{v}_3$, the eigenvector corresponding to eigenvalue $2$.
+    The rate of converge is
+    \[
+        \rho = \left| \frac{\lambda_1((\vec{A}-c\vec{I})^{-1})}{\lambda_2((\vec{A}-c\vec{I})^{-1})} \right|,
+    \]
+    where $\lambda_1((\vec{A}-c\vec{I})^{-1})$ and $\lambda_2((\vec{A}-c\vec{I})^{-1})$ are the largest and second largest eigenvalues of $(\vec{A} - c\vec{I})^{-1}$ in magnitude respectively.
+
+
+    \begin{enumerate}
+        \item Plot $\rho$ as a function of $c$ for $c$ in the range $(0.5, 2.5)$.
+
+        \item Let $\vec{y}_k$ be the output of $k$-steps of the power method, and assume $\|\vec{v}_3 - \vec{y}_k\|_2 \leq \rho^k$.
+            
+            For $\epsilon = 10^{-1}$, make a plot showing how large $k$ has to be so that $\|\vec{v}_3 - \vec{y}_k\|_2 < \epsilon$ for the values of $c$ in the range $(0.5,2.5)$.
+            Add more a new line to this plot for each $\epsilon = 10^{-2}, 10^{-5}, 10^{-10}$ plot. Label all the lines.
+
+            
+
+    \end{enumerate}
+
+
+
+
+\end{problem}
+
+\begin{problem}
+For the same matrix as in Problem 3, suppose we run power method with a starting vector:
+\[
+\vec{x} = \vec{V}\begin{bmatrix}0\\1\\1\\1\end{bmatrix}.
+\]
+
+    \begin{enumerate}
+        \item Find a vector $\vec{z}$ so that $\vec{A}^k \vec{x} = \vec{V} \vec{z}$.
+        
+        \item What vector does $\vec{z} / \|\vec{z}\|$ converge to as $k\to\infty$?
+
+        \item What vector does $\vec{A}^k\vec{v} / \|\vec{A}^k\vec{v}\|$ converge to as $k\to\infty$?
+
+        \item Why did we get something different than on worksheet 8, where power method converged to a multiple of $\vec{v}_1$?
+    
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}
