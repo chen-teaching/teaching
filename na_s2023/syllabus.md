@@ -54,7 +54,7 @@ These thresholds may be adjusted based on the final grades, but they will only b
 
 Active participation in the course is expected.
 This will be evaluated through participation points.
-If you earn between 20-30 points, you particpation grade will be max(\#points/2,15)%. 
+If you earn between 20-30 points, you particpation grade will be min(\#points/2,15)%. 
 If you earn 10-19.99 points you will receive 5%. Less than 10 points will receive 0%.
 
 There are many ways in which you can participate to earn you participation points. 
