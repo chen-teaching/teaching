@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 2\hfill Numerical Analysis Fall 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 09/29 at 5:00pm on \href{https://www.gradescope.com/courses/570477/}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2023/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{5em}
+
+
+
+\begin{problem}
+Consider the matrix 
+    \[
+        \vec{A} 
+        = 
+        \begin{bmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            -2 & 0 \\ 0 & 1 \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            \cos \pi/4 & -\sin \pi/4 \\
+            \sin \pi/4 & \cos \pi/4
+        \end{bmatrix}
+    \]
+    \begin{enumerate}
+        \item Find a SVD of $\vec{A}$. Hint: think about why the given factorization is not an SVD.
+        \item Draw what $\vec{A}$ does to the following points (here a point is anything shown in black, and the dotted lines represent the x and y axes.):
+            
+        % these images are online on the google drive
+        \includegraphics[scale=.4]{car.pdf}
+        \hfill
+        \includegraphics[scale=.4]{nyu.pdf}
+    
+    \end{enumerate}
+
+\end{problem}
+
+\hfill
+
+\begin{problem}~
+    \begin{enumerate}
+        \item 
+            Suppose $\vec{X}$ is a $n\times m$ matrix. 
+            How does $\|\vec{X}\|_\F$ relate to $\|\vec{X}^\T\|_\F$?
+        \item 
+            Suppose $\vec{X}$ is a $n\times m$ matrix. 
+            Write $\|\vec{X}\|_\F$ in terms of the column-norms $\|[\vec{X}]_{:,i}\|_2$.
+        \item Suppose $\vec{X}$ is a $n\times m$ matrix and $\vec{U}$ is a $n\times n$ orthogonal matrix $(\vec{U}^\T \vec{U} = \vec{I})$.
+            Show that $\|\vec{U} \vec{X}\|_\F = \| \vec{X} \|_\F$. 
+            Hint: use (b) and show that $\|\vec{U} \vec{x}\|_2 = \|\vec{x}\|_2$ for any vector $\vec{x}$.
+        \item Let $\vec{A}$ be a $n\times m$ matrix with SVD $\vec{A} = \vec{U}\vec{\Sigma}\vec{V}^\T$ and assume $n\geq m$.
+            Prove that $\|\vec{A}\|_\F = \sqrt{\sigma_1^2 + \cdots + \sigma_m^2}$, where $\sigma_i$ are the singular values of $\vec{A}$
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+
+    Download the numpy data file from this link: \url{https://drive.google.com/file/d/18Xf0029XXm3ENWfe3Z0a--Cf6tjyCViz/view?usp=drive_link}
+
+Use the following code to import the file into numpy.
+
+\begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
+
+im = np.load('change this path/CIMS.npy')
+\end{lstlisting}
+
+    If you are using google colab, you can copy the \lstinline{CIMS.npy} file to your own drive and then 
+\begin{lstlisting}
+from google.colab import drive
+drive.mount('/content/gdrive')
+
+im = np.load('gdrive/MyDrive/change this path/CIMS.npy')
+\end{lstlisting}
+
+In both cases, forma matrix from the image data.
+\begin{lstlisting}
+A = np.mean(im,axis=2)
+\end{lstlisting}
+Here we obtain $\vec{A}$ by averaging the red, green, and blue channels of the image.
+This results in a black and white image.
+
+    \begin{enumerate}
+        \item Plot the image using \lstinline{plt.imshow}.
+            You may want to use the colormap \texttt{'Greys\_r'} so that it looks like a greyscale image.
+        \item
+            Compute the reduced SVD of $\vec{A}$. 
+            You can use \lstinline{full_matrices=False} to get the reduced SVD.
+            This will be much faster than computing the full SVD.
+
+            For each $k=1,10,100,200$, make a plot of the best rank-$k$ approximation $\vec{A}_k$ to $\vec{A}$ (i.e. via truncated SVD).
+            Label each plot with the rank $k$ as well as the relative error $\| \vec{A} - \vec{A}_k \|_\F / \| \vec{A} \|_\F$
+        \item 
+            Remark on the quality of the plots. 
+            
+            How many numbers are required to store $\vec{A}$?
+            How many numbers are required to store the rank-$k$ truncated SVD (as a factorization)?
+    \end{enumerate}
+
+\end{problem}
+\clearpage
+
+\begin{problem}
+    Computing the SVD is expensive, but randomization can help us!
+    \begin{enumerate}
+        \item Randomized numerical linear algebra (RandNLA) is the study of the use of randomness in numerical linear algebra algorithms. 
+            One of the most famous randNLA algorithms is the randomized SVD.
+            A simple version for approximating the SVD of a $m\times n$ matrix $\vec{A}$ can be described in several lines:
+            \begin{itemize}
+                \item Choose a $n\times k$ matrix $\vec{R}$ with standard normal random entries
+                \item Compute $\vec{X} = \vec{A} \vec{R}$
+                \item Compute $\vec{Q},\_,\_ = \textsc{reduced-svd}(\vec{X})$
+                \item 
+                    $\hat{\vec{U}}, \hat{\vec{\Sigma}}, \hat{\vec{V}}^\T = \textsc{reduced-svd}(\vec{Q}^\T \vec{A})$: 
+                \item Return approximate SVD of $\vec{A}$: $(\vec{Q} \hat{\vec{U}}) \hat{\vec{\Sigma}} \hat{\vec{V}}^\T$  
+            \end{itemize}
+
+            Implement this algorithm with the same matrix $\vec{A}$ as in Problem 3.
+            To generate the random matrix, you can use \lstinline{np.random.randn(n,k)}.
+
+
+            Again make sure to use \lstinline{full_matrices=False} when computing the SVD of $\vec{Q}^\T \vec{A}$.
+            Compare this to long the whole randomized SVD took (all of the steps) against the time to compute the exact SVD in the previous problem.
+       
+        \item Prove that the factors $\vec{Q}\hat{\vec{U}}$, $\hat{\vec{\Sigma}}$ and $\hat{\vec{V}}^\T$ have the same properties as a SVD; i.e. $\vec{Q}\hat{\vec{U}}$ and $\hat{\vec{V}}$ have orthonormal columns and $\hat{\vec{\Sigma}}$ is diagonal with non-negative entires.
+        \item 
+            Make a plot of the rank $k=100$ truncated SVD (from problem 1) and the $k=100$ randomized SVD.
+            Show the relative errors $\|\vec{A} - (\vec{Q} \hat{\vec{U}})\hat{\vec{\Sigma}} \hat{\vec{V}}^\T \|_\F/\|\vec{A}\|_\F$ for each. 
+        \item How long did this algorithm take to run vs. the reduced SVD in problem 3? Why was it so much faster? Hint: what are the dimensions of the matrices which we take the SVD of using this approach?
+
+    \end{enumerate}
+\end{problem}
+
+\end{document}
