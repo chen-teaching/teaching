@@ -14,7 +14,7 @@ Linear algebra is a prerequisite, as much of numerical analysis is based on line
 **Instructor**: Tyler Chen  
 **Email**: tyler.chen@nyu.edu  
 **Class**: T, Th 12:30-1:45pm (WWH 201)  
-**Office Hours**: T 4:30-5:30pm, Th 8:30-9:25am (WWH905)
+**Office Hours**: T 4:30-5:30pm, F 8:30-9:25am (WWH905)
 
 
 **Teaching Assistant**: Marguerite Brown  
