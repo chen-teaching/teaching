@@ -1,0 +1,347 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 3\hfill Numerical Analysis Fall 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 10/13 at 5:00pm on \href{https://www.gradescope.com/courses/570477/}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2023/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+    For each problem, write down a matrix or matrices which performs the stated operations to a $3\times 4$ matrix.
+    Make sure to specify whether you should be applied on the left or right.
+
+    For reference, we will also show what the operation does to the following matrices:
+    \[
+        \vec{A} = 
+        \begin{bmatrix}
+            1 & 2 & 3 & 4 \\
+            5 & 6 & 7 & 8 \\
+            9 & 10 & 11 & 12
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} = 
+        \begin{bmatrix}
+            1 & 3& -2 & 0 \\
+            2 & -3 & 1 & 1 \\
+            2 & -2 & 5 & 4
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}
+        \item Extract the second column.
+            \[
+                \vec{A} \to \begin{bmatrix} 2 \\ 6 \\ 10 \end{bmatrix}
+                    ,\qquad
+                    \vec{B} \to \begin{bmatrix} 3 \\ -3 \\ -2 \end{bmatrix}
+            \]
+        \item Extract the second column and place it in the third column of a $3\times 3$ matrix of zeros.
+            \[
+                    \vec{A} \to \begin{bmatrix} 0&0&2 \\ 0&0&6 \\ 0&0&10 \end{bmatrix}
+                    ,\qquad
+                    \vec{B} \to \begin{bmatrix} 0&0&3 \\ 0&0&-3 \\ 0&0&-2 \end{bmatrix}
+            \]
+        \item Swap the second and third columns.
+    \[
+        \vec{A} \to 
+        \begin{bmatrix}
+            1 & 3 & 2 & 4 \\
+            5 & 7 & 6 & 8 \\
+            9 & 11 & 10 & 12
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to
+        \begin{bmatrix}
+            1 & -2 & 3& 0 \\
+            2 & 1 & -3 & 1 \\
+            2 & 5 & -2 & 4
+        \end{bmatrix}
+    \]
+    \item Sum up each column.
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            15 & 18 & 21 & 24 
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            5 & -2 & 4 & 5
+        \end{bmatrix}
+    \]
+    \item Swap the second and third columns, then sum up each column  (this one requires using two matrices).
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            15 & 21 & 18 & 24 
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            5 & 4 & -2 & 5
+        \end{bmatrix}
+    \]
+
+    \item Sum all the entries (this one requires using two matrices).
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            78
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            12
+        \end{bmatrix}
+    \]
+
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+
+    \begin{enumerate}
+        \item Prove that on a log-log plot, $n$ vs $n^k$ is a line. What is the slope?
+        \item What will the plot of $n$ vs $5n^2 + 3n + 1$ look like on a log-log plot when $x$ is large?
+        \item Prove that on a log-y plot, $n$ vs $\rho^n$ is a line. What is the slope?
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+
+    In chapter 9, we see our implementation of a triangular solved was faster than numpy's \lstinline{np.linalg.solve}.
+
+    Scipy has a solver \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_triangular.html}{\lstinline{sp.linalg.solve_triangular}} for triangular systems which uses LAPACK's triangular solver.
+
+    Add this solver to the runtime comparison of \lstinline{np.linalg.solve} and our triangular solver in Chapter 9 of the notes (all the code from the notes is online on the Google Drive).
+    
+    Include the new figure showing the runtime scaling of all three algorithms.
+    How does scipy's triangular solver compare compare?
+
+    Remember to include your code as well as the figure.
+
+    Note also that the timings don't work that well in colab, so it is preferable to run locally if possible.
+
+\end{problem}
+
+\begin{problem}
+Consider the problem of adding $n$ numbers. 
+That is $f(x_1, \ldots, x_n) = x_1 + x_2 + \cdots + x_n$. 
+
+There are many ways we could implement an algorithm for this problem. Perhaps the simplest is
+\begin{lstlisting}
+import numpy as np
+
+def add_list(x,n):
+    s = np.zeros(1,dtype=x.dtype)
+    for i in range(n):
+        s = s + x[i]
+    return s
+\end{lstlisting}
+
+Consider $x = [10^{8},1,1,\ldots, 1]$ for $n=34412$.
+We can set this problem up as
+\begin{lstlisting}
+n = 34412
+x  = np.ones(n,dtype=np.float32)
+x[0] = 1*10**8
+
+add_list(x,n)
+\end{lstlisting}
+
+Note here we are using 32 bit floating point arithmetic throughout. 
+
+    \begin{enumerate}
+        \item
+            What is the correct answer to this problem, and what does the algorithm output?
+
+        \item Suppose instead we implement an algorithm
+\begin{lstlisting}
+def add_list_sorted(x,n):
+    z = np.sort(x)
+    s = np.zeros(1,dtype=x.dtype)
+    for i in range(n):
+        s = s + z[i]
+    return s
+\end{lstlisting}
+    What is the output of \lstinline{add_list_sorted(x,n)}?
+
+\item Give a possible explication for why the two algorithms have different outputs.
+    \end{enumerate}
+
+\end{problem}
+
+
+\clearpage
+\begin{problem}
+Describe whether the following problems/tasks are well-conditioned or not. 
+    Justify each of your responses.
+
+    \begin{enumerate}
+         \item Problem/task: You are given a vector $[x_1, x_2]$ and must compute the solution $[z_1, z_2]$ to the linear system of equations
+            \begin{equation*}
+                 2.3z_1 − 1.01z_2 = x_1 
+                 ,\qquad 
+                 2.31 z_1 − 1.00 z_2= x_2.
+            \end{equation*}
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+                $[1,2]$ & $[30.816,69.184]$ \\
+                $[1,1]$ & $[0.30211,-0.302115]$ \\ 
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+        \item Problem/task: You are given function $h:[-1,1]\to \mathbb{R}$ and must return $\int_{-1}^{1} g(s) \d{s}$. 
+            We will use the norm $\|\tilde{h} - h\|_\infty := \max_{s\in[-1,1]} |\tilde{h}(x) - h(x)|$.
+
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+                $h(s) = 1$ & 2 \\
+                $h(s) = s^2$ & 2/3 \\
+                $h(s) = \sin(s)$ & 0 \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+\clearpage
+
+\item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a greyscale image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+        
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day_gs.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night_gs.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+\clearpage
+
+
+        \item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a color image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+       
+            Images from:
+            \href{https://www.youtube.com/watch?v=yhCAWZlv_Sc}{Brooklyn 4K - Night Drive}
+            and \href{https://www.youtube.com/watch?v=eyu0d1x5TMs}{Jazz New York City Drive}
+
+    \end{enumerate}
+\end{problem}
+
+\end{document}
