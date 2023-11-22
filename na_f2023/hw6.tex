@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 6\hfill Numerical Analysis Fall 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 12/1 at 5:00pm on \href{https://www.gradescope.com/courses/570477/}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2023/syllabus.html}{syllabus} 
+        \item This homework is worth 40 points (less than the usual 50 points)
+\end{itemize}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+    Spend at least two hours working on your project prior to the 20th. 
+    Answer the following:
+    \begin{enumerate}
+        \item What is the current status of your project? 
+        \item What are the big tasks you have left to do before your project is done?
+        \item What is your plan for completing the project in a timely manner?
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+
+This problem will illustrate that solving the normal equations is less stable than other approaches.
+
+\begin{enumerate}
+    \item 
+    For each $\kappa = 10^1,10^2,10^3 \ldots, 10^8$, construct a $500\times 100$ matrix $\vec{A}$ whose condition number is $\kappa$.
+        A simple way to do this is to generate $\vec{U}$ and $\vec{V}$ as random orthogonal matrices of size $m\times n$ and $n\times n$ and define $\vec{\Sigma}$ as a $n\times n$ diagonal matrix manually.
+    
+The following code gets you started, you just need to modify the line for the singular values \lstinline{s = ...}.
+\begin{lstlisting}
+m,n = 500,100
+U,_ = np.linalg.qr(np.random.randn(m,n))
+V,_ = np.linalg.qr(np.random.randn(n,n))
+s = #TODO
+    
+A = U@np.diag(s)@V.T
+\end{lstlisting}
+
+
+        Let $\vec{b}$ be the all ones vector, and compute the ``true'' solution to the least squares problem $\min_{\vec{x}} \| \vec{b} - \vec{A} \vec{x}\|_2$  by setting 
+    $\vec{x}_{\textup{true}} =  \vec{V} \vec{\Sigma}^{-1} \vec{U}^\T \vec{b}$.
+This can be done with the following code:
+\begin{lstlisting}
+b = np.ones(m)
+x_true = V@np.diag(1/s)@U.T@b
+\end{lstlisting}
+
+
+Now, compute the least squares solution via:
+\begin{itemize}
+    \item numpy's least squares solver \lstinline{np.linalg.lstsq}
+    \item a QR based approach with numpy's \lstinline{np.linalg.qr} and \lstinline{np.linalg.solve} or \lstinline{sp.linalg.solve_triangular}
+    \item Solving the normal equations with \lstinline{np.linalg.solve}
+\end{itemize}
+
+    For each of these three methods and each value of $\kappa$, record the relative error $\| \vec{x}_{\textup{method}} - \vec{x}_{\textup{true}} \|_2 / \| \vec{x}_{\textup{true}} \|_2$, where $\vec{x}_{\textup{method}}$ is the solution obtained by the given method.
+
+\item 
+    Make a log-log plot with the following five (labeled) curves:
+    \begin{itemize}
+        \item $\kappa$ vs $10^{-16} \kappa$
+        \item $\kappa$ vs $10^{-16} \kappa^2$
+        \item $\kappa$ vs relative error (for each of the three methods above)
+    \end{itemize}
+
+    Comment on what you observe about the plots. 
+    In particular, discuss how each method depends on $\kappa$ and what the relative errors would be if we did everything in exact arithmetic
+
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Suppose $\vec{A}$ has eigenvalue decomposition:
+\[
+    \vec{A} 
+    = 
+    \vec{V}
+    \begin{bmatrix}
+        -4 \\ & -1 \\ && 2 \\ &&& 3
+    \end{bmatrix}
+    \vec{V}^{-1}
+    ,\qquad
+    \vec{V} = \begin{bmatrix} |&|&|&| \\ \vec{v}_1 & \vec{v}_2 & \vec{v}_3 & \vec{v}_4 \\ |&|&|&| \end{bmatrix}
+    \]
+where the $\vec{v}_i$ are all orthonormal.
+
+    Suppose we run inverse power method with shift $c$ with $\vec{x} = \vec{v}_1 + \vec{v}_2 + \vec{v}_3 + \vec{v}_4$; that is, power method on $(\vec{A} - c\vec{I})^{-1}$.
+
+    If $c\in(0.5,2.5)$, then we will converge to $\vec{v}_3$, the eigenvector corresponding to eigenvalue $2$.
+    The rate of converge is
+    \[
+        \rho = \left| \frac{\lambda_2((\vec{A}-c\vec{I})^{-1})}{\lambda_1((\vec{A}-c\vec{I})^{-1})} \right|,
+    \]
+    where $\lambda_1((\vec{A}-c\vec{I})^{-1})$ and $\lambda_2((\vec{A}-c\vec{I})^{-1})$ are the largest and second largest eigenvalues of $(\vec{A} - c\vec{I})^{-1}$ in magnitude respectively.
+
+
+    \begin{enumerate}
+        \item Plot $\rho$ as a function of $c$ for $c$ in the range $(0.5, 2.5)$.
+
+        \item Let $\vec{y}_k$ be the output of $k$-steps of the power method, and assume $\|\vec{v}_3 - \vec{y}_k\|_2 \leq \rho^k$.
+            
+            For $\epsilon = 10^{-1}$, make a plot showing how large $k$ has to be so that $\|\vec{v}_3 - \vec{y}_k\|_2 < \epsilon$ for the values of $c$ in the range $(0.5,2.5)$.
+            Add more a new line to this plot for each $\epsilon = 10^{-2}, 10^{-5}, 10^{-10}$ plot. Label all the lines.
+
+            
+\end{enumerate}
+\end{problem}
+ 
+ 
+\begin{problem}
+For the same matrix as in Problem 3, suppose we run power method with a starting vector:
+\[
+\vec{x} = \vec{V}\begin{bmatrix}0\\1\\1\\1\end{bmatrix}.
+\]
+
+    \begin{enumerate}
+        \item Find a vector $\vec{z}$ so that $\vec{A}^k \vec{x} = \vec{V} \vec{z}$.
+        
+        \item What vector does $\vec{z} / \|\vec{z}\|$ converge to as $k\to\infty$?
+
+        \item What vector does $\vec{A}^k\vec{x} / \|\vec{A}^k\vec{x}\|$ converge to as $k\to\infty$?
+
+        \item Why did we get something different than on worksheet 8, where power method converged to a multiple of $\vec{v}_1$?
+    
+    \end{enumerate}
+\end{problem}
+\end{document}
