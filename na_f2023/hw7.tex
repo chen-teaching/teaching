@@ -1,0 +1,205 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 7\hfill Numerical Analysis Fall 2023}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 12/15 at 5:00pm on \href{https://www.gradescope.com/courses/570477/}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2023/syllabus.html}{syllabus} 
+        \item This homework is worth 40 points (less than the usual 50 points)
+        \item If this is your lowest homework grade, I will drop it (i.e. this homework is optional)
+\end{itemize}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+    Spend at least two hours working on your project prior to the 20th. 
+    Answer the following:
+    \begin{enumerate}
+        \item What is the current status of your project? 
+        \item What are the big tasks you have left to do before your project is done?
+        \item What is your plan for completing the project in a timely manner?
+    \end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+    Suppose $\vec{A}$ has SVD $\vec{A} = \vec{U} \vec{\Sigma} \vec{V}^\T$ where 
+    \[
+        \vec{U} = 
+        \begin{bmatrix}
+            |&|&&|\\
+            \vec{u}_1 & \vec{u}_2 & \cdots & \vec{u}_n\\
+            |&|&&|\\
+        \end{bmatrix},
+        \qquad
+        \vec{\Sigma} = \begin{bmatrix} \sigma_1 \\ &\sigma_2 \\ &&\ddots \\ &&& \sigma_n\end{bmatrix}
+        ,\qquad
+        \vec{V}
+    =   \begin{bmatrix}
+            |&|&&|\\
+            \vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_n\\
+            |&|&&|\\
+        \end{bmatrix}. 
+    \]
+    \begin{enumerate}
+        \item Show that $\vec{v}_i$ is an eigenvector of $\vec{A}^\T \vec{A}$. What is the corresponding eigenvalue?
+
+        \item
+
+    Define the block matrix:
+    \[
+        \vec{B} = 
+        \begin{bmatrix} \vec{0}& \vec{A} \\ 
+            \vec{A}^\T & \vec{0}
+        \end{bmatrix}.
+    \]
+    Show that 
+    \[
+        \vec{x} = \begin{bmatrix} \vec{u}_i \\ \vec{v}_i \end{bmatrix}
+    \]
+    is an eigenvector of $\vec{B}$.
+    What is the corresponding eigenvalue?
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Let $f(x) = |x|$ and define $p_k(x)$ as the degree $k$ polynomial interpolate to $f(x)$ at the $k+1$ Chebyshev nodes. 
+    \begin{enumerate}
+        \item 
+            For $k=10$ make one plot with $x$ vs $f(x)$ and $x$ vs $p_k(x)$  and one plot over $x$ vs $|f(x) - p_k(x)|$ with the vertical axis on a log-scale.
+
+        \item 
+            Repeat this for $k=40$
+
+
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    \begin{enumerate}
+        \item 
+    Let $f(x) = \exp(-x)$ and define $p_k(x)$ as the degree $k$ polynomial interpolate to $f(x)$ at the $k+1$ Chebyshev nodes. 
+
+    Make a plot of $k$ vs 
+    \[
+        \max_{x\in[-1,1]} |f(x) - p_k(x)|
+    \]
+    for $k=0,1,2,\ldots20$. Put the $y$-axis on a log scale and label the axes/plot/etc.
+
+    To approximate \[
+        \max_{x\in[-1,1]} |f(x) - p_k(x)|
+    \]
+    you can instead take the maximum over $1000$ equally spaced points in $[-1,1]$ and use this instead. 
+
+\item Repeat this for $f(x) = 1/(1+16x^2)$ and $k=0,1,\ldots, 100$.
+
+\item Repeat this for $f(x) = |\sin(5x)|^3 = (\sin(5x)^2)^{3/2}$ and $k=0,1,\ldots,100$, but put both axes on log-scales.
+
+    Add a line $k$ vs $k^{-\nu}$, where $\nu$ is the largest value so that the $(\nu-1)$-st derivative of $f(x)$ is continuous.
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+    Let $f(x) = 1/(1+16x^2)$.
+
+    For any non-negative integer $k$, set $n=k^2+1$ and let $x_1 ,\ldots, x_n$ be $n$ equally spaced points from $-1$ to $1$ and let $q_{k}(x)$ be the degree $k$ polynomial minimizing
+    \[
+        \min_{\deg(q) = k} \sum_{i=1}^{n} ( f(x_i) - q(x_i) )^2.
+    \]
+
+    On a log-y plot, plot the error
+    \[
+        \max_{x\in[-1,1]} |f(x) - q_{k}(x)|
+    \]
+    for $k=0,1,\ldots, 100$.
+    Add to this plot the error of the Chebyshev interpolant that you computed in 3(b).
+
+
+
+\end{problem}
+
+
+\end{document}
