@@ -53,7 +53,6 @@ bold-style = TeX
 \setlength{\parindent}{0em}
 
 \renewcommand{\d}{\mathrm{d}}
-\renewcommand{\vec}{\mathbf}
 \newcommand{\T}{\mathsf{T}}
 
 
@@ -64,13 +63,9 @@ bold-style = TeX
 \vspace{-1.8em}
 \hrulefill
 
-\textbf{
-This is not the final version of the assignment.
-Check back after this notice has been removed.}
-
 \textbf{Instructions:}
     \begin{itemize}
-        \item Due TBD at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
+        \item Due Feb 5 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
         \item You must follow the submission policy in the \href{https://courses.chen.pw/la_s2024/syllabus.html}{syllabus} 
 \end{itemize}
    
@@ -85,8 +80,9 @@ Check back after this notice has been removed.}
 
 \begin{problem}[Vector Spaces]~
     \begin{enumerate}
-        \item Let $V$ be a vector space. Prove that $-(-v) = v$ for all $v\in V$.
-        \item Let $V = \vec{R}^n$. Suppose $a\in \mathbb{R}$ and $v\in V$. Prove that if $a \vec{v} = \vec{0}$, then $a = 0$ or $\vec{v} = \vec{0}$.
+        \item Let $V$ be a vector space. Prove that $-(-\vec{v}) = \vec{v}$ for all $\vec{v}\in V$.
+        \item Prove $0\vec{v} = \vec{0}$ for all $\vec{v}\in V$.
+        \item Let $V = \mathbb{R}^n$. Suppose $a\in \mathbb{R}$ and $v\in V$. Prove that if $a \vec{v} = \vec{0}$, then $a = 0$ or $\vec{v} = \vec{0}$.
         \item The empty set $\{\}$ is not a vector space. Which property of vector spaces is not satisfied by the empty set?
     \end{enumerate}
 \end{problem}
@@ -99,13 +95,17 @@ Check back after this notice has been removed.}
 Show that the set of continuous real-valued functions $f$ on the interval $[0,1]$ such that $\int_0^1 f(x) \d x = b$ is a subspace of the vector space of all continuous real-valued functions on $[0,1]$ if and only if $b=0$.
 \end{enumerate}
 \end{problem}
-        
 
-\begin{problem}[Span/Independence]~
-\begin{enumerate}
-\item Let $\vec{v}_1, \ldots, \vec{v}_k \in V$. Prove $\operatorname{span}(\vec{v}_1, \ldots, \vec{v}_k)$ is a subspace of $V$.
-\item Show that if the set of vectors $\vec{v}_1, \ldots, \vec{v}_k$ are linearly independent, then none of the $\vec{v}_i$ are the zero vector.
-\end{enumerate}
+\begin{problem}
+    Let $(V,+,\cdot,\mathbb{F})$ be a vector space. Suppose $U$ is a non-empty subset of $V$ closed under vector addition and scalar multiplication; i.e. for all $a,b\in\mathbb{F}$ and $\vec{u},\vec{v}\in V$, $a\vec{u} + b \vec{v} \in U$. 
+    Prove that $(U,+,\cdot,\mathbb{F})$ is a vector space.
 \end{problem}
+
+% \begin{problem}[Span/Independence]~
+% \begin{enumerate}
+% \item Let $\vec{v}_1, \ldots, \vec{v}_k \in V$. Prove $\operatorname{span}(\vec{v}_1, \ldots, \vec{v}_k)$ is a subspace of $V$.
+% \item Show that if the set of vectors $\vec{v}_1, \ldots, \vec{v}_k$ are linearly independent, then none of the $\vec{v}_i$ are the zero vector.
+% \end{enumerate}
+% \end{problem}
 
 \end{document}
