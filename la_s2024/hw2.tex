@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage[]{xcolor}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 2\hfill Linear Algbera I}}
+    
+\vspace{-1.8em}
+\hrulefill
+
+\textbf{\color{red}More problems will be added next week.}
+
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due Feb 19 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/la_s2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+\begin{problem}[Span]~
+\begin{enumerate}
+\item Let $\vec{v}_1, \ldots, \vec{v}_k \in V$. Prove $\operatorname{span}(\vec{v}_1, \ldots, \vec{v}_k)$ is a subspace of $V$.
+
+\item Show that $\operatorname{span}(\vec{v}_1, \ldots, \vec{v}_k)$ is the smallest subspace of $V$ containing $\vec{v}_1, \ldots, \vec{v}_k$.
+
+\item Find a list of four distinct vectors in $\mathbb{R}^3$ whose span equals 
+\[ \{ (x,y,z) \in \mathbb{R}^3 : x+y+z = 0\}. \]
+
+\item Prove or give a counterexample: If $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_m$ is a linearly independent list of vectors in $V$ and $\lambda \in \mathbf{F}$ with $\lambda \neq 0$, then $\lambda \vec{v}_1, \lambda \vec{v}_2, \ldots, \lambda \vec{v}_m$ is linearly independent.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Independence]~
+\begin{enumerate}
+    \item Let $\vec{v}_1, \ldots, \vec{v}_k \in V$. Prove that if $\vec{v}_1, \ldots, \vec{v}_k$ are linearly dependent if and only if there exists $i \in \{1, \ldots, k\}$ such that $\vec{v}_i \in \operatorname{span}(\vec{v}_1, \ldots, \vec{v}_{i-1}, \vec{v}_{i+1}, \ldots, \vec{v}_k)$.
+    
+    \item Show that if the set of vectors $\vec{v}_1, \ldots, \vec{v}_k$ are linearly independent, then none of the $\vec{v}_i$ are the zero vector.
+    
+    \item Prove or give a counterexample: If $\vec{v}_1, \ldots, \vec{v}_m$ and $\vec{w}_1, \ldots, \vec{w}_m$ are linearly independent lists of vectors in $V$, then the list $\vec{v}_1+\vec{w}_1, \ldots, \vec{v}_m+\vec{w}_m$ is linearly independent.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[Basis]~
+\begin{enumerate}
+    \item Show every vector space spanned by a finite set of vectors has a basis.
+    \item Suppose $\vec{v}_1, \ldots, \vec{v}_4$ is a basis of $V$. Prove that 
+    \[ v_1 + v_2, v_2+v_3, v_3+v_4, v_4 \]
+    is also a basis of $V$.
+    \item Prove or give a counterexample: If $\vec{v}_1, \ldots, \vec{v}_4$ is a basis of $V$ and $U$ is a
+    subspace of $V$ such that $\vec{v}_1, \vec{v}_2\in U$ and $\vec{v}_3\not\in U$ and $\vec{v}_4\not\in U$, then $\vec{v}_1, \vec{v}_2$ is a basis of $U$.
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}
