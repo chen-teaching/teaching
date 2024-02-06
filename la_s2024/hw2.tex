@@ -64,8 +64,6 @@ bold-style = TeX
 \vspace{-1.8em}
 \hrulefill
 
-\textbf{\color{red}More problems will be added next week.}
-
 \textbf{Instructions:}
     \begin{itemize}
         \item Due Feb 19 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
@@ -99,15 +97,30 @@ bold-style = TeX
 
 \begin{problem}[Basis]~
 \begin{enumerate}
+    \item Show that a linear space spanned by a finite set of vectors has a basis. (This is Lemma 2 in Lax, but the proof is a bit too terse, so you should fill in the details. In particular, he writes ``So we can drop that $x_i$'' but does not explain what should happen after we drop $x_i$, and he writes that we can repeat this until they are linearly independent but does not justify why it will eventually become independent.)
     \item Show every vector space spanned by a finite set of vectors has a basis.
     \item Suppose $\vec{v}_1, \ldots, \vec{v}_4$ is a basis of $V$. Prove that 
     \[ v_1 + v_2, v_2+v_3, v_3+v_4, v_4 \]
     is also a basis of $V$.
     \item Prove or give a counterexample: If $\vec{v}_1, \ldots, \vec{v}_4$ is a basis of $V$ and $U$ is a
     subspace of $V$ such that $\vec{v}_1, \vec{v}_2\in U$ and $\vec{v}_3\not\in U$ and $\vec{v}_4\not\in U$, then $\vec{v}_1, \vec{v}_2$ is a basis of $U$.
+    \item Recall $\mathcal{P}_m(\mathbb{R})$ is the space of polynomials with real coefficients and degree at most m. Show that if $p_0, \ldots, p_m\in \mathcal{P}_m(\mathbb{R})$ are such that $\deg(p_i) = i$, then $p_0, \ldots, p_m$ is a basis for $\mathcal{P}_m(\mathbb{R})$.
 \end{enumerate}
 \end{problem}
 
+\begin{problem}[Dimesion]~
+\begin{enumerate}
+    \item Prove that if $X = Y_1 \oplus Y_2 \oplus \cdots \oplus Y_m$, then $\dim(X) = \dim(Y_1) + \dim(Y_2) + \cdots + \dim(Y_m)$.
+    \item Recall $\mathcal{P}_4(\mathbb{R})$ is the space of polynomials with real coefficients and degree at most 4. 
+    Let $U = \{ p \in \mathcal{P}_4(\mathbb{R}) : \int_{-1}^{1} p = 0\}$. 
+    \begin{itemize}
+        \item Find a basis of $U$
+        \item Extend the previous basis to a basis for $\mathcal{P}_4(\mathbb{R})$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\mathbb{R})$ such that $\mathcal{P}_4(\mathbb{R}) = U \oplus W$.
+    \end{itemize}
+    \item Suppose $U$ and $V$ are both 3 dimensional subspaces of $\mathbb{R}^5$. Prove that $U \cap V \neq \{ 0 \} $.
+\end{enumerate}
+\end{problem}
 
 
 \end{document}
