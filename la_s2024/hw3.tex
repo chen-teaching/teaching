@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\range}{\operatorname{range}}
+\renewcommand{\null}{\operatorname{null}}
+
+
+\usepackage[]{xcolor}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 3\hfill Linear Algbera I}}
+    
+\vspace{-1.8em}
+\hrulefill
+
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due March 4 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/la_s2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+\begin{problem}[Isomorphism]~
+    \begin{enumerate}
+        \item Let $V = \mathbb{R}^n$ and $W = \mathcal{P}_{n-1}(\mathbb{R})$ (the set of polynomials of degree at most $n-1$). Write down an isomorphism $\phi$ from $V$ to $W$ (you must define $\phi(\vec{v})$ for each $\vec{v}\in V$), and prove it is an isomorphism.
+        \item Suppose $\phi:U\to V$ is an isomorphism. Let $\phi^{-1}:V\to U$ be the inverse of $\phi$ (i.e. $\phi^{-1}(\phi(\vec{u})) = \vec{u}$ for all $u\in U$). Prove that $\phi^{-1}$ is an isomorphism from $V$ to $U$.
+        \item Let $V = \mathbb{R}^3$ and $W = \mathbb{R}^4$. Prove that $U$ and $V$ are not isomorphic. (Hint: suppose $\phi$ is an isomorphism from $U$ to $V$, and derive a contradiction.)
+    \end{enumerate}
+    \end{problem}
+
+
+\begin{problem}[Linear Maps]~
+\begin{enumerate}
+    \item Suppose $b, c \in \mathbf{R}$. Define $T: \mathbf{R}^3 \rightarrow \mathbf{R}^2$ by
+    \[
+    T(x, y, z)=(2 x-4 y+3 z+b, 6 x+c x y z) .
+    \]
+    Show that $T$ is linear if and only if $b=c=0$.
+
+    \item Suppose $b, c \in \mathbf{R}$. Define $T: \mathcal{P}(\mathbf{R}) \rightarrow \mathbf{R}^2$ by
+    \[
+    T p=\left(3 p(4)+5 p^{\prime}(6)+b p(1) p(2), \int_{-1}^2 x^3 p(x) d x+c \sin p(0)\right) .
+    \]
+    Show that $T$ is linear if and only if $b=c=0$.
+    \item Suppose $\vec{v}_1, \ldots, \vec{v}_n$ spans $V$. Prove that $T \vec{v}_1, \ldots, T \vec{v}_n$ spans $\range(T)$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[FTLM Proof]~
+We will prove the FTLM in a slightly different way (so you can't use any consequences of the FTLM in this problem). 
+While this is a bit more tedious at the moment, once things like (a) and (b) become second nature, I think this proof is more insightful.
+
+Suppose $V$ is finite dimensional and $T\in\mathcal{L}(V,W)$.
+Let $\vec{u}_1, \ldots, \vec{u}_m$ be a basis for $\null(T)$ and extend to a basis  $\vec{u}_1, \ldots, \vec{u}_m, \vec{v}_1, \ldots, \vec{v}_n$ for $V$.
+Define a subspace  $X=\operatorname{span}({v}_1, \ldots, \vec{v}_n)$ of $V$.
+\begin{enumerate}
+    \item Define $T_V$ as the restriction of $T$ to $X$; i.e. $(T_V(\vec{x})) = T(\vec{x})$ for all $\vec{x}\in X$. Prove that $T_V\in\mathcal{L}(X,W)$.
+    \item What is $\null(T_V)$?
+    \item What is $\range(T_V)$?
+    \item Prove that $T_V$ is an isomorphism from $X$ to $\range(T)$; i.e. that it is injective and surjective.
+    \item Conclude that $\dim(\range(T)) = n$, and hence the FTLM.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[FTLM]~
+\begin{enumerate}
+    \item Give an example of a linear map with $\dim(\null(T)) = 2$ and $\dim(\range(T)) = 2$.
+    \item Suppose $U$ and $V$ are finite-dimensional vector spaces and $S \in \mathcal{L}(V, W)$ and $T \in \mathcal{L}(U, V)$. Prove that
+    \[
+    \dim \null (S T) \leq \dim \null (S)+\dim \null(T) .
+    \]
+    \item Suppose $U$ and $V$ are finite-dimensional vector spaces and $S \in \mathcal{L}(V, W)$ and $T \in \mathcal{L}(U, V)$. Prove that
+    \[
+        \dim \range S T \leq \min \{\dim \range S, \dim \range T\}.\]
+    \item Prove there does not exist $T\in\mathcal{L}(\mathbb{R}^5)$ such that $\range(T) = \null(T)$.
+    \item Find an example of $T\in\mathcal{L}(\mathbb{R}^4)$ such that $\range(T) = \null(T)$.
+    \item For the operator from the previous problem, what is $\range(T^2)$ and $\null(T^2)$? (Here $T^2$ is notation for $TT$.)
+\end{enumerate}
+\end{problem}
+
+
+\end{document}
