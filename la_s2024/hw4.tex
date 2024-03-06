@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\range}{\operatorname{range}}
+\renewcommand{\null}{\operatorname{null}}
+
+
+\usepackage[]{xcolor}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 4\hfill Linear Algebra I}}
+    
+\vspace{-1.8em}
+\hrulefill
+
+{\color{red}\textbf{I will add some more problems}}
+
+
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due March 26 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/la_s2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+As mentioned in lecture, we can express abstract linear operatons on abstract linear spaces in terms of matrices and vectors. 
+Here we will work through some of the math that would be required to manipulate polynomials on a computer.\footnote{This is what makes stuff like numpy's \href{https://numpy.org/doc/stable/reference/routines.polynomials.html}{\texttt{polynomial}} module work.}
+
+For conveneience, we will restrict to polynomials of degree at most 4.
+
+We are used to working with the monomial basis:
+\[
+m_0(x) = 1, \quad
+m_1(x) = x, \quad
+m_2(x) = x^2, \quad
+m_3(x) = x^3, \quad
+m_4(x) = x^4
+\]
+For certain numerical reasons, we might also be interested in the Chebyshev Basis:
+\[
+T_0(x) = 1, \quad
+T_1(x) = x, \quad
+T_2(x) = 2x^2 - 1, \quad
+T_3(x) = 4x^3 - 3x, \quad
+T_4(x) = 8x^4 - 8x^2 + 1    
+\]
+
+\begin{enumerate}
+    \item Write down the differentiation matrices $D_m\in \mathcal{L}(\mathcal{P}_4,\mathcal{P}_4)$ the integration matrix (for a definite integral over $[a,b]$) $T_m \in \mathcal{L}(\mathcal{P}_4,\mathbb{R}^1)$ (with respect to the monomial basis for the input and output). The integration matrix should depend on $a$ and $b$.
+    \item Repeat (a) for the Chebyshev basis for the input and output spaces (call these matrices $D_c$ and $D_m$.
+    \item Write a the matrix $M$ which converts a Chebyshev polynomial to a monomial polynomial, and the matrix $N$ which converts a monomial polynomial to a Chebyshev polynomial. 
+\end{enumerate}
+
+    
+\end{problem}
+
+\begin{problem}
+    Let $D_m$, $D_c$, $M$ and $N$ be the matrices defined in the previous problem.
+    \begin{enumerate}
+        \item Describe in words what the following matrices are doing as operations:
+        \begin{itemize}
+            \item $D_m M$
+            \item $D_c N$
+            \item $M N$
+            \item $T_m D_m D_m$
+        \end{itemize}
+        \item verify by hand (meaning multiply out the matrices) the following:
+        \begin{itemize}
+            \item $M N = I$
+            \item $N M = I$
+            \item $D_m M = D_c$
+            \item $D_c N = D_c$
+            \item $(D_m)^5 = 0$.
+        \end{itemize}
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+    Implement the above operations in a computer program. 
+    I have provided started python code here: \url{https://colab.research.google.com/drive/1qqrpd-a7NnAo7uooQs1CVgnbnwgpIvS6}.
+
+    Include the functions you implement in your submission.
+    If you are using latex, you can use the \texttt{listings} package.
+\end{problem}
+
+
+\end{document}
