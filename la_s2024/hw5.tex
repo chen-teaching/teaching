@@ -39,8 +39,6 @@
 \vspace{-1.8em}
 \hrulefill
 
-{\color{red}More problems will be added}
-
 \textbf{Instructions:}
     \begin{itemize}
         \item Due April 9 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
@@ -71,6 +69,75 @@
     $$
     thus defining functions $\varphi_1, \ldots, \varphi_m$ from $V$ to $\mathbf{F}$. Show that each of the functions $\varphi_1, \ldots, \varphi_m$ is a linear functional on $V$.
 \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}~
+
+    \begin{enumerate}
+        \item  Suppose $v_1, \ldots, v_n$ and $v_1, \ldots, u_n$ are such that $\operatorname{span}\{v_1, \ldots, v_k\} = \operatorname{span}\{u_1, \ldots, u_k\}$ for each $k$.
+        problems
+        \item 
+    Suppose we have a independent set of vectors $v_1, \ldots, v_n$ and apply Gram-Schmidt to obtain an orthonormal set $u_1, \ldots, u_n$ such that 
+
+        \begin{center}
+        \fbox{
+        \begin{minipage}{.8\textwidth}
+        Set $u_1 = v_1 / \|v_1\|$.
+
+        For $k = 2, \ldots, n$, set:
+        $$
+        \hat{u}_k = v_k - \langle v_k, u_1\rangle u_1 - \cdots - \langle v_k, u_{k-1}\rangle u_{k-1}.
+        $$
+        and 
+        $$
+        u_k = \hat{u}_k / \|\hat{u}_k\|.
+        $$
+        \end{minipage}
+        }
+        \end{center}
+
+        \item Show that the upper triangular matrix $R$ you described in part (a) can be obtained from the coefficients computed by the Gram--Schmidt algorithm. 
+        That is, that you get the matrix $R$ ``for free'' from the Gram--Schmidt algorithm.
+
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the vector space $\mathcal{P}_4$ of polynomials of degree at most $4$. 
+    Define an inner product on $\mathcal{P}_4$ by
+    $$ 
+    \langle p,q\rangle = \int_{-1}^{1} p(x) q(x) \frac{1}{\sqrt{1-x^2}}\d{x},
+    \qquad \forall p,q\in\mathcal{P}_4.
+    $$
+
+    \begin{enumerate}
+        \item Verify this is an inner product.
+        \item Apply the Gram-Schmidt process to the basis $\{1,x,x^2,x^3,x^4\}$ to obtain an orthonormal basis.
+        You can use Wolfram alpha or similar to compute integrals, but should write down the integrals you are computing.
+        \item Make a plot of the polynomials you computed and a different plot of the Chebyshev polynomials (up to degree 4). How do they compare?
+    \end{enumerate}
+\end{problem}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item Suppose $V$ is a real inner product space and $v_1, \ldots, v_m$ is a linearly independent list of vectors in $V$. Prove that there exist exactly $2^m$ orthonormal lists $e_1, \ldots, e_m$ of vectors in $V$ such that
+        $$
+        \operatorname{span}\left(v_1, \ldots, v_k\right)=\operatorname{span}\left(e_1, \ldots, e_k\right)
+        $$
+        for all $k \in\{1, \ldots, m\}$.
+        \item Suppose $C[-1,1]$ is the vector space of continuous real-valued functions on the interval $[-1,1]$ with inner product given by
+        $$
+        \langle f, g\rangle=\int_{-1}^1 f g
+        $$
+        for all $f, g \in C[-1,1]$. Let $\varphi$ be the linear functional on $C[-1,1]$ defined by $\varphi(f)=f(0)$. Show that there does not exist $g \in C[-1,1]$ such that
+        $$
+        \varphi(f)=\langle f, g\rangle
+        $$
+        for every $f \in C[-1,1]$.
+        \item Suppose $V$ is finite-dimensional. Suppose $\langle\cdot, \cdot\rangle_1,\langle\cdot, \cdot\rangle_2$ are inner products on $V$ with corresponding norms $\|\cdot\|_1$ and $\|\cdot\|_2$. Prove that there exists a positive number $c$ such that $\|v\|_1 \leq c\|v\|_2$ for every $v \in V$.
+    \end{enumerate}
 \end{problem}
 
 \end{document}
