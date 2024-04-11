@@ -1,0 +1,154 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\range}{\operatorname{range}}
+\renewcommand{\null}{\operatorname{null}}
+
+
+\usepackage[]{xcolor}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 6\hfill Linear Algebra I}}
+    
+\vspace{-1.8em}
+\hrulefill
+
+{\color{red}I will add more problems to this homework.}
+
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due April 23 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/la_s2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+\begin{problem}~
+    \begin{enumerate}
+        \item Prove that $| \|x\| - \|y\| | \leq \|x-y\|$ for all $x,y \in V$.
+        \item Suppose $S\in\mathcal{L}(V)$. Define $\langle \cdot ,\cdot \rangle_1$ by $\langle x,y \rangle_1 = \langle Sx,Sy \rangle$ for all $x,y\in V$. Prove that $\langle \cdot ,\cdot \rangle_1$ is an inner product if and only if $S$ is injective.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}~
+    In this problem we will consider the task of approximating a function with polynomials.
+    This is at the core of \href{https://en.wikipedia.org/wiki/Approximation_theory}{approximation theory}.
+    One takeaway is will be that there are much better ways to do this than using a Taylor series.
+
+
+    Recall the Chebyshev polynomials are 
+    \begin{align*}
+    T_0(x) &= 1 \\
+    T_1(x) &= x \\
+    T_2(x) &= 2x^2 - 1 \\
+    T_3(x) &= 4x^3 - 3x \\
+    T_4(x) &= 8x^4 - 8x^2 + 1 \\
+    T_5(x) &= 16x^5 - 20x^3 + 5x \\
+    T_6(x) &= 32x^6 - 48x^4 + 18x^2 - 1 \\
+    T_7(x) &= 64x^7 - 112x^5 + 56x^3 - 7x \\
+    T_8(x) &= 128x^8 - 256x^6 + 160x^4 - 32x^2 + 1 \\
+    T_9(x) &= 256x^9 - 576x^7 + 432x^5 - 120x^3 + 9x \\
+    T_{10}(x) &= 512x^{10} - 1280x^8 + 1120x^6 - 400x^4 + 50x^2-1 \\
+    \end{align*}
+    and satisfy the orthogonality condition:
+    \begin{equation*}
+        \int_{-1}^1 T_n(x)\,T_m(x)\,\frac{\mathrm{d}x}{\sqrt{1-x^2}} = 
+        \begin{cases}
+        0             & ~\text{ if }~ n \ne m, \\
+        \pi           & ~\text{ if }~ n=m=0, \\
+        \frac{\pi}{2} & ~\text{ if }~ n=m \ne 0.
+        \end{cases}
+    \end{equation*}
+    \begin{enumerate}
+        \item Let $f(x) = \exp(x)$.
+        For each $k=0,1,\ldots, 10$, find the degree $k$ polynomial $p_k$ which minimizes 
+        \[
+            \int_{-1}^{1} (f(x) - p(x))^2 \frac{1}{\sqrt{1-x^2}}\d{x} 
+        \] 
+        and make a plot of $f(x) - p_k(x)$.
+
+        \item Make similar plots with the error of the degree $k$ Taylor series approximation.
+
+        \item Make a plot of $k$ (on the horizontal axis) versus $\max_{x\in[-1,1]} |f(x) - p_k(x)|$ (on the vertical axis).
+        Put the vertical axis on a log-scale. 
+        
+        Add another curve for the error of the Taylor series approximation.
+        
+        To compute the max, you can instead take a bunch of points (say 1000) equally spaced in $[-1,1]$ and then take the max at those points.
+
+        \item Repeat this for $f(x) = |x|$. But this time the Taylor series doesn't even exist, so you don't need to do that part.
+        
+        \item How do the rates of convergence (with respect to $k$) compare for the two functions? Why do you think this is?
+    \end{enumerate}
+
+    To compute integrals you could use Mathematica syntax \texttt{Integrate[ ChebyshevT[4,x] exp(x) , \{x,-1,1\}]} on 
+    \href{https://www.wolframalpha.com/input?i=Integrate%5B+ChebyshevT%5B4%2Cx%5D+exp%28x%29+%2C+%7Bx%2C-1%2C1%7D%5D}{Wolfram Alpha} or some other tool. 
+    \end{problem}
+
+
+\begin{problem}
+    Consider the matrix 
+        \[
+            A 
+            = 
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{bmatrix}
+            \begin{bmatrix}
+                -2 & 0 \\ 0 & 1 \\
+            \end{bmatrix}
+            \begin{bmatrix}
+                \cos \pi/4 & -\sin \pi/4 \\
+                \sin \pi/4 & \cos \pi/4
+            \end{bmatrix}
+        \]
+        \begin{enumerate}
+            \item Find a SVD of ${A}$. Hint: think about why the given factorization is not an SVD.
+            \item Draw what ${A}$ does to the following vector (here a vector is anything shown in black, and the dotted lines represent the x and y axes.):
+                
+            \includegraphics[scale=.4]{car.pdf}
+            \hfill
+            \includegraphics[scale=.4]{nyu.pdf}
+        
+        \end{enumerate}
+    
+\end{problem}
+
+\begin{problem}~
+    \begin{enumerate}
+        \item Suppose $T \in \mathcal{L}(V)$ and $U$ is a subspace of $V$.
+        (i) Prove that if $U \subseteq$ null $T$, then $U$ is invariant under $T$.
+        (ii) Prove that if range $T \subseteq U$, then $U$ is invariant under $T$.
+    \item Define $T: \mathcal{P}(\mathbf{R}) \rightarrow \mathcal{P}(\mathbf{R})$ by $T p=p^{\prime}$. Find all eigenvalues and eigenvectors of $T$.
+    1\item Define $T \in \mathcal{L}\left(\mathcal{P}_4(\mathbf{R})\right)$ by $(T p)(x)=x p^{\prime}(x)$ for all $x \in \mathbf{R}$. Find all eigenvalues and eigenvectors of $T$.
+    \end{enumerate}
+\end{problem}
+
+\end{document}
