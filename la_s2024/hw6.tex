@@ -39,8 +39,6 @@
 \vspace{-1.8em}
 \hrulefill
 
-{\color{red}I will add more problems to this homework.}
-
 \textbf{Instructions:}
     \begin{itemize}
         \item Due April 23 at 11:59pm on \href{https://www.gradescope.com/courses/709136}{Gradescope}.
@@ -141,13 +139,33 @@
     
 \end{problem}
 
+
+\begin{problem}~
+
+    Recall $\|X\|_F^2= \sum_{i,j} X_{i,j}^2$. The point of this problem is to relate the Frobenius norm of a matrix to its singular values.
+
+    \begin{enumerate}
+        \item 
+            Suppose $\vec{X}$ is a $n\times m$ matrix. 
+            How does $\|\vec{X}\|_F$ relate to $\|\vec{X}^\T\|_F$?
+        \item 
+            Suppose $\vec{X}$ is a $n\times m$ matrix. 
+            Write $\|\vec{X}\|_F$ in terms of the column-norms $\|[\vec{X}]_{:,i}\|_2$.
+        \item Suppose $\vec{X}$ is a $n\times m$ matrix and $\vec{U}$ is a $n\times n$ orthogonal matrix $(\vec{U}^\T \vec{U} = \vec{I})$.
+            Show that $\|\vec{U} \vec{X}\|_F = \| \vec{X} \|_F$. 
+            Hint: use (b) and show that $\|\vec{U} \vec{x}\|_2 = \|\vec{x}\|_2$ for any vector $\vec{x}$.
+        \item Let $\vec{A}$ be a $n\times m$ matrix with SVD $\vec{A} = \vec{U}\vec{\Sigma}\vec{V}^\T$ and assume $n\geq m$.
+            Prove that $\|\vec{A}\|_F = \sqrt{\sigma_1^2 + \cdots + \sigma_m^2}$, where $\sigma_i$ are the singular values of $\vec{A}$
+    \end{enumerate}
+\end{problem}
+
 \begin{problem}~
     \begin{enumerate}
         \item Suppose $T \in \mathcal{L}(V)$ and $U$ is a subspace of $V$.
         (i) Prove that if $U \subseteq$ null $T$, then $U$ is invariant under $T$.
         (ii) Prove that if range $T \subseteq U$, then $U$ is invariant under $T$.
     \item Define $T: \mathcal{P}(\mathbf{R}) \rightarrow \mathcal{P}(\mathbf{R})$ by $T p=p^{\prime}$. Find all eigenvalues and eigenvectors of $T$.
-    1\item Define $T \in \mathcal{L}\left(\mathcal{P}_4(\mathbf{R})\right)$ by $(T p)(x)=x p^{\prime}(x)$ for all $x \in \mathbf{R}$. Find all eigenvalues and eigenvectors of $T$.
+    \item Define $T \in \mathcal{L}\left(\mathcal{P}_4(\mathbf{R})\right)$ by $(T p)(x)=x p^{\prime}(x)$ for all $x \in \mathbf{R}$. Find all eigenvalues and eigenvectors of $T$.
     \end{enumerate}
 \end{problem}
 
