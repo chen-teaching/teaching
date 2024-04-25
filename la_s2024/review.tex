@@ -1,0 +1,371 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=.5in]{geometry}
+
+% \usepackage[no-math]{fontspec}
+% \setmainfont[
+%     BoldFont = Vollkorn Bold,
+%     ItalicFont = Vollkorn Italic,
+%     BoldItalicFont={Vollkorn Bold Italic},
+%     RawFeature=+lnum,
+% ]{Vollkorn}
+
+% \setsansfont[
+%     BoldFont = Lato Bold,
+%     FontFace={l}{n}{*-Light},
+%     FontFace={l}{it}{*-Light Italic},
+% ]{Lato}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+% \usepackage{unicode-math}
+% \mathitalicsmode=1
+
+% \setmathfont[
+% mathit = sym,
+% mathup = sym,
+% mathbf = sym,
+% math-style = TeX, 
+% bold-style = TeX
+% ]{Wholegrain Math}
+% \everydisplay{\Umathoperatorsize\displaystyle=4ex}
+% \AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1.5em}
+\setlength{\parindent}{0em}
+
+\newcommand{\range}{\operatorname{range}}
+\renewcommand{\null}{\operatorname{null}}
+\usepackage{arydshln}
+
+\begin{document}
+
+    \textbf{\Large\sffamily{Final Review Problems\hfill Linear Algebra I}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+\vspace{.25em} 
+
+The final will be in class April 30. 
+The format and style will be similar to the quizzes, and you can use two pages of 8.5x11 notes.
+All content covered through April 16 may appear on the final.
+
+The following are some selected practice problems which are broadly representative of the type of problems that could appear (but not exhaustive).
+You should also review the past quizzes, homeworks, and textbook problems.
+
+\begin{problem}
+    Recall that a non-empty subset $U$ of a vector space $V$ is a \emph{subspace} if it is closed under addition and scalar multiplication. 
+    
+    Let $V$ be the vector space of continuous real-valued functions on $[-5,5]$. 
+    For $b\in \mathbb{R}$, define a subset $U$ of $V$ by $U = \{ f \in V : f'(0) + f''(3) = b \}$.
+    Show that $U$ is a subspace of $V$ \emph{if and only if} $b=0$.
+\end{problem}
+
+\begin{problem}
+    Suppose $\vec{v}_1, \ldots, \vec{v}_n$ is a linearly independent.
+    Prove $\vec{v}_1, \ldots, \vec{v}_k$ is linearly independent if $k\leq n$.
+\end{problem}
+
+
+\begin{problem}
+    Suppose $\vec{v}_1, \ldots, \vec{v}_n$ is a basis for a vector space $X$. 
+    Let $Y = \text{span}(\vec{v}_1, \ldots, \vec{v}_k)$ for some $k \leq n$.
+    Show that $\vec{v}_{1}, \ldots, \vec{v}_k$ is a basis for $Y$.
+\end{problem}
+
+\begin{problem}
+    Let $v_1, \ldots, v_n$ be a linearly independent set of vectors. Suppose $v = c_1 v_1 + \cdots + c_n v_n$ and $v' = c_1' v_1 + \cdots + c_n' v_n$.
+    Show that $v = v'$ if and only if $c_i = c_i'$ for all $i=1,\ldots,n$.
+\end{problem}
+
+\begin{problem}
+    Suppose $U$ and $W$ are subspaces of $V$ such that $V=U \oplus W$. Suppose also that $u_1, \ldots, u_m$ is a basis of $U$ and $w_1, \ldots, w_n$ is a basis of $W$. Prove that
+    \[
+    u_1, \ldots, u_m, w_1, \ldots, w_n
+    \]
+    is a basis of $V$.
+\end{problem}
+
+\begin{problem}
+    Suppose that $V$ is finite-dimensional and that $T \in \mathcal{L}(V, W)$. Prove that there exists a subspace $U$ of $V$ such that
+    \[
+    U \cap \operatorname{null} T=\{0\} \quad \text { and } \quad \operatorname{range} T=\{T u: u \in U\} .
+    \]
+\end{problem}
+
+\begin{problem}
+    Suppose $U$ and $V$ are finite-dimensional vector spaces and $S \in \mathcal{L}(V, W)$ and $T \in \mathcal{L}(U, V)$. Prove that
+\[
+\operatorname{dim} \text { null } S T \leq \operatorname{dim} \text { null } S+\operatorname{dim} \operatorname{null} T .
+\]
+\end{problem}
+
+\begin{problem}
+    Suppose $T \in \mathcal{L}(V, W)$ and $v_1, \ldots, v_m$ is a list of vectors in $V$ such that $T v_1, \ldots, T v_m$ is a linearly independent list in $W$. Prove that $v_1, \ldots, v_m$ is linearly independent.
+\end{problem}
+
+\begin{problem}
+    Show that if $S, T \in \mathcal{L}(V, W)$, then $\mathcal{M}(S+T)=\mathcal{M}(S)+\mathcal{M}(T)$.
+\end{problem}
+
+\begin{problem}
+
+\textbf{Fact 1.} If $q_0, \ldots, q_k\in\mathcal{P}_k$ are such that $\deg(q_i) = i$, then they are a basis for $\mathcal{P}_k$.
+
+\textbf{Fact 2.} Let $T:V\to W$ be a linear map. The fundamental theorem of linear maps says if $\dim(V)<\infty$, then
+\[
+    \dim(V) = \dim(\null(T)) + \dim(\range(T)).
+\]
+
+\textbf{Fact 3.} Let $V$ be a finite dimensional vector space and $U$ a subspace of $V$. If $\dim(U) = \dim(v)$, then $U = V$.
+
+    Suppose $T$ is a linear map from $\mathcal{P}_2$ to $\mathbb{R}^3$ with $\range(T) = \left\{ (a,b,0) : a,b\in \mathbb{R} \right\}$.
+    Let $q\in\mathcal{P}_2$ be defined by $q(x) = x+1$ and suppose 
+    \[
+        T q = (0,0,0)
+        .
+    \]
+    Find vectors $p_1,p_2\in\mathcal{P}_2$ so that $v_1 = Tp_1$ and $v_2 = Tp_2$ form a basis for $\range(T)$ (and prove it)
+
+    \textbf{Hint}: Start by extending $q$ to a basis $q,p_1,p_2$ for $\mathcal{P}_2$. Then show $v_1$ and $v_2$ are linearly independent by considering $\alpha_1 v_1 + \alpha_2 v_2 = 0$ and using the definition of $v_1$ and $v_2$ and what you know about the null space of $T$. Finally, argue $v_1$ and $v_2$ are spanning.
+
+\end{problem}
+
+\begin{problem}
+    Suppose $T$ is invertible and $S_1$ and $S_2$ are inverses of $T$. Prove $S_1 = S_2$.
+\end{problem}
+
+\begin{problem}
+Suppose $T\in\mathcal{L}(U,V)$ and $S\in \mathcal{L}(V,W)$.
+Prove that $\mathcal{M}(ST) = \mathcal{M}(S)\mathcal{M}(T)$.
+\end{problem}
+
+\begin{problem}
+    We are used to working with the monomial basis:
+    \[
+    m_0(x) = 1, \quad
+    m_1(x) = x, \quad
+    m_2(x) = x^2, \quad
+    m_3(x) = x^3, \quad
+    m_4(x) = x^4
+    \]
+    Physicists like the Legendre polynomials:
+    \[
+    L_0(x) = 1 ,\quad
+    L_1(x) = x, \quad
+    L_2(x) = \frac{1}{2}(3x^2 - 1), \quad
+    L_3(x) = \frac{1}{2}(5x^3 - 3x).
+    \]
+    (a) Let $D:\mathcal{P}_4\to\mathcal{P}_4$ be the differentiation operator: $Dp = p'$.
+    What is $C = \mathcal{M}(D,\{m_i\},\{m_i\})$?
+    
+    \vspace{-.5em}
+    (b) Let $p = 2L_3$. 
+    What is $v = \mathcal{M}(p,\{L_i\})$?
+
+
+    (c)     
+    The change of basis matrices for monomial to Legendre and Legendre to monomial are given by:
+    \[
+    A = \mathcal{M}(I,\{L_i\},\{m_i\}) = 
+    \begin{bmatrix}
+        1 & 0 & -\frac{1}{2} & 0 \\
+        0 & 1 & 0 & -\frac{3}{2} \\
+        0 & 0 & \frac{3}{2} & 0 \\
+        0 & 0 & 0 & \frac{5}{2} \\
+    \end{bmatrix}
+    ,\qquad
+    B = \mathcal{M}(I,\{m_i\},\{L_i\}) = 
+    \begin{bmatrix}
+        1 & 0 & \frac{1}{3} & 0 \\
+        0 & 1 & 0 & \frac{3}{5} \\
+        0 & 0 & \frac{2}{3} & 0 \\
+        0 & 0 & 0 & \frac{2}{5} \\
+    \end{bmatrix}.
+    \]
+    What is the formula for $\mathcal{M}(Dp,\{L_i\})$ in terms of $A$,$B$,$C$ and $v$? Also compute the numerical entries. You can do it by matrix products or other means.
+
+\end{problem}
+
+\begin{problem}
+    Suppose $u_1, \ldots, u_n$ is a basis for $U$ and $v_1, \ldots, v_m$ is a basis for $V$ (both over the same field).
+    Write a basis for $U\times V$.
+\end{problem}
+
+\begin{problem}
+    Let $V$ be a vector space and $U\subset V$. 
+    Recall $v+U = \{v+u : u\in U\}$.
+
+    Prove that $v+U = w+U$ if and only if $v-w\in U$.
+\end{problem}
+
+
+
+\begin{problem}
+    
+    \textbf{Fact.}
+    Suppose $R$ is upper triangular ($r_{i,j} = 0$ if $i>j$).
+    If $R$ is invertible, then the inverse $R^{-1}$ is also upper triangular.
+
+
+    Suppose $v_1, \ldots, v_n$ and $u_1, \ldots, u_n$ are such that 
+        \[
+        \begin{bmatrix}
+            | & | & & | \\
+            v_1 & v_2 & \cdots & v_n \\
+            | & | & & | \\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            | & | & & | \\
+            u_1 & u_2 & \cdots & u_n \\
+            | & | & & | \\
+        \end{bmatrix}
+        R
+        ,\quad\text{where}\quad
+        R = 
+        \begin{bmatrix}
+            r_{1,1} & r_{1,2} & \cdots & r_{1,n} \\
+            0 & r_{2,2} & \cdots & r_{2,n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & r_{n,n} \\
+        \end{bmatrix}.
+        \]
+        
+        \begin{enumerate}
+            \item[(a)] Show that
+            $\operatorname{span}\{v_1, \ldots, v_k\}$ is a subset of $\operatorname{span}\{u_1, \ldots, u_k\}$ for each $k=1,2, \ldots, n$.
+            \item[(b)] 
+            Prove that if $R$ is invertible,  $\operatorname{span}\{v_1, \ldots, v_k\} = \operatorname{span}\{u_1, \ldots, u_k\}$ for each $k=1,2, \ldots, n$.
+            \\This can be viewed as a converse to the homework problem 3(a).
+        \end{enumerate}
+        
+   
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}[label=(\alph*)]
+        \item 
+    Find an orthonormal basis for 
+    \[
+    \operatorname{span}\left( 
+    \begin{bmatrix}
+        3 \\ 0 \\ 0 \\0
+    \end{bmatrix},
+    \begin{bmatrix}
+        1 \\ 0 \\ 2 \\0
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 \\ 0 \\ 0 \\-2
+    \end{bmatrix},
+     \right)
+    \]
+    \item Solve the least squares problem
+    \[
+        \min_{x,y,z} \left\| 
+        \begin{bmatrix}
+            3 &1&0 \\
+            0 &0&0 \\
+            0 &2&0 \\
+            0 &0&-2
+        \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+        - \begin{bmatrix}
+            1\\2\\3\\4
+        \end{bmatrix}
+        \right\|_2
+    \]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Recall the Chebyshev polynomials
+    \begin{align*}
+        T_0(x) = 1
+        ,\qquad T_1(x) = x
+        ,\qquad T_2(x) = 2x^2 - 1
+        ,\qquad T_3(x) = 4x^3 - 3x 
+    \end{align*}
+    satisfy the orthogonality condition:
+    \begin{equation*}
+        \int_{-1}^1 T_n(x)\,T_m(x)\,\frac{\mathrm{d}x}{\sqrt{1-x^2}} = 
+        \begin{cases}
+        0             & ~\text{ if }~ n \ne m, \\
+        \pi           & ~\text{ if }~ n=m=0, \\
+        \frac{\pi}{2} & ~\text{ if }~ n=m \ne 0.
+        \end{cases}
+    \end{equation*}
+
+    Let $f(x) = \sin(x)$. Find a degree $3$ polynomial $p(x)$ and a function $g(x)$ so that $f(x) = p(x) + g(x)$ and 
+    \[
+        \int_{-1}^1 p(x) g(x) \frac{1}{\sqrt{1-x^2}}\mathrm{d}{x} = 0.
+    \]
+    You can express your functions in terms of the Chebyshev polynomials and leave the coefficients as integrals.
+\end{problem}
+
+\begin{problem}
+    Suppose $T \in \mathcal{L}(V)$ and $U$ is a subspace of $V$.
+        (i) Prove that if $U \subseteq$ null $T$, then $U$ is invariant under $T$.
+        (ii) Prove that if range $T \subseteq U$, then $U$ is invariant under $T$.
+\end{problem}
+
+\begin{problem}
+    Suppose $T\in\mathcal{L}(V)$. Then $\operatorname{null}(T)$ and $\operatorname{range}(T)$ are invariant under $T$.
+\end{problem}
+
+\begin{problem}
+    Let $e_1, e_2, e_3, e_4$ be a basis for $V$.
+    Suppose $T\in\mathcal{L}(V)$ is defined by
+    \[
+        Te_1 = e_1,\quad
+        Te_2 = e_2,\quad
+        Te_3= -2e_3,\quad
+        Te_4 = 3e_4.
+        \]
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Write the matrix of $T$ with respect to $e_1, \ldots, e_4$.
+        \item Find the minimial polynomial of $T$; i.e. the monic polynomial of minimal degree for which $p(T) = 0$. 
+        Prove the polynomial you found is of minimal degree and unique.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Suppose $T$ is invertible. Prove that $E(\lambda,T) = E(1/\lambda,T)$ for all $\lambda\neq 0$.
+\end{problem}
+
+\begin{problem}
+    Let $V$ be a vector space of $\mathbb{C}$ with an inner product $\langle \cdot, \cdot\rangle$.
+    Recall an operator $T$ is called self-adjoint if $\langle Tu,v\rangle = {\langle u,Tv\rangle}$ for all $u,v\in V$.
+
+    Prove that $T$ is self-adjoint if and only if $\langle Tv,v\rangle$ is real for all $v\in V$.
+\end{problem}
+
+\end{document}
