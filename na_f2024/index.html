@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <title>Numerical Analysis (Fall 2024)</title>
+  <meta name="description" content="Course overview for NYU Numerical Analysis Fall 2024">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="keywords" content="Numerical Analysis, MATH-UA.0252, MA-UY.4424, NYU, Courant, Tandon" />
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link href="../tc.ico" rel="shortcut icon" >
+  <link href="../css/main.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="../css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <link rel="stylesheet" href="../font/lato/stylesheet.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../font/vollkorn/stylesheet.css" type="text/css" charset="utf-8" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50592837-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50592837-1');
+</script>
+
+</head>
+<body>
+<div id="contentContainer">
+<h1>Numerical Analysis (Fall 2024)</h1>
+<p>Welcome to Numerical Analysis!
+Numerical analysis studies algorithms and mathematical problems in the presence of (small) errors.
+In practice, such errors are unavoidable, so it is important to understand their impacts.
+Numerical analysis is one of the core fields in applied math, and this class will cover a number of key topics in numerical analysis.
+Linear algebra is a prerequisite, as much of numerical analysis is based on linear algebra.</p>
+<p><strong>Instructor</strong>: Tyler Chen<br />
+<strong>Email</strong>: tyler.chen@nyu.edu<br />
+<strong>Class</strong>: M, W 3:30-4:45pm (19 West 4th 102)<br />
+<strong>Office Hours</strong>: M 1:00-2:00pm, Tu 12:30-1:30pm (WWH 905)</p>
+<p><strong>Teaching Assistant</strong>: TBD<br />
+<strong>Recitation</strong>: F 9:30-10:45am (WWH 201)<br />
+<strong>Office Hours</strong>: TBD</p>
+<p><a href="./syllabus.html"><strong>Syllabus</strong></a><br />
+<a href="https://edstem.org/us/courses/61837"><strong>Edstem discussion</strong></a><br />
+<a href="https://www.gradescope.com/courses/818054"><strong>Gradescope</strong></a></p>
+<p><a href="https://drive.google.com/drive/folders/1zj92Mos3tAm_wTfYXXfsuSJRg4pNUgQL?usp=sharing"><strong>Course notes</strong></a></p>
+<h2>Approximate Schedule</h2>
+ 
+<div class="schedule-container">
+<div class="week weektitle">
+<div class="label">
+<strong>Week</strong>
+</div>
+<div class="topic">
+<strong>Topic</strong>
+</div>
+<div class="hw">
+<strong>Homework/Quiz</strong>
+</div>
+</div>
+<div class="week current">
+<div class="label">
+<strong>1.</strong> (9/1)
+</div>
+<div class="topic">
+No class Monday, Intro to numerical anlaysis
+</div>
+<div class="hw">
+<a href="./intro.pdf">[intro survey]</a> <a href="./hw1.pdf">[hw1]</a> (due 9/10)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>2.</strong> (9/8)
+</div>
+<div class="topic">
+Linear algebra review, SVD
+</div>
+<div class="hw">
+quiz 1 (9/11)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>3.</strong> (9/15)
+</div>
+<div class="topic">
+SVD, Norms, Factored systems
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>4.</strong> (9/22)
+</div>
+<div class="topic">
+Floating point numbers, Stability
+</div>
+<div class="hw">
+quiz 2 (9/25)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>5.</strong> (9/29)
+</div>
+<div class="topic">
+Conditioning, runtime
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>6.</strong> (10/6)
+</div>
+<div class="topic">
+Gaussian elimination (LU)
+</div>
+<div class="hw">
+quiz 3 (10/9)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>7.</strong> (10/13)
+</div>
+<div class="topic">
+Monday class on Tueday, Pivoting, QR
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>8.</strong> (10/20)
+</div>
+<div class="topic">
+QR
+</div>
+<div class="hw">
+quiz 4 (10/23)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>9.</strong> (10/27)
+</div>
+<div class="topic">
+QR, least squares
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>10.</strong> (11/3)
+</div>
+<div class="topic">
+Power Method
+</div>
+<div class="hw">
+quiz 5 (11/5)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>11.</strong> (11/10)
+</div>
+<div class="topic">
+NLA Review
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>12.</strong> (11/17)
+</div>
+<div class="topic">
+Inverse Power Method
+</div>
+<div class="hw">
+midterm (11/20)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>13.</strong> (11/24)
+</div>
+<div class="topic">
+Iterative Methods
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>14.</strong> (12/1)
+</div>
+<div class="topic">
+Polynomial interpolation, Chebyshev polynomials
+</div>
+<div class="hw">
+quiz 6 (12/3)
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>15.</strong> (12/8)
+</div>
+<div class="topic">
+Numerical Integration
+</div>
+<div class="hw">
+ 
+</div>
+</div>
+<div class="week">
+<div class="label">
+<strong>16.</strong> (12/15)
+</div>
+<div class="topic">
+Finals week
+</div>
+<div class="hw">
+Final Presentation (TBD)
+</div>
+</div>
+</div>
+
+
+<div class="menu">
+    <p>
+    <a href="https://chen.pw">home</a>  /  <a href="https://courses.chen.pw">teaching</a>  /  <a href="https://research.chen.pw">research</a>
+    </p>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+
+\begin{document}
+
+\textbf{\Large\sffamily{Intro Survey\hfill Numerical Analysis Fall 2024}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 09/10 at 5:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{2em}
+
+\begin{problem}
+    ~
+    \begin{itemize}
+        \item Respond to the intro post on Ed. If you do not have access, contact me as soon as possible.
+        \item What percent of the final grade is participation? What do you need to do to get full participation credit?
+        \item Check if you have any conflicts which will force you to miss class. If you do, please let me know now.
+            Examples of common conflicts include midterms for other classes which are scheduled during our class time, standardized tests, religious holidays, etc.
+            Quizzes cannot be made up if you miss class due to a foreseeable absence and did not notify me sufficiently far in advance.
+    \end{itemize}
+\end{problem}
+
+\begin{problem}
+Describe in a few sentences your background with: 
+    \begin{itemize}
+        \item linear algebra
+        \item coding
+    \end{itemize}
+\end{problem}
+
+\begin{problem}
+Tell me about your goals for the class.
+    \begin{itemize}
+        \item Are there any particular things you are hoping to learn? 
+        \item What are you most excited about?
+        \item Is there anything you're nervous about?
+        \item Is there anything else you want me to know?
+    \end{itemize}
+\end{problem}
+
+
+\end{document}

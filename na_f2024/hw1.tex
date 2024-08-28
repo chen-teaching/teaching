@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 1\hfill Numerical Analysis Fall 2024}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 09/10 at 5:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
+\end{itemize}
+
+\vfill
+\begin{problem}
+    Floating point operations (such as adding two floating point numbers) are some of the most basic units of modern computation (for instnace, using a neural network require adding and multiplying lots of numbers).
+
+    The Frontier supercomputer at Oak Ridge National Lab is the largest supercomputer in the world.
+    Frontier consists of roughly 10,000 nodes (individual computers) connected together.
+    Each node can do $10^{14}$ floating point operations per second.
+
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{frontier.jpeg}
+        
+        Image of Frontier from \href{https://en.wikipedia.org/wiki/Frontier_(supercomputer)}{Wikipedia}.
+    \end{center}
+    \begin{enumerate}            
+        \item 
+            Suppose you want to train the AlexNet image classifier (state of the art in 2012).
+            This will require roughly $10^{17}$ floating point operations.\footnote{\protect\url{https://epochai.org/data/notable-ai-models\#explore-the-data}}
+            
+            You are allocated a single node on Frontier.            
+            Roughly how long will it take (in minutes)?
+        \item 
+            Suppose that the furthest nodes are separated by 25 meters.
+            Roughly how many floating point operations could the whole supercomputer do in the time it takes to send a signal from one of these node to the other? (You can assume the signal travels at the speed of light)
+        \item 
+            Suppose you want to train GPT-4.
+            This requires roughly $10^{25}$ flops, $10^{8}$ times more operations than in AlexNet.
+            However, this time you can use the entire supercomputer.
+            
+            Because the data set is so huge, we need to store different parts of the data on different nodes. 
+
+            We are doing a computation $10^8$ times larger, using $10^4$ times as many resources.
+            Do you think the runtime will be more, less, or about the same than $10^4$ times the runtime in (a)? Why?
+
+            Relate you answer to your response in (b).
+        \item  A Macbook Pro M3 can do roughly $10^{11}$ floating point operations per second. How long would it (in years) to do $10^{25}$ flops? 
+    \end{enumerate}
+\end{problem}
+
+
+\vfill
+\begin{problem}For (a), (b), and (c) you must \emph{prove} the results for the general case. 
+    \begin{enumerate}
+        \item Suppose $\vec{A}$ is both an upper triangular matrix and a lower triangular matrix. Show that $\vec{A}$ is diagonal.
+        \item Suppose $\vec{A}$ is a matrix. Show that $\vec{A}^\T \vec{A}$ is symmetric.
+        \item Suppose $\vec{A}$ is a diagonal matrix and $\vec{B}$ is upper triangular. Show that $\vec{A}\vec{B}$ is upper triangular.
+        \item Find an example of a matrix $\vec{A}$ with orthogonal columns (i.e. $\vec{A}^\T \vec{A} = \vec{I}$) for which $\vec{A}\vec{A}^\T \neq \vec{I}$. 
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Define 
+\begin{equation*}
+    \vec{A} = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \\ 10 & 11 & 12\end{bmatrix}
+    ,\quad
+    \vec{B} = \begin{bmatrix} 0 & -1 & -4 \\ -7 & 0 & -1 \\ 3 & 4 & 3\end{bmatrix}
+    ,\quad
+    \vec{x} = \begin{bmatrix} 3 \\ 2 \\ -2\end{bmatrix}.
+\end{equation*}
+
+    \begin{enumerate}
+        \item Compute $\vec{A} \vec{B}$.
+        \item Compute $\vec{B} \vec{x}$.
+        \item Compute $\vec{A} (\vec{B} \vec{x})$.
+        \item Compute $(\vec{A}\vec{B}) \vec{x}$.
+    \end{enumerate}
+Show your work at each step.
+\end{problem}
+
+\clearpage
+\begin{problem}~Make sure to read the course guidelines on submitting code!
+\begin{enumerate}
+    \item Make the matrices $\vec{A}$, $\vec{B}$, and vector $\vec{x}$ in numpy.
+    \item Verify each of the answers you generated in Problem 3 using numpy. 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}~
+    Consider linear equations $f(x) = a x + b$ and $\tilde{f}(x) = a x + (b+\epsilon)$, where $a$ and $b$ are constants and $\epsilon = 10^{-5}$.
+    \begin{enumerate}
+        \item Find the solutions to $f(x) = 0$ and $\tilde{f}(x) = 0$ in terms of $a$ and $b$.
+        \item Find values of $a$ and $b$ so that the solutions to these two equations are very different. Here ``very different'' means the solutions differ by much more than $\epsilon$.
+        \item Using matplotlib, plot the functions $f(x)$ and $\tilde{f}(x)$ corresponding to your values of $a$ and $b$.
+        Make sure the plots are labeled, and that the axes bounds are chosen such that the two lines can be clearly differentiated from one another and the zeros are clearly visible.
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}
