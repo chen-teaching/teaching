@@ -224,7 +224,7 @@ This results in a black and white image.
                 \item Return approximate SVD of $\vec{A}$: $(\vec{Q} \hat{\vec{U}}) \hat{\vec{\Sigma}} \hat{\vec{V}}^\T$  
             \end{itemize}
 
-            Implement this algorithm with the same matrix $\vec{A}$ as in Problem 3.
+            Implement this algorithm with the same matrix $\vec{A}$ as in Problem 4.
             To generate the random matrix, you can use \lstinline{np.random.randn(n,k)}.
 
 
@@ -233,9 +233,9 @@ This results in a black and white image.
        
         \item Prove that the factors $\vec{Q}\hat{\vec{U}}$, $\hat{\vec{\Sigma}}$ and $\hat{\vec{V}}^\T$ have the same properties as a SVD; i.e. $\vec{Q}\hat{\vec{U}}$ and $\hat{\vec{V}}$ have orthonormal columns and $\hat{\vec{\Sigma}}$ is diagonal with non-negative entires.
         \item 
-            Make a plot of the rank $k=100$ truncated SVD (from problem 3) and the $k=100$ randomized SVD.
+            Make a plot of the rank $k=100$ truncated SVD (from problem 4) and the $k=100$ randomized SVD.
             Show the relative errors $\|\vec{A} - (\vec{Q} \hat{\vec{U}})\hat{\vec{\Sigma}} \hat{\vec{V}}^\T \|_\F/\|\vec{A}\|_\F$ for each. 
-        \item How long did this algorithm take to run vs. the reduced SVD in problem 3? Why was it so much faster? Hint: what are the dimensions of the matrices which we take the SVD of using this approach?
+        \item How long did this algorithm take to run vs. the reduced SVD in problem 4? Why was it so much faster? Hint: what are the dimensions of the matrices which we take the SVD of using this approach?
 
     \end{enumerate}
 \end{problem}
