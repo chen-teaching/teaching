@@ -180,11 +180,12 @@ thead > tr {
 }
 
 .week > .topic {
-    width: 30%;
+    width: 55%;
 }
 
 .week > .reading {
-    width: 25%;
+    width: 0%;
+    display: none;
 }
 
 .week > .hw {
@@ -229,11 +230,13 @@ caption {
 .week > .reading {
     width: 40%;
     padding-top: .5em;
+    display: none;
 }
 
 .week > .hw {
     width: 60%;
     padding-top: .75em;
+    padding-left: 40%;
 }
 
 }
