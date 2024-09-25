@@ -1,0 +1,444 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 3\hfill Numerical Analysis Fall 2024}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+ 
+\textbf{Instructions:}
+    \begin{itemize}
+        \item Due 10/8 at 5:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+    For each problem, write down a matrix or matrices which performs the stated operations to a $3\times 4$ matrix.
+    Make sure to specify whether you should be applied on the left or right.
+
+    For reference, we will also show what the operation does to the following matrices:
+    \[
+        \vec{A} = 
+        \begin{bmatrix}
+            1 & 2 & 3 & 4 \\
+            5 & 6 & 7 & 8 \\
+            9 & 10 & 11 & 12
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} = 
+        \begin{bmatrix}
+            1 & 3& -2 & 0 \\
+            2 & -3 & 1 & 1 \\
+            2 & -2 & 5 & 4
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}
+        \item Extract the second column.
+            \[
+                \vec{A} \to \begin{bmatrix} 2 \\ 6 \\ 10 \end{bmatrix}
+                    ,\qquad
+                    \vec{B} \to \begin{bmatrix} 3 \\ -3 \\ -2 \end{bmatrix}
+            \]
+        \item Extract the second column and place it in the third column of a $3\times 3$ matrix of zeros.
+            \[
+                    \vec{A} \to \begin{bmatrix} 0&0&2 \\ 0&0&6 \\ 0&0&10 \end{bmatrix}
+                    ,\qquad
+                    \vec{B} \to \begin{bmatrix} 0&0&3 \\ 0&0&-3 \\ 0&0&-2 \end{bmatrix}
+            \]
+        \item Swap the second and third columns.
+    \[
+        \vec{A} \to 
+        \begin{bmatrix}
+            1 & 3 & 2 & 4 \\
+            5 & 7 & 6 & 8 \\
+            9 & 11 & 10 & 12
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to
+        \begin{bmatrix}
+            1 & -2 & 3& 0 \\
+            2 & 1 & -3 & 1 \\
+            2 & 5 & -2 & 4
+        \end{bmatrix}
+    \]
+    \item Sum up each column.
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            15 & 18 & 21 & 24 
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            5 & -2 & 4 & 5
+        \end{bmatrix}
+    \]
+    \item Swap the second and third columns, then sum up each column  (this one requires using two matrices).
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            15 & 21 & 18 & 24 
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            5 & 4 & -2 & 5
+        \end{bmatrix}
+    \]
+
+    \item Sum all the entries (this one requires using two matrices).
+    \[
+        \vec{A} \to  
+        \begin{bmatrix}
+            78
+        \end{bmatrix}
+        ,\qquad 
+        \vec{B} \to 
+        \begin{bmatrix}
+            12
+        \end{bmatrix}
+    \]
+
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Plotting data is often a useful way to understand the behavior of a function. For instance, we might plot the runtime of an algorithm as a function of the size of the input.
+    The simplest thing to do is plot $x$ vs $y$ values. 
+    However, sometimes it is more useful to plot $x$ vs $\log(y)$ or $\log(x)$ vs $\log(y)$.
+    This problem will explore why this is the case.
+
+    \begin{enumerate}
+        \item Prove that on a log-log plot, $n$ vs $c n^k$ is a line. What is the slope? What is the intercept?
+        \item What will the plot of $n$ vs $50n^2 + 3n + 1$ look like on a log-log plot when $n$ is large?
+        \item Prove that on a log-y plot, $n$ vs $\rho^n$ is a line. What is the slope?
+        \item Over the range $n\in[1,20]$ make a plot of:
+        \begin{itemize}
+            \item  $n$ vs $50n^2+3n+1$ and $v$ vs $n^3$ 
+            \item $n$ vs $\log(50n^2+3n+1)$ and $\log(n)$ vs $\log(n^3)$
+            \item $\log(n)$ vs $\log(50n^2+3n+1)$ and $\log(n)$ vs $\log(n^3)$
+        \end{itemize}
+        
+        Imagine you didn't know what functions we were plotting (i.e. you were timing two algorithms and got the plots empirically). 
+        Explain why the log-log plot is the most useful for understanding the behavior of growth of the functions beyond $n=20$.
+    \end{enumerate}
+
+\end{problem}
+
+
+
+\begin{problem}
+
+    In chapter 9, we see our implementation of a triangular solved was faster than numpy's \lstinline{np.linalg.solve}.
+
+    Scipy has a solver \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_triangular.html}{\lstinline{sp.linalg.solve_triangular}} for triangular systems which uses LAPACK's triangular solver.
+
+    Add this solver to the runtime comparison of \lstinline{np.linalg.solve} and our triangular solver in Chapter 9 of the notes (all the code from the notes is online on the Google Drive).
+    
+    Include the new figure showing the runtime scaling of all three algorithms.
+    How does scipy's triangular solver compare?
+
+    Remember to include your code as well as the figure.
+
+\end{problem}
+
+\begin{problem}
+In lecture, we said floating point numbers were basically like scientific notation.
+
+Let's define the set of numbers which we can represent in finite precision with $p>0$ decimal places as 
+\[
+\mathbb{F}_p := \big\{ b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\mathbb{Z} \big\} 
+\]
+For example, $3.2414\times 10^2$ and $9.9999 \times 10^{-99}$ are both in $\mathbb{F}_4$.
+
+
+Define the rounding function $\operatorname{round} : \mathbb{R} \to \mathbb{F}_p$ as the function which takes in a number $x$ and outputs the nearest number $\operatorname{round}(x)$ in $\mathbb{F}_p$ to $x$ (round up in a tie).
+
+For example, 
+\[
+x = \pi = 3.14159265358979323846\ldots \to \operatorname{round}(x) = 3.1416 \times 10^0.
+\]
+
+\begin{enumerate}
+    \item What is the distance between two consecutive numbers in $\mathbb{F}_p$ with the same exponent $m$?
+    \item Prove that for any $x\in\mathbb{R}$, 
+    \[ 
+        |x - \operatorname{round}(x) | \leq 10^{-p} |x|.
+    \]
+    \emph{Hint}: Use (a) and argue that $|x| \geq 10^{m}$. 
+    
+    \item Note that $\mathbb{F}_p$ is an infinite set. Define 
+    \[
+    \mathbb{F}_{p,q} := \big\{ b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\{-q,-q+1 \ldots, q\} \big\}.
+    \]
+    This is like $\mathbb{F}_p$ but we only allow exponents between $-q$ and $q$.
+
+    Show that if $\operatorname{round} : \mathbb{R} \to \mathbb{F}_{p,q}$ is the function which takes in a number $x$ and outputs the nearest number $\operatorname{round}(x)$ in $\mathbb{F}_{p,q}$ to $x$ (round up in a tie) there exits $x\in\mathbb{R}$ with
+    \[ 
+        |x - \operatorname{round}(x) | > 10^{-p} |x|.
+    \]
+    
+    
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+
+    Define,
+    \begin{equation*}
+        \vec{A} =
+        \begin{bmatrix}
+         3 & 4 & 1 & -8 \\
+         6 & 5 & 2 & -28 \\
+         3 & 2 & -8 & -13 \\
+         -12 & -15 & -4 & 48 \\
+        \end{bmatrix}
+        ,\qquad
+        \vec{b} = 
+        \begin{bmatrix}-10\\-26\\-38\\54\end{bmatrix}
+        \end{equation*}
+        We want to find $\vec{x}$ so that $\vec{A}\vec{x} = \vec{b}$.
+        Suppose we have
+        \[
+            \vec{A} = \vec{L}\vec{U},\qquad
+        \vec{L} = 
+        \begin{bmatrix}
+     1 & 0 & 0 & 0 \\
+     2 & -3 & 0 & 0 \\
+     1 & -2 & 3 & 0 \\
+     -4 & 1 & 0 & 4 \\
+        \end{bmatrix}
+        ,\qquad
+        \vec{U} = 
+        \begin{bmatrix}
+     3 & 4 & 1 & -8 \\
+     0 & 1 & 0 & 4 \\
+     0 & 0 & -3 & 1 \\
+     0 & 0 & 0 & 3 \\
+        \end{bmatrix}
+        \]
+        We will use this factorization to solve $\vec{A} \vec{x} = \vec{b}$.
+
+        \begin{enumerate}
+        \item Solve $\vec{L}\vec{y} = \vec{b}$.
+        \item Solve $\vec{U}\vec{x} = \vec{y}$.
+        \item Check that $\vec{A}\vec{x} = \vec{b}$.
+        \end{enumerate}
+    
+    \end{problem}
+    
+    \clearpage
+    \begin{problem}
+    Define,
+    \begin{equation*}
+        \vec{A} =
+        \begin{bmatrix}
+     1 & 5 & 7 & 8 \\
+     1 & -1 & 1 & 6 \\
+     1 & 5 & 5 & -2 \\
+     1 & -1 & -1 & 4 \\
+        \end{bmatrix}
+        ,\qquad
+        \vec{b} = 
+        \begin{bmatrix}-18\\-90\\-69\\138\end{bmatrix}
+        \end{equation*}
+        We want to find $\vec{x}$ so that $\vec{A}\vec{x} = \vec{b}$.
+        Suppose we have
+        \[
+        \vec{A} = \vec{Q}\vec{R},\qquad
+        \vec{Q} = 
+        \frac{1}{2}\begin{bmatrix}
+     1 & 1 & 1 & 1 \\
+     1 & -1 & 1 & -1 \\
+     1 & 1 & -1 & -1 \\
+     1 & -1 & -1 & 1 \\
+        \end{bmatrix}
+        ,\qquad
+        \vec{R} = 
+        \begin{bmatrix}
+     2 & 4 & 6 & 8 \\
+     0 & 6 & 6 & -2 \\
+     0 & 0 & 2 & 6 \\
+     0 & 0 & 0 & 4 \\
+        \end{bmatrix}
+        \]
+        We will use this factorization to solve $\vec{A} \vec{x} = \vec{b}$.
+
+        \begin{enumerate}
+            \item 
+            What is $\vec{Q}^\T \vec{Q}$? What does this tell you about $\vec{Q}^{-1}$?
+            \item Solve $\vec{Q}\vec{y} = \vec{b}$.
+            \item Solve $\vec{R}\vec{x} = \vec{y}$.
+            \item Check that $\vec{A}\vec{x} = \vec{b}$.
+        \end{enumerate}
+
+    \end{problem}
+
+\begin{problem}
+Describe whether the following problems/tasks are well-conditioned or not. 
+    Justify each of your responses.
+
+    \begin{enumerate}
+         \item Problem/task: You are given a vector $[x_1, x_2]$ and must compute the solution $[z_1, z_2]$ to the linear system of equations
+            \begin{equation*}
+                 2.3z_1 − 1.01z_2 = x_1 
+                 ,\qquad 
+                 2.31 z_1 − 1.00 z_2= x_2.
+            \end{equation*}
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $P(x)$ \\ \midrule
+                $[1,2]$ & $[30.816,69.184]$ \\
+                $[1,1]$ & $[0.30211,-0.302115]$ \\ 
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+        \item Problem/task: You are given function $h:[-1,1]\to \mathbb{R}$ and must return $\int_{-1}^{1} h(s) \d{s}$. 
+            We will use the norm $\|\tilde{h} - h\|_\infty := \max_{s\in[-1,1]} |\tilde{h}(s) - h(s)|$.
+
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $P(x)$ \\ \midrule
+                $h(s) = 1$ & 2 \\
+                $h(s) = s^2$ & 2/3 \\
+                $h(s) = \sin(s)$ & 0 \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+\clearpage
+
+\item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a greyscale image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+        
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $P(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day_gs.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night_gs.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night_gs.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+\clearpage
+
+
+        \item Problem/task: You're designing a self-driving car. 
+            As you approach an intersection, you are given a color image of the stoplight. 
+            You must determine whether it is green or red; i.e. if the car should continue through the intersection or stop.
+            
+            Example inputs/outputs:
+
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $P(x)$ \\ \midrule
+            \includegraphics[width=1.75in]{green_day.jpg} & green \\
+            \includegraphics[width=1.75in]{red_day.jpg} & red \\
+            \includegraphics[width=1.75in]{green_night.jpg} & green \\
+            \includegraphics[width=1.75in]{red_night.jpg} & red \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+
+       
+            Images from:
+            \href{https://www.youtube.com/watch?v=yhCAWZlv_Sc}{Brooklyn 4K - Night Drive}
+            and \href{https://www.youtube.com/watch?v=eyu0d1x5TMs}{Jazz New York City Drive}
+
+    \end{enumerate}
+\end{problem}
+
+\end{document}
