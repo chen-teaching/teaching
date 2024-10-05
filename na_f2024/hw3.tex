@@ -225,7 +225,7 @@ In lecture, we said floating point numbers were basically like scientific notati
 
 Let's define the set of numbers which we can represent in finite precision with $p>0$ decimal places as 
 \[
-\mathbb{F}_p := \big\{ b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\mathbb{Z} \big\} 
+\mathbb{F}_p := \big\{ \pm b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\mathbb{Z} \big\} 
 \]
 For example, $3.2414\times 10^2$ and $9.9999 \times 10^{-99}$ are both in $\mathbb{F}_4$.
 
@@ -247,7 +247,7 @@ x = \pi = 3.14159265358979323846\ldots \to \operatorname{round}(x) = 3.1416 \tim
     
     \item Note that $\mathbb{F}_p$ is an infinite set. Define 
     \[
-    \mathbb{F}_{p,q} := \big\{ b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\{-q,-q+1 \ldots, q\} \big\}.
+    \mathbb{F}_{p,q} := \big\{ \pm b.b_1b_2\ldots b_p \times 10^{m} : b\in\{1,\dots, 9\}, b_i\in \{0,\ldots, 9\}, m\in\{-q,-q+1 \ldots, q\} \big\}.
     \]
     This is like $\mathbb{F}_p$ but we only allow exponents between $-q$ and $q$.
 
