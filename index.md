@@ -7,6 +7,8 @@ description: Here is info on my teaching.
 
 ## NYU
 
+- [Numerical Analysis (Fall 2024)](./na_f2024)
+- [Graduate Linear Algebra I (Spring 2024)](./la_s2024)
 - [Numerical Analysis (Fall 2023)](./na_f2023)
 - [Numerical Analysis (Spring 2023)](./na_s2023)
 - [Mathematical Statistics (Fall 2022)](./mathstats_f2022)

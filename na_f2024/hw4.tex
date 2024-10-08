@@ -1,0 +1,229 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\usepackage{xcolor}
+
+\begin{document}
+
+\textbf{\Large\sffamily{Homework 4\hfill Numerical Analysis Fall 2024}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+
+    \textbf{Instructions:}
+    \begin{itemize}
+        \item Due 10/21 at 6:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+{\color{red}I may add more problems to this homework set.}
+   
+\vspace{.5em}
+
+
+\begin{problem}
+
+    In the last homework, we considered the following problem/task: You are given function $h:[-1,1]\to \mathbb{R}$ and must return $\int_{-1}^{1} h(s) \d{s}$; i.e.
+    \[
+        f(h) = \int_{-1}^{1} h(s) \d{s}.
+    \]
+    Consider the following algorithm for this task:
+    \[
+        A(h) = \sum_{i=0}^{100} \frac{1}{50} h(x_i) ,\qquad x_i = -1+i/50. 
+    \]
+
+    \begin{enumerate}
+        \item For each of the following inputs, compute the algorithm's output and compare it to the true solution $f(x)$.
+            \begin{center}
+            \begin{tabular}{>{\centering\arraybackslash}m{2in}>{\centering\arraybackslash}m{2in}}
+            \toprule
+                input $x$ & solution $f(x)$ \\ \midrule
+                $h(s) = 1$ & 2 \\
+                $h(s) = s^2$ & 2/3 \\
+                $h(s) = \sin(s)$ & 0 \\
+                \bottomrule
+            \end{tabular}
+            \end{center}
+        \item Find an input for which the algorithm's output is very far from the true output. Explain why this is the case.
+        \item Argue that the algorithm is not backwards stable. Justify your response.
+        \item How could we restrict the input space to this algorithm to make it backwards stable?
+    \end{enumerate}
+\end{problem}
+
+
+
+
+\begin{problem}
+For each $j=1,2, \ldots, n-1$, define $\vec{L}_j \in \mathbb{R}^{n\times n}$ by 
+\[
+    [\vec{L}]_{i,k} 
+    = \begin{cases}
+    1 & i=k \\
+    \ell_{i,j} & k=j \\
+    0 & \text{o.w.}
+    \end{cases}
+\]
+For example:
+\[
+\vec{L}_1=
+\begin{bmatrix}
+1 &\\
+\ell_{2,1} &1 \\
+\ell_{3,1} &&1 \\
+    \vdots & & & \ddots \\
+    \ell_{n,1} &&&&1
+\end{bmatrix}
+,\quad
+\vec{L}_2=
+\begin{bmatrix}
+1 &\\
+&1 \\
+&\ell_{3,2} &1 \\
+    & \vdots &&\ddots \\
+    &\ell_{n,2}&&&1
+\end{bmatrix}
+,\ldots\quad
+    \vec{L}_{n-1}=
+\begin{bmatrix}
+1 &\\
+&1 \\
+&&\ddots \\
+&&&1 \\
+&&&\ell_{n,n-1}&1
+\end{bmatrix}
+    \]
+Verify that
+\[
+(\vec{L}_{n-1} \cdots \vec{L}_2\vec{L}_1)^{-1}
+=
+\begin{bmatrix}
+1 &\\
+-\ell_{2,1} &1 \\
+-\ell_{3,1} &-\ell_{3,2}&1 \\
+\vdots & \vdots & & \ddots \\
+    -\ell_{n,1} &-\ell_{n,2}&\cdots&-\ell_{n,n-1}&1
+\end{bmatrix}.
+\]
+\emph{Hint}: It suffices to check a certain product of matrices is the identity.
+Write down this product, and then compute it.
+\end{problem}
+
+
+\begin{problem}
+Suppose
+    \[
+        \vec{A} 
+        = 
+        \begin{bmatrix}
+            0 & 3 & -2 & 4 \\
+            4 & -3 & 2 & 1 \\
+            1 & 2 & 3 & -1 \\
+            2 & 1 & 1& 3
+        \end{bmatrix}
+    \]
+
+    \begin{enumerate}
+        \item Perform PLU factorization, using the row with the largest leading entry as the pivot row, to obtain a factorization $\vec{L}^{(3)} \vec{P}^{(3)} \vec{L}^{(2)} \vec{P}^{(2)} \vec{L}^{(1)} \vec{P}^{(1)} \vec{A} = \vec{U}$.
+        Write each of the $\vec{L}^{(i)}$, $\vec{P}^{(i)}$, and $\vec{U}$ as you go, along with the current state of the matrix after applying each factor.
+            
+            You should compute the factors exactly (i.e. using fractions), but you do not need to show you work when evaluating matrix-matrix products. It is recommended you use wolfram alpha, Mathematica, sympy, or some other symbolic math tool to assist you.  
+        \item Use (a) to find a factorization $\vec{P}\vec{A}  = \vec{L} \vec{U}$.
+        \item Perform regular LU factorization (without pivoting) on $\vec{P}\vec{A}$.
+            Show the row operation matrices you use along the way.
+        \item How do the steps you take in (a) and (c) compare?
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Let 
+\[
+\vec{Q} = \begin{bmatrix}
+|&|&&| \\
+\vec{q}_1 & \vec{q}_2 & \cdots & \vec{q}_k \\
+|&|&&| \\
+\end{bmatrix}.
+\]
+
+\begin{enumerate}
+    \item Suppose $\{\vec{q}_1, \ldots, \vec{q}_k\}$ are orthonormal. What is $\vec{Q}^\T \vec{Q}$?
+    \item Suppose $\vec{x}$ is in the span of $\{\vec{q}_1, \vec{q}_2, \ldots, \vec{q}_k\}$. Show that $\vec{x} = \vec{Q}\vec{c}$ for some vector $\vec{c}\in\mathbb{R}^k$.
+    \item Suppose we know $\vec{x} = c_1 \vec{q}_1 + c_2 \vec{q}_2 + \cdots + c_k \vec{q}_k$, but we do not know the coefficients $c_1, c_2 \ldots, c_k$. 
+       Explain how you can obtain these coefficients from $\vec{Q}$ and $\vec{x}$.
+\end{enumerate}
+
+\end{problem}
+
+
+\end{document}
