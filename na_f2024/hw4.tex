@@ -87,7 +87,6 @@ bold-style = TeX
         \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
 \end{itemize}
    
-{\color{red}I may add more problems to this homework set.}
    
 \vspace{.5em}
 
@@ -198,13 +197,69 @@ Suppose
         Write each of the $\vec{L}^{(i)}$, $\vec{P}^{(i)}$, and $\vec{U}$ as you go, along with the current state of the matrix after applying each factor.
             
             You should compute the factors exactly (i.e. using fractions), but you do not need to show you work when evaluating matrix-matrix products. It is recommended you use wolfram alpha, Mathematica, sympy, or some other symbolic math tool to assist you.  
+
         \item Use (a) to find a factorization $\vec{P}\vec{A}  = \vec{L} \vec{U}$.
+        You must show the work for how you obtain the factors (particularly the $\vec{L}$ factor).
         \item Perform regular LU factorization (without pivoting) on $\vec{P}\vec{A}$.
             Show the row operation matrices you use along the way.
         \item How do the steps you take in (a) and (c) compare?
     \end{enumerate}
 \end{problem}
 
+\begin{problem}
+    In worksheet 4, we saw that applying Gaussian elimination to the matrix
+    \[
+        \vec{A} = 
+    \begin{bmatrix}
+        10^{-20} & 1 \\ 1 & 1 
+    \end{bmatrix}.
+    \]
+    without pivoting results in an LU factorization that might have a large error.
+
+    Let's see that that is actually the case on a computer.
+
+    \begin{enumerate}
+        \item Find a matrix $\vec{L}_1$ which introduces a zero in the bottom left corner by subtracting some multiple of the first row from the second row.
+        \item Find the corresponding LU factorization for $\vec{A}$.
+        \item Form the matrixes $\vec{A}$ and $\vec{L}_1$ in numpy, and multiply them to get $\vec{U}$. 
+        Form $\vec{L}$ by using the formula for $\vec{L} = \vec{L}_1^{-1}$.
+
+        Print out $\vec{A}$, $\vec{L}\vec{U}$, and $\|\vec{A}-\vec{L}\vec{U}\|_\F$. 
+
+        \item Repeat this with partial pivoting. I.e. first find a permutation matrix $\vec{P}_1$ which swaps the rows of $\vec{A}$ so that the largest entry in the first column is in the first row. Multiply this matrix with $\vec{A}$. 
+        Then find $\vec{L}_1$ which introduces a zero in the bottom left corner by subtracting some multiple of the first row from the second row.
+        Obtain $\vec{U} =\vec{L}_1 (\vec{P}_1\vec{A})$ and $\vec{L}$.
+
+        Output the factorization and error.
+
+    \end{enumerate}
+
+
+
+
+\end{problem}
+
+\begin{problem}
+    Recall the growth factor for Gaussian elimination is the maximum ratio of the largest entry in $\vec{U}$ to the largest entry in $\vec{A}$.
+    A bigger growth factor is correlated to a bigger loss of precision when the factorization is used to solve systems.
+
+    Apply PLU factorization (no pivoting if the rows have the same magnitude) to
+    \[
+    \vec{A} = 
+    \begin{bmatrix}
+    	1 & 0 & 0 & 0 & 1 \\
+    	-1 & 1 & 0 & 0 & 1 \\
+    	-1 & -1 & 1 & 0 & 1 \\
+    	-1 & -1 & -1 & 1 & 1 \\
+    	-1 & -1 & -1 & -1 & 1
+    \end{bmatrix}.
+    \]
+    Wilkinson showed that the growth factor for Gaussian elimination is $2^{n-1}$ in the worst case.
+    This example shows that the growth factor of partial pivoting on a $n\times n$ matrix can be as large as $2^{n-1}$. 
+    Other (more expensive) pivoting schemes can guarantee smaller growth factors.
+    \footnote{\url{https://nhigham.com/2020/07/14/what-is-the-growth-factor-for-gaussian-elimination/}}
+
+\end{problem}
 
 \begin{problem}
 Let 
