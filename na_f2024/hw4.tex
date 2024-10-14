@@ -72,18 +72,21 @@ bold-style = TeX
 
 \usepackage{array,booktabs}
 
+\usepackage{xcolor}
+
 \begin{document}
 
-\textbf{\Large\sffamily{Homework 4\hfill Numerical Analysis Fall 2023}}
+\textbf{\Large\sffamily{Homework 4\hfill Numerical Analysis Fall 2024}}
     
     \vspace{-1.8em}
     \hrulefill
- 
-\textbf{Instructions:}
+
+    \textbf{Instructions:}
     \begin{itemize}
-        \item Due 10/27 at 5:00pm on \href{https://www.gradescope.com/courses/570477/}{Gradescope}.
-        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2023/syllabus.html}{syllabus} 
+        \item Due 10/21 at 6:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
 \end{itemize}
+   
    
 \vspace{.5em}
 
@@ -96,7 +99,7 @@ bold-style = TeX
     \]
     Consider the following algorithm for this task:
     \[
-        \tilde{f}(h) = \sum_{i=0}^{100} \frac{1}{50} h(x_i) ,\qquad x_i = -1+i/50. 
+        A(h) = \sum_{i=0}^{100} \frac{1}{50} h(x_i) ,\qquad x_i = -1+i/50. 
     \]
 
     \begin{enumerate}
@@ -112,9 +115,12 @@ bold-style = TeX
             \end{tabular}
             \end{center}
         \item Find an input for which the algorithm's output is very far from the true output. Explain why this is the case.
-        \item Is this algorithms backwards stable? Justify your response.
+        \item Argue that the algorithm is not backwards stable. Justify your response.
+        \item How could we restrict the input space to this algorithm to make it backwards stable?
     \end{enumerate}
 \end{problem}
+
+
 
 
 \begin{problem}
@@ -179,10 +185,10 @@ Suppose
         \vec{A} 
         = 
         \begin{bmatrix}
-            0 & 3 & -2 & 4 \\
-            4 & -3 & 2 & 1 \\
-            1 & 2 & 3 & -1 \\
-            2 & 1 & 1& 3
+            1 & 3 & 2 & 1 \\
+            -2 & 6 & 3 & 3 \\
+            3 & 3 & 6 & 0 \\
+            1 & 3 & 1 & 1 \\
         \end{bmatrix}
     \]
 
@@ -191,7 +197,9 @@ Suppose
         Write each of the $\vec{L}^{(i)}$, $\vec{P}^{(i)}$, and $\vec{U}$ as you go, along with the current state of the matrix after applying each factor.
             
             You should compute the factors exactly (i.e. using fractions), but you do not need to show you work when evaluating matrix-matrix products. It is recommended you use wolfram alpha, Mathematica, sympy, or some other symbolic math tool to assist you.  
+
         \item Use (a) to find a factorization $\vec{P}\vec{A}  = \vec{L} \vec{U}$.
+        You must show the work for how you obtain the factors (particularly the $\vec{L}$ factor).
         \item Perform regular LU factorization (without pivoting) on $\vec{P}\vec{A}$.
             Show the row operation matrices you use along the way.
         \item How do the steps you take in (a) and (c) compare?
@@ -210,8 +218,7 @@ Let
 \]
 
 \begin{enumerate}
-    \item Suppose $\vec{Q}^\T \vec{Q} = \vec{I}$. 
-        What is $\vec{q}_i^\T\vec{q}_j$ for each $i,j \in \{1,2,\ldots, k\}$?
+    \item Suppose $\{\vec{q}_1, \ldots, \vec{q}_k\}$ are orthonormal. What is $\vec{Q}^\T \vec{Q}$?
     \item Suppose $\vec{x}$ is in the span of $\{\vec{q}_1, \vec{q}_2, \ldots, \vec{q}_k\}$. Show that $\vec{x} = \vec{Q}\vec{c}$ for some vector $\vec{c}\in\mathbb{R}^k$.
     \item Suppose we know $\vec{x} = c_1 \vec{q}_1 + c_2 \vec{q}_2 + \cdots + c_k \vec{q}_k$, but we do not know the coefficients $c_1, c_2 \ldots, c_k$. 
        Explain how you can obtain these coefficients from $\vec{Q}$ and $\vec{x}$.
@@ -219,5 +226,68 @@ Let
 
 \end{problem}
 
+
+
+\clearpage
+
+The following are worth a small number of bonus points. If you submit them, you should submit them to the separate gradescope assignment.
+
+\begin{problem}
+    In worksheet 4, we saw that applying Gaussian elimination to the matrix
+    \[
+        \vec{A} = 
+    \begin{bmatrix}
+        10^{-20} & 1 \\ 1 & 1 
+    \end{bmatrix}.
+    \]
+    without pivoting results in an LU factorization that might have a large error.
+
+    Let's see that that is actually the case on a computer.
+
+    \begin{enumerate}
+        \item Find a matrix $\vec{L}_1$ which introduces a zero in the bottom left corner by subtracting some multiple of the first row from the second row.
+        \item Find the corresponding LU factorization for $\vec{A}$.
+        \item Form the matrixes $\vec{A}$ and $\vec{L}_1$ in numpy, and multiply them to get $\vec{U}$. 
+        Form $\vec{L}$ by using the formula for $\vec{L} = \vec{L}_1^{-1}$.
+
+        Print out $\vec{A}$, $\vec{L}\vec{U}$, and $\|\vec{A}-\vec{L}\vec{U}\|_\F$. 
+
+        \item Repeat this with partial pivoting. I.e. first find a permutation matrix $\vec{P}_1$ which swaps the rows of $\vec{A}$ so that the largest entry in the first column is in the first row. Multiply this matrix with $\vec{A}$. 
+        Then find $\vec{L}_1$ which introduces a zero in the bottom left corner by subtracting some multiple of the first row from the second row.
+        Obtain $\vec{U} =\vec{L}_1 (\vec{P}_1\vec{A})$ and $\vec{L}$.
+
+        Output the factorization and error.
+
+    \end{enumerate}
+
+
+
+
+\end{problem}
+
+\begin{problem}
+    Recall the growth factor for Gaussian elimination is the maximum ratio of the largest absolute entry in $\vec{U}$ to the largest absolute entry in $\vec{A}$.
+    \[
+        \frac{\max_{i,j} |U_{i,j}|}{\max_{i,j} |A_{i,j}|}
+    \]
+    A bigger growth factor is correlated to a bigger loss of precision when the factorization is used to solve systems.
+
+    Apply PLU factorization (no pivoting if the rows have the same magnitude) to
+    \[
+    \vec{A} = 
+    \begin{bmatrix}
+    	1 & 0 & 0 & 0 & 1 \\
+    	-1 & 1 & 0 & 0 & 1 \\
+    	-1 & -1 & 1 & 0 & 1 \\
+    	-1 & -1 & -1 & 1 & 1 \\
+    	-1 & -1 & -1 & -1 & 1
+    \end{bmatrix}.
+    \]
+    Wilkinson showed that the growth factor for Gaussian elimination is $2^{n-1}$ in the worst case.
+    This example shows that the growth factor of partial pivoting on a $n\times n$ matrix can be as large as $2^{n-1}$. 
+    Other (more expensive) pivoting schemes can guarantee smaller growth factors.
+    \footnote{\url{https://nhigham.com/2020/07/14/what-is-the-growth-factor-for-gaussian-elimination/}}
+
+\end{problem}
 
 \end{document}
