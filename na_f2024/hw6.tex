@@ -1,0 +1,266 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amssymb}
+
+% you will probably have to remove the font-setup
+\usepackage[no-math]{fontspec}
+\setmainfont[
+    BoldFont = Vollkorn Bold,
+    ItalicFont = Vollkorn Italic,
+    BoldItalicFont={Vollkorn Bold Italic},
+    RawFeature=+lnum,
+]{Vollkorn}
+
+\setsansfont[
+    BoldFont = Lato Bold,
+    FontFace={l}{n}{*-Light},
+    FontFace={l}{it}{*-Light Italic},
+]{Lato}
+
+\usepackage{unicode-math}
+\mathitalicsmode=1
+
+\setmathfont[
+mathit = sym,
+mathup = sym,
+mathbf = sym,
+math-style = TeX, 
+bold-style = TeX
+]{Wholegrain Math}
+\everydisplay{\Umathoperatorsize\displaystyle=4ex}
+\AtBeginDocument{\renewcommand\setminus{\smallsetminus}}
+% font setup ends here
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+  {\textbf{Solution.} }
+  {}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate]{itemsep=-.15em, topsep=-.5em}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\vec}{\mathbf}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\F}{\mathsf{F}}
+
+\usepackage{dsfont}
+\newcommand{\bOne}{\mathds{1}}
+
+\usepackage{array,booktabs}
+
+\begin{document}
+
+
+\textbf{\Large\sffamily{Homework 6\hfill Numerical Analysis Fall 2024}}
+    
+    \vspace{-1.8em}
+    \hrulefill
+
+    \textbf{Instructions:}
+    \begin{itemize}
+        \item Due 11/25 at 6:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
+\end{itemize}
+   
+\vspace{.5em}
+
+\begin{problem}
+    Suppose we have time-series data $(t_1, y_1), \ldots, (t_n,y_n)$. 
+    We can try to fit the data with a polynomial of degree $k$. 
+    I.e. find a polynomial 
+    \[
+    p(x) = c_0 + c_1 x + \cdots + c_k x^k
+    \]
+    so that at each time $t_i$, we have
+    \[
+    p(t_i) \approx y_i.
+    \]
+    To do this, we can solve a least squares problem
+    \[
+        \min_{c_0, \ldots, c_k} \sum_{i=1}^{n} ( y_i - p(t_i))^2
+        =
+        \min_{c_0, \ldots, c_k} \sum_{i=1}^{n} ( y_i - (c_0 + c_1 t_i + \cdot + c_k t_i^k))^2.
+    \]
+
+    As we saw in class, this can be written as a linear algebra problem:
+    \[
+    \min_{\vec{c}\in\mathbb{R}^{k+1}} \| \vec{b} - \vec{A}\vec{x} \|_2^2
+    \]
+    where
+    \[
+    \vec{b} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}
+    ,\qquad
+    \vec{A} = 
+    \begin{bmatrix} 
+        1 & t_1 & t_1^2 & \cdots & t_1^k \\
+        1 & t_2 & t_2^2 & \cdots & t_2^k \\
+        \vdots & \vdots &&\vdots \\
+        1 & t_n & t_n^2 & \cdots & t_n^k 
+    \end{bmatrix}.
+    \]
+
+    Get the data \texttt{temp.npy} from the website. 
+    Load the data:    
+    \begin{lstlisting}
+temp = np.load('gdrive/MyDrive/na_f2024/hw files/temp.npy')
+t = np.arange(190)/24 # time in days
+    \end{lstlisting}
+
+    We can plot the data:
+    \begin{lstlisting}
+plt.subplots(1,1,figsize=(12,4))
+plt.plot(t,temp,marker='.',ls='None',label='data')
+plt.ylabel('temperature (F)')
+plt.xlabel('time since Oct 29 (days)')
+plt.legend()
+    \end{lstlisting}
+
+
+    \begin{enumerate}
+        \item 
+        
+        For each $k=5, 10, 15$, set up the least squares problem for and and solve it (either using \texttt{np.linalg.lstsq} or using a QR factorization followed by a triangular solve).
+
+        Add each of the polynomials (evaluated at a finer grid of $t$ values) to the plot. Make sure they are labeled. 
+    
+        \item Note that we could represent our polynomial in terms of a different basis. I.e. instead of $1, x, x^2, \ldots, x^k$, we could use any family $p_0(x), p_1(x), \ldots, p_k(x)$, where $p_i(x)$ has degree $i$. 
+        
+        One common choice is the Chebyshev polynomials. On $[-1,1]$, these are  defined by
+        \[
+        T_{0}(x) = 1, \quad T_{1}(x) = x, \quad T_{j+1}(x) = 2xT_j(x) - T_j{-1}(x).
+        \]
+        More generally, we can define them on an interval $[a,b]$ by 
+        \[
+        p_i(x) = T_i\left(\frac{2x - (a+b)}{b-a}\right).
+        \]
+
+        Repeat the above process with the scaled Chebyshev polynomials (here $a=0$ and $b=8$); i.e. using 
+        \[
+        \vec{A} = 
+        \begin{bmatrix}
+        p_0(t_1) & p_1(t_1) & \cdots & p_k(t_1) \\
+        T_0(t_2) & p_1(t_2) & \cdots & p_k(t_2) \\
+        \vdots & \vdots & & \vdots \\
+        p_0(t_n) & p_1(t_n) & \cdots & p_k(t_n) \\
+        \end{bmatrix}.
+        \]
+
+        We can make a function to evaluate the Chebyshev polynomials on $[a,b]$ as follows: \footnote{It's not obvious how to get this formula, but you could prove it satisfies the recurrence formula! You can look at the wikipedia page for more info}
+        \begin{lstlisting}
+def chebyshev_polynomail(j,x,a,b):
+    return np.cos(j*np.arccos((2*x-(a+b))/(b-a)))
+                    
+        \end{lstlisting}
+
+        If we want to evaluate this for $j=3$ at all the $t$ values we can do:
+        \begin{lstlisting}
+chebyshev_polynomail(3,t,0,8)
+        \end{lstlisting} 
+
+        Make a plot with $k=5,10,15$.
+
+        \item Explain why the plots should look the same if we were doing th e computations exactly.
+        
+        \item Look at the condition numbers of all of the matrices you use in the least squares problems. 
+        How does this explain why the plots with different polynomial families look different?
+
+    \end{enumerate}
+
+\end{problem}
+
+
+\begin{problem}
+
+    Suppose $\vec{A}$ is symmetric with eigenvalues $\lambda_1, \ldots, \lambda_n$ (so that $|\lambda_1| > |\lambda_2|  \geq \cdots \geq |\lambda_n|$) and corresponding orthonormal eigenvectors $\vec{v}_1, \ldots, \vec{v}_n$.
+
+    Our analysis of the power-method involved writing the starting vector $\vec{x}$ in terms of $\vec{V}$; i.e. writing 
+    \[
+    \vec{x} = \vec{V} \begin{bmatrix}
+        c_1 \\ c_2 \\ \vdots \\ c_n
+    \end{bmatrix}.
+    \]
+    As long as $|c_1| > 0$, then we got convergence to $\vec{v}_1$.
+
+    Of course, in practice we don't know the eigenvectors or the $c_i$s. 
+    However, it turns out if we choose $\vec{x}$ randomly, then $c_1$ will never be zero (and in fact will never be that small).
+
+    \begin{enumerate}
+        \item Suppose we have $\vec{x}$ and $\vec{V}$. 
+        How we compute $c_1$?
+        
+        \item Make any $5\times 5$ symmetric matrix $\vec{A}$ sample a length 5 vector $\vec{x}$ whose entries are independent Gaussians. You can do this by using \texttt{np.random.randn(5)}.
+        
+        \item Use numpy's \texttt{np.linalg.eigh} to compute its eigendecompsition. Use (a) to compute $c_1$ and report it's value.
+        
+        \item Repeat (b) 1000 times with a new $\vec{x}$ each time. 
+        Make a histogram of the value of $c_1$ over these trials.\footnote{It turns out the distribution of $c_1$ does not depend on how you generated the matrix $\vec{A}$! This is because of something called the orthogonal invariance of the Gaussian distribution.}
+ 
+        Was $c_1$ ever zero? 
+        \item In the above process, we needed to compute $\vec{V}$ in order to find $c_1$. But this would be expensive for large matrices.
+        
+        Explain why we do not need to compute $\vec{V}$ in practice in order to use the power method to find $\vec{v}_1$. 
+        
+    \end{enumerate}
+
+
+\end{problem}
+
+
+
+\begin{problem}
+Suppose $\vec{A}$ is symmetric with eigenvalue decomposition $\vec{V}\vec{\Lambda}\vec{V}^\T$, where $\vec{\Lambda}$ is diagonal with entries $\lambda_1, \ldots, \lambda_n$.
+
+\begin{enumerate}
+    \item 
+Find the eigenvalue decomposition of:
+\begin{itemize}
+\item $\vec{A}^k$    
+\item $\vec{A}^3 -2 \vec{A}$
+\item $\vec{A}^{-1}$
+\item $(\vec{A}+\lambda)^{-1}$
+\end{itemize}
+\item What is the largest eigenvalue of $(\vec{A}+\lambda)^{-1}$ in terms of the $\lambda_i$s?
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Suppose $\vec{A}$ is symmetric with eigenvalues $\lambda_1, \ldots, \lambda_n$ (so that $|\lambda_1| > |\lambda_2| > |\lambda_3| > \cdots > |\lambda_n|$) and corresponding orthonormal eigenvectors $\vec{v}_1, \ldots, \vec{v}_n$.
+
+    Define $\vec{B} = \vec{A}(\vec{I} - \vec{v}_1\vec{v}_1^\T)$. 
+
+    \begin{enumerate}
+        \item What are the eigenvalues of $\vec{B}$?
+
+        \item Explain how to use the observation in (a) and the power-method to find $\vec{v}_2$.
+
+    \end{enumerate}
+
+\end{problem}
+
+
+\end{document}
