@@ -82,7 +82,7 @@ bold-style = TeX
 
     \textbf{Instructions:}
     \begin{itemize}
-        \item Due 11/25 at 6:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
+        \item Due 11/26 at 6:00pm on \href{https://www.gradescope.com/courses/818054}{Gradescope}.
         \item You must follow the submission policy in the \href{https://courses.chen.pw/na_f2024/syllabus.html}{syllabus} 
 \end{itemize}
    
@@ -143,7 +143,7 @@ plt.legend()
     \begin{enumerate}
         \item 
         
-        For each $k=5, 10, 15$, set up the least squares problem for and and solve it (either using \texttt{np.linalg.lstsq} or using a QR factorization followed by a triangular solve).
+        For each $k=5,10,15,20,25$, set up the least squares problem for and and solve it (either using \texttt{np.linalg.lstsq} or using a QR factorization followed by a triangular solve).
 
         Add each of the polynomials (evaluated at a finer grid of $t$ values) to the plot. Make sure they are labeled. 
     
@@ -181,7 +181,7 @@ def chebyshev_polynomail(j,x,a,b):
 chebyshev_polynomail(3,t,0,8)
         \end{lstlisting} 
 
-        Make a plot with $k=5,10,15$.
+        Make a plot with $k=5,10,15,20,25$.
 
         \item Explain why the plots should look the same if we were doing th e computations exactly.
         
@@ -241,7 +241,7 @@ Find the eigenvalue decomposition of:
 \item $\vec{A}^k$    
 \item $\vec{A}^3 -2 \vec{A}$
 \item $\vec{A}^{-1}$
-\item $(\vec{A}+\lambda)^{-1}$
+\item $(\vec{A}+\lambda \vec{I})^{-1}$
 \end{itemize}
 \item What is the largest eigenvalue of $(\vec{A}+\lambda)^{-1}$ in terms of the $\lambda_i$s?
 \end{enumerate}
